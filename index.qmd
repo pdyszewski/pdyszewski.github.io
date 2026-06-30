@@ -20,15 +20,14 @@ about:
       aria-label: ORCID
 
 
-#listing:
-#  - id: latest-news
-#    contents: "news/*.qmd"
-#    type: default
-#    sort: "date desc"
-#    max-items: 3
-#::: {#latest-news}
-#:::
-#[old news →](news/)
+listing:
+  - id: latest-news
+    contents: "news/*.qmd"
+    type: default
+    sort: "date desc"
+    fields: [date, title, description]
+    max-items: 3
+
 ---
 
 :::{#hero-heading}
@@ -51,6 +50,10 @@ University of Wrocław | Assistant Professor | Oct 2018 - Sept 2019
 
 :::
 
+## News
 
+::: {#latest-news}
+:::
+[old news →](news/)
 
 

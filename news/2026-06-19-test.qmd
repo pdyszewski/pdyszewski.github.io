@@ -1,8 +1,5 @@
 ---
-title: "Nowy projekt badawczy"
-date: 2026-06-19
-description: "Krótka informacja o nowym projekcie."
-categories: [projekt, badania]
+title: "New lecture notes"
+date: 2026-06-30
+description: "I'm drafting new lecture notes [Matematyczne podstawy sieci neuronowych](https://pdyszewski.github.io/MPSN/). Comments are welcome!"
 ---
-
-bla bla bla 

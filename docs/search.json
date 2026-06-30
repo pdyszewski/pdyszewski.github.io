@@ -247,8 +247,15 @@
   {
     "objectID": "news/index.html",
     "href": "news/index.html",
-    "title": "News",
+    "title": "Piotr Dyszewski",
     "section": "",
-    "text": "Latest news\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNowy projekt badawczy\n\n\n\nprojekt\n\nbadania\n\n\n\nKrótka informacja o nowym projekcie.\n\n\n\n\n\nJun 19, 2026\n\n\n\n\n\nNo matching items"
+    "text": "Latest news\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew lecture notes\n\n\nI’m drafting new lecture notes Matematyczne podstawy sieci neuronowych. Comments are welcome!\n\n\n\n\n\nJun 30, 2026\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#news",
+    "href": "index.html#news",
+    "title": "Piotr Dyszewski",
+    "section": "News",
+    "text": "News\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew lecture notes\n\n\nI’m drafting new lecture notes Matematyczne podstawy sieci neuronowych. Comments are welcome!\n\n\n\n\n\nJun 30, 2026\n\n\n\n\n\nNo matching items\n\nold news →"
   }
 ]

@@ -1,10 +1,8 @@
 ---
-title: "News"
-
 listing:
   contents: "*.qmd"
   type: default
   sort: "date desc"
-  categories: true
+  categories: false
 ---
 Latest news

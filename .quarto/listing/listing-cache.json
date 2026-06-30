@@ -36,6 +36,12 @@
     ],
     "lecture_notes\\index.qmd": [
       "notes.yml"
+    ],
+    "index.qmd": [
+      "news/*.qmd"
+    ],
+    "news\\index.qmd": [
+      "*.qmd"
     ]
   }
 }

@@ -30,5 +30,12 @@
     "items": [
       "/news/2026-06-19-test.html"
     ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/news/index.html",
+      "/news/2026-06-19-test.html"
+    ]
   }
 ]
