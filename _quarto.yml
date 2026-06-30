@@ -1,0 +1,44 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Piotr Dyszewski"
+  search: true
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Papers"
+        href: papers
+#      - text: "News"
+#        href: news/
+#      - text: "Grants"
+#        href: grants/
+      - text: "Talks"
+        href: presentations/
+      - text: "Events"
+        href: events/
+      - text: "Teaching"
+        href: courses/
+      - text: Lecture notes
+        href: lecture_notes/
+    right:
+      - icon: github
+        href: https://github.com/pdyszewski
+      - icon: envelope
+        href: mailto:piotr.dyszewski2@uwr.edu.pl
+      - icon: mortarboard
+        href: https://scholar.google.pl/citations?user=tJGS1iUAAAAJ&hl=en
+        aria-label: Google Scholar
+      - icon: person-badge
+        href: https://orcid.org/0000-0002-4253-3775
+        aria-label: ORCID
+
+format:
+  html:
+    theme: 
+      light: cosmo
+      dark: darkly
+    css: styles.css
+    toc: false

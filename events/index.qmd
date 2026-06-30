@@ -1,0 +1,16 @@
+---
+title: "Events"
+
+listing:
+  id: events
+  contents:
+    - events.yml
+  template: _events-split-table.ejs
+  field-types:
+    date: date
+---
+
+This is a partial list of interesting conferences which I may or may not attend.
+
+::: {#events}
+:::

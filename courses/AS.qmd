@@ -1,0 +1,70 @@
+---
+title: "Analiza stochastyczna"
+description: "semestr zimowy 2022/2023"
+semester: "2025/2026"
+image: "AS.png"
+---
+
+## Aktualności
+
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1uOxszSd-OQsG-PtaWazUNIYh2H9qiCWY/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Sylabus</span></a>
+
+  - Kolokwia: 5.12 i 30.01
+
+  - Egzamin 16.02 sala 601 godzina 10:15
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/181merL1SKkVEBlXXlvIiZsY7mfpyP-68/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Przykładowy egzamin</span></a>
+  
+## Notatki do wykładu  
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1XdFtIoF5VkValhQHPdQzre1Jr8f-Snxg/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Wstęp</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/14rWlnrjj3kQFG15ckWPlk-Lfh78wIOPm/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Procesy stochastyczne</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1UyBHJ8Ysv6hQ1vhGQsBdK4n5ZLP5FNuD/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Martyngały</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1S2ZaLTGz_h8aZGLywnPQ7SfXInYwsvqu/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Całka stochastyczna</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1VQLSduIE47-ZhGRuDvTFw_D6NAhTMqJw/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Stochastyczny rachunek całkowy</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1ueSvbwepYvT28WA12usqaWsJAkA2t-1q/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Stochastyczne równania różniczkowe</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/15d9Lg_EgnSOooieu96pzUnalmfen9OPW/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Wielowymiarowa całka stochastyczna</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1ep6zEqpNzTacgmqo1iyFTBwON8rsUm66/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Zastosowania</span></a>
+  
+## Listy zadań
+
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1Ya1fRHK5OEIXp1tantV9_6OsHVLAVOrr/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Ruch Browna i całka Riemanna-Stieltjesa</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1ZmE2rjE0_iB98INUAfANO_05Ksb2p3X3/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Filtracje i czasy zatrzymania</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1a2G_ot80Bw-QY8_wcwlGmI4xCslQR8IU/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Procesy mierzalne</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1PkTwFOfh_01q-DJi3WPcCwh-1Ur9pgON/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Martyngały po raz pierwszy</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1a6osJui1V4NVqlffR9IDuNNPpcohVNQ8/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Twierdzenie o zatrzymaniu</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1kEnTpTzW0OVXnEWe69yUSdCJho3l6N3N/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Nawias skośny</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1BD-GmnHjIXt-PuIsjNUs_TZ0rMEBYmKT/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Powtórka przed kolokwium</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1kHCc7a1oyE1eDF_Td241LLOLQpLNQMnk/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Całka stochastyczna</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/13mhztYxvw0OkiEz0h7XdK4mu0h4L-LG0/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Własności całki stochastycznej</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1Q0N39FixA7Il35VN5-bkQ9dppM0rxtkY/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Procesy Ito</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/15mea9UzLN0eMa4wBYzUEZmVJ-vRxQKDX/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Stochastyczne równania różniczkowe</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1-y4a9XfDem9VUye9F0KxZ1gnEmuTOKvT/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Dyfuzje Ito</span></a></p>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1613Xtx62o-0fyHsSpObS-hIPWQ3kpf7x/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Powtórka przed kolokwium</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1YdrsK3yagq08HqQEdIf6RC7WHfJoe3HH/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Wielowymiarowa całka stochastyczna</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1f-a5HIXQj01MHTYAZXJ0XkQlH4mTD_Mk/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Zamiana miary i czasu</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1AEwBBONHWMdlFuiEdcErOwHrVUBpgNt_/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Powtórka przed egzaminem</span></a>
+  
+

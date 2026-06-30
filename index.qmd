@@ -1,0 +1,56 @@
+---
+title: "Piotr Dyszewski"
+image: profile.jpg
+about:
+  template: trestles
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/pdyszewski
+    - icon: envelope
+      text: Email
+      href: mailto:piotr.dyszewski2@uwr.edu.pl
+    - icon: mortarboard
+      text: Google Scholar
+      href: https://scholar.google.pl/citations?user=tJGS1iUAAAAJ&hl=en
+      aria-label: Google Scholar
+    - icon: person-badge
+      text: ORCID
+      href: https://orcid.org/0000-0002-4253-3775
+      aria-label: ORCID
+
+
+#listing:
+#  - id: latest-news
+#    contents: "news/*.qmd"
+#    type: default
+#    sort: "date desc"
+#    max-items: 3
+#::: {#latest-news}
+#:::
+#[old news →](news/)
+---
+
+:::{#hero-heading}
+
+I am a mathematician at the Mathematical Institute of Wrocław University. I've completed my Humboldt fellowship under the supervision of prof. Nina Gantert at the Technical University of Munich. I am mostly interested in branching and fragmentation processes. 
+
+## Education
+
+University of Wrocław | PhD in Mathematics | March 2014 - Sept 2018
+
+## Experience
+
+University of Wrocław | Assistant Professor | Oct 2021 - present
+
+Technical University of Munich | Alexander von Humboldt Research Fellow | Oct 2020 - Sept 2021
+
+Technical University of Munich | Wissenschaftlicher Mitarbeiter | Oct 2019 - Sept 2020
+
+University of Wrocław | Assistant Professor | Oct 2018 - Sept 2019
+
+:::
+
+
+
+

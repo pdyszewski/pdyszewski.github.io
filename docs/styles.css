@@ -1,0 +1,434 @@
+/* css styles */
+
+/* ============================================================
+   Global font settings
+   ============================================================ */
+
+:root,
+[data-bs-theme="light"],
+[data-bs-theme="dark"] {
+  --bs-font-sans-serif:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+}
+
+body {
+  font-family: var(--bs-font-sans-serif);
+}
+
+h1, h2, h3, h4, h5, h6,
+.navbar,
+.quarto-title,
+.quarto-title-banner,
+.quarto-about-trestles,
+.note-card,
+.pub-item,
+.presentation-item,
+.event-table {
+  font-family: var(--bs-font-sans-serif);
+}
+
+/* ============================================================
+   Navbar: consistent size in light and dark mode
+   ============================================================ */
+
+:root,
+[data-bs-theme="light"],
+[data-bs-theme="dark"] {
+  --bs-navbar-padding-y: 0.45rem;
+  --bs-navbar-brand-padding-y: 0.25rem;
+  --bs-nav-link-padding-y: 0.35rem;
+}
+
+.navbar {
+  min-height: 56px;
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.navbar-brand,
+.navbar-title,
+.navbar-nav .nav-link {
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+  line-height: 1.5;
+}
+
+.navbar-brand,
+.navbar-title {
+  white-space: nowrap;
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+.navbar .quarto-color-scheme-toggle,
+.navbar .quarto-search-button {
+  line-height: 1.5;
+}
+
+/* ============================================================
+   General layout
+   ============================================================ */
+
+.quarto-about-trestles {
+  margin-bottom: 2rem;
+}
+
+h2 {
+  margin-top: 2.5rem;
+}
+
+.page-description {
+  font-size: 1.05rem;
+  color: var(--bs-secondary-color);
+  margin-bottom: 2rem;
+}
+
+/* ============================================================
+   Shared link buttons
+   ============================================================ */
+
+.pub-links,
+.presentation-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.pub-links a,
+.presentation-links a {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--bs-primary);
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: var(--bs-primary);
+}
+
+.pub-links a:hover,
+.presentation-links a:hover {
+  background: var(--bs-primary);
+  color: var(--bs-body-bg);
+}
+
+/* ============================================================
+   Papers / publications
+   ============================================================ */
+
+.pub-list {
+  max-width: 1050px;
+}
+
+.pub-item {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 1.25rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.pub-year {
+  font-weight: 700;
+  color: var(--bs-secondary-color);
+  padding-top: 0.2rem;
+}
+
+.pub-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 180px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.pub-type {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--bs-primary);
+  margin-bottom: 0.25rem;
+}
+
+.pub-title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.15rem;
+  line-height: 1.3;
+}
+
+.pub-authors {
+  margin-bottom: 0.25rem;
+}
+
+.pub-venue {
+  color: var(--bs-secondary-color);
+  margin-bottom: 0.5rem;
+}
+
+.pub-description {
+  margin-bottom: 0.6rem;
+}
+
+.pub-image-wrap {
+  width: 180px;
+}
+
+.pub-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0.4rem;
+  border: 1px solid var(--bs-border-color);
+}
+
+.pub-cite {
+  margin-top: 0.75rem;
+}
+
+.pub-cite summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--bs-primary);
+}
+
+.pub-cite pre {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 0.35rem;
+  background: var(--bs-tertiary-bg);
+  color: var(--bs-body-color);
+  font-size: 0.85rem;
+  overflow-x: auto;
+}
+
+/* ============================================================
+   Presentations
+   ============================================================ */
+
+.presentation-list {
+  max-width: 1050px;
+}
+
+.presentation-item {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 1.25rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.presentation-year {
+  font-weight: 700;
+  color: var(--bs-secondary-color);
+  padding-top: 0.2rem;
+}
+
+.presentation-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 180px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.presentation-type {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--bs-primary);
+  margin-bottom: 0.25rem;
+}
+
+.presentation-title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.15rem;
+  line-height: 1.3;
+}
+
+.presentation-title a {
+  text-decoration: none;
+}
+
+.presentation-title a:hover {
+  text-decoration: underline;
+}
+
+.presentation-event {
+  color: var(--bs-secondary-color);
+  margin-bottom: 0.25rem;
+}
+
+.presentation-location {
+  margin-bottom: 0.5rem;
+}
+
+.presentation-description {
+  margin-bottom: 0.6rem;
+}
+
+.presentation-image-wrap {
+  width: 180px;
+}
+
+.presentation-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 0.4rem;
+  border: 1px solid var(--bs-border-color);
+}
+
+/* ============================================================
+   Events tables
+   ============================================================ */
+
+.event-table {
+  font-size: 0.95rem;
+}
+
+.event-table th,
+.event-table td {
+  vertical-align: top;
+}
+
+.event-table a {
+  text-decoration: none;
+}
+
+.event-table a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================
+   Lecture notes grid
+   ============================================================ */
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.note-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.6rem;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--bs-body-color);
+  background: var(--bs-body-bg);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.note-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.12);
+  border-color: var(--bs-primary);
+  color: var(--bs-body-color);
+}
+
+.note-card-image-wrap {
+  width: 100%;
+  background: var(--bs-tertiary-bg);
+}
+
+.note-card-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.note-card-body {
+  padding: 1rem;
+}
+
+.note-card-type {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--bs-primary);
+  margin-bottom: 0.35rem;
+}
+
+.note-card-title {
+  font-size: 1.1rem;
+  line-height: 1.3;
+  margin: 0 0 0.5rem 0;
+}
+
+.note-card-description {
+  font-size: 0.95rem;
+  color: var(--bs-secondary-color);
+  margin-bottom: 0.75rem;
+}
+
+.note-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--bs-secondary-color);
+}
+
+.note-card-meta .listing-status,
+.note-card-meta .listing-language,
+.note-card-meta-separator {
+  color: var(--bs-secondary-color);
+}
+
+/* Dark mode fixes */
+
+[data-bs-theme="dark"] .note-card:hover {
+  box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.35);
+}
+
+/* ============================================================
+   Responsive layout
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .notes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .pub-item,
+  .presentation-item {
+    grid-template-columns: 1fr;
+  }
+
+  .pub-main,
+  .presentation-main {
+    grid-template-columns: 1fr;
+  }
+
+  .pub-image-wrap {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .presentation-image-wrap {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 600px) {
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+}

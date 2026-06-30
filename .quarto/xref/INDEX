@@ -1,0 +1,68 @@
+{
+  "about.qmd": {
+    "about.html": "de07f9b3"
+  },
+  "index.qmd": {
+    "index.html": "144ecd36"
+  },
+  "news/2026-06-19-test.qmd": {
+    "2026-06-19-test.html": "70426612"
+  },
+  "news/index.qmd": {
+    "index.html": "ca52ca15"
+  },
+  "grants/example-grant.qmd": {
+    "example-grant.html": "eb78b369"
+  },
+  "grants/index.qmd": {
+    "index.html": "66c33ee4"
+  },
+  "presentations/index.qmd": {
+    "index.html": "68b5b51e"
+  },
+  "presentations/talk-example.qmd": {
+    "talk-example.html": "6f56eded"
+  },
+  "courses/example.qmd": {
+    "example.html": "c7b9bb72"
+  },
+  "courses/index.qmd": {
+    "index.html": "30ab6b8b"
+  },
+  "publications/index.qmd": {
+    "index.html": "b6c93f9f"
+  },
+  "publications/pub-list.ejs.md": {
+    "pub-list.ejs.html": "e1c199dd"
+  },
+  "papers/index.qmd": {
+    "index.html": "f8aebf1e"
+  },
+  "papers/pub-list.ejs.md": {
+    "pub-list.ejs.html": "fab6ec17"
+  },
+  "presentations/panda2026.qmd": {
+    "panda2026.html": "df444478"
+  },
+  "events/index.qmd": {
+    "index.html": "520ec762"
+  },
+  "courses/TWO.qmd": {
+    "TWO.html": "b35d1553"
+  },
+  "courses/SZMP.qmd": {
+    "SZMP.html": "e60bb45a"
+  },
+  "courses/SMUO.qmd": {
+    "SMUO.html": "32d8ce2b"
+  },
+  "courses/AS.qmd": {
+    "AS.html": "ed0eb22c"
+  },
+  "courses/RP2R.qmd": {
+    "RP2R.html": "3f31ae1f"
+  },
+  "lecture_notes/index.qmd": {
+    "index.html": "63deea72"
+  }
+}

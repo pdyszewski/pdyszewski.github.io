@@ -1,0 +1,57 @@
+```{=html}
+<div class="notes-grid list">
+<% for (const item of items) {
+  const href = item.link || "#";
+%>
+  <a class="note-card" href="<%- href %>" <%= metadataAttrs(item) %>>
+    <% if (item.image) { %>
+      <div class="note-card-image-wrap">
+        <img
+          class="note-card-image"
+          src="<%- item.image %>"
+          alt="<%- item.image_alt || item.title || 'Course cover' %>"
+          loading="lazy"
+        />
+      </div>
+    <% } %>
+
+    <div class="note-card-body">
+
+      <h3 class="note-card-title listing-title">
+        <%- item.title || "" %>
+      </h3>
+
+      <% if (item.description) { %>
+        <p class="note-card-description">
+          <%- item.description %>
+        </p>
+      <% } %>
+
+      <% if (item.semester || item.level || item.language) { %>
+        <div class="note-card-meta">
+          <% if (item.semester) { %>
+            <span class="listing-semester"><%- item.semester %></span>
+          <% } %>
+
+          <% if (item.semester && (item.level || item.language)) { %>
+            <span class="note-card-meta-separator">·</span>
+          <% } %>
+
+          <% if (item.level) { %>
+            <span class="listing-level"><%- item.level %></span>
+          <% } %>
+
+          <% if (item.level && item.language) { %>
+            <span class="note-card-meta-separator">·</span>
+          <% } %>
+
+          <% if (item.language) { %>
+            <span class="listing-language"><%- item.language %></span>
+          <% } %>
+        </div>
+      <% } %>
+    </div>
+  </a>
+<% } %>
+</div>
+```

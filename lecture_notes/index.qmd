@@ -1,0 +1,19 @@
+---
+title: "Lecture notes"
+
+listing:
+  id: lecture-notes
+  contents:
+    - notes.yml
+  template: _notes-grid.ejs
+  sort: "date desc"
+  field-types:
+    date: date
+  filter-ui: [title, status, language, date]
+  page-size: 20
+---
+
+A collection of lecture notes and teaching materials.
+
+::: {#lecture-notes}
+:::

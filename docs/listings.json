@@ -1,0 +1,34 @@
+[
+  {
+    "listing": "/lecture_notes/index.html",
+    "items": []
+  },
+  {
+    "listing": "/grants/index.html",
+    "items": [
+      "/grants/example-grant.html"
+    ]
+  },
+  {
+    "listing": "/papers/index.html",
+    "items": []
+  },
+  {
+    "listing": "/presentations/index.html",
+    "items": []
+  },
+  {
+    "listing": "/courses/index.html",
+    "items": []
+  },
+  {
+    "listing": "/events/index.html",
+    "items": []
+  },
+  {
+    "listing": "/news/index.html",
+    "items": [
+      "/news/2026-06-19-test.html"
+    ]
+  }
+]

@@ -1,0 +1,35 @@
+- title: "Analiza stochastyczna"
+  date: "2026-02-01"
+  semester: "semestr zimowy 2022/2023"
+  type: "Course"
+  description: " "
+  image: "AS.png"
+  image_alt: "Cover image for Mathematical Foundations of Neural Networks"
+  link: "AS.html"
+
+
+
+- title: "Rachunek prawdopodobieństwa 2R"
+  semester: "semestr zimowy 2023/2024"
+  image: "RR2R.png"
+  description: " "
+  link: "RP2R.html"
+
+
+- title: "Stochastyczne modele układów oddziałujących"
+  semester: "semestr letni 2024/2025"
+  image: "SMUO.png"
+  description: " "
+  link: "SMUO.html"
+
+- title: "Słaba zbieżność miar probabilistycznych"
+  semester: "semestr letni 2022/2023"
+  image: "SZMP.png"
+  description: " "
+  link: "SZMP.html"
+
+- title: "Teoria wielkich odchyleń"
+  semester: "semestr letni 2023/2024"
+  image: "TWO.png"
+  description: " "
+  link: "TWO.html"

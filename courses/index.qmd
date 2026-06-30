@@ -1,0 +1,19 @@
+---
+title: "Courses"
+
+listing:
+  id: courses
+  contents:
+    - courses.yml
+  template: _courses-grid.ejs
+  sort: "date desc"
+  field-types:
+    date: date
+  filter-ui: [title, categories, semester, level, language]
+  page-size: 20
+---
+
+A list of courses I teach or have taught.
+
+::: {#courses}
+:::

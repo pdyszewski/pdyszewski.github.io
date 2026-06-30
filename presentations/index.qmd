@@ -1,0 +1,11 @@
+---
+title: "Talks"
+
+listing:
+  contents: "presentations.yml"
+  template: _presentation-list.ejs
+  type: default
+  sort: "date desc"
+  fields: [date, title, event, location, description]
+  categories: true
+---

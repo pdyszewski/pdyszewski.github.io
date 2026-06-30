@@ -1,0 +1,16 @@
+---
+title: "Grants"
+
+listing:
+  contents: "*.qmd"
+  type: table
+  sort: "date desc"
+  fields: [date, title, role, funder, amount, description]
+  field-display-names:
+    date: "Rok"
+    title: "Grant"
+    role: "Rola"
+    funder: "Finansowanie"
+    amount: "Budżet"
+    description: "Opis"
+---

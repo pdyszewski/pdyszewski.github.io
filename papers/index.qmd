@@ -1,0 +1,19 @@
+---
+title: "Papers"
+
+listing:
+  id: papers
+  contents:
+    - pubs.yml
+  template: _pub-list.ejs.md
+  sort: "date desc"
+  sort-ui: [date, title, venue, type]
+  filter-ui: [title, authors, venue, type, categories]
+  categories: true
+  page-size: 20
+  field-types:
+    date: date
+---
+
+::: {#papers}
+:::

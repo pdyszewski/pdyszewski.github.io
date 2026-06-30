@@ -1,0 +1,8 @@
+---
+title: "Nowy projekt badawczy"
+date: 2026-06-19
+description: "Krótka informacja o nowym projekcie."
+categories: [projekt, badania]
+---
+
+bla bla bla 

@@ -1,0 +1,142 @@
+- title: "The largest fragment in self-similar fragmentation processes"
+  date: 2026-05-15
+  year: 2026
+  type: "conference talk"
+  event: "Probability and Analysis"
+  location: "Będlewo"
+  image: "panda2026/panda2026.png"
+  image_alt: "Title slide of the presentation"
+  slides: "panda2026/panda2026.pdf"
+  video: ""
+  code: ""
+  categories: 
+    - conference talks
+
+
+- title: "Sztuczki, gierki i teoria Ramseya"
+  date: 2026-10-11
+  year: 2026
+  type: "lecture"
+  event: "Warsztaty młodych odkrywców"
+  location: "Wrocław"
+  image: "wmo2026/wmo2026.png"
+  slides: "wmo2026/wmo2026.pdf"
+  categories: 
+    - lectures
+
+
+- title: "Tasowanie drzew a hipoteza jakobianowa"
+  date: 2025-9-9
+  year: 2025
+  type: "conference talk"
+  event: "10. Forum Matematyków Polskich"
+  location: "Białystok"
+  image: "fmp2025/fmp2025.png"
+  slides: "fmp2025/fmp2025.pdf"
+  categories: 
+    - conference talks
+
+- title: "Domino, skarby Azteków i koło podbiegunowe"
+  date: 2025-9-10
+  year: 2025
+  type: "lecture"
+  event: "9. Kongres Młodych Matematyków"
+  location: "Wrocław"
+  image: "kmm2025/kmm2025.png"
+  slides: "kmm2025/kmm2025.pdf"
+  categories: 
+    - lectures
+
+
+- title: "Solutions of kinetic-type equations with perturbed collisions"
+  date: 2023-5-18
+  year: 2025
+  type: "conference talk"
+  event: "Discrete Random Structures"
+  location: "Będlewo"
+  image: "drs2023/drs2023.png"
+  slides: "drs2023/drs2023.pdf"
+  categories: 
+    - conference talks
+
+- title: "K-regular self-similar fragmentation process"
+  date: 2023-5-29
+  year: 2023
+  type: "conference talk"
+  event: "Stochastic Models VII"
+  location: "Będlewo"
+  image: "sm2023/sm2023.png"
+  slides: "sm2023/sm2023.pdf"
+  categories: 
+    - conference talks
+
+
+- title: "Branching random walks and stretched exponential tails"
+  date: 2023-2-28
+  year: 2023
+  type: "conference talk"
+  event: "Branching and Interacting Particle Systems"
+  location: "Wrocław"
+  image: "ips2023/ips2023.png"
+  slides: "ips2023/ips2023.pdf"
+  categories: 
+    - conference talks
+
+
+- title: "Large deviations for a random walk in random environment revisited"
+  date: 2018-05-7
+  year: 2018
+  type: "conference talk"
+  event: "Probabilistic Aspects of Harmonic Analysis"
+  location: "Będlewo"
+  image: "paha2018/paha2018.png"
+  slides: "paha2018/paha2018.pdf"
+  categories: 
+    - conference talks
+
+
+- title: "Spacer losowy z rzedkimi losowymi zaburzeniami"
+  date: 2021-04-27
+  year: 2021
+  type: "conference talk"
+  event: "Polska konferencja z probabilistyki"
+  location: "online"
+  image: "prob2021/prob2021.png"
+  slides: "prob2021/prob2021.pdf"
+  categories: 
+    - conference talks
+
+
+- title: "Trzy losowania bez zwracania"
+  date: 2026-03-9
+  year: 2026
+  type: "lecture"
+  event: "Matematyczno-Informatyczne SpotkanIa na Uniwersytecie"
+  location: "Wrocław"
+  image: "misiu2026/misiu2026.png"
+  slides: "misiu2026/misiu2026.pdf"
+  categories: 
+    - lectures
+
+
+- title: "Teoretyczne i prektyczne aspekty gry Bridg-it"
+  date: 2025-11-20
+  year: 2026
+  type: "lecture"
+  event: "Matematyczno-Informatyczne SpotkanIa na Uniwersytecie"
+  location: "Wrocław"
+  image: "misiu2025/misiu2025.png"
+  slides: "misiu2025/misiu2025.pdf"
+  categories: 
+    - lectures
+
+- title: "Magia czy matematyka?"
+  date: 2025-04-17
+  year: 2026
+  type: "lecture"
+  event: "Matematyczno-Informatyczne SpotkanIa na Uniwersytecie"
+  location: "Wrocław"
+  image: "misiu2026b/misiu2026b.png"
+  slides: "misiu2026b/misiu2026b.pdf"
+  categories: 
+    - lectures

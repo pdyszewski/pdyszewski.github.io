@@ -1,0 +1,95 @@
+---
+title: "Teoria wielkich odchyleń"
+description: "semestr letni 2023/2024"
+semester: "2025/2026"
+image: "TWO.png"
+---
+
+Zajęcia odbywają się w środy w godzinach 8-12 w sali 602
+
+## Aktualności:
+
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1_2Yr74j1qVPhPYzpFv8CyHpK1Y8wpy2c/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Sylabus</a>
+
+  - Pierwsze spotkanie odbędzie się 21.02
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1cjE2RytPYXm7RF-Q6PIHgLIxsPmgn4PM/view" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">wstępna wersja notatek</a>
+
+## Notatki
+
+ 1. <a class="XqQF9c" href="https://drive.google.com/file/d/1GKzcD9KFU5K01No_XgaMEoIBprVI85Qa/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Rzuty monetą (21.02)</a>
+
+  1. <a class="XqQF9c" href="https://drive.google.com/file/d/1TYHRLedKI6DNOMeWcnPcTKj6a9KPYFZS/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Twierdzenie Cramera (28.02)</a>
+
+  1. <a class="XqQF9c" href="https://drive.google.com/file/d/1_s1ypfoCgcYOV3M5tbjoZeG6ar0dylnC/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Twierdzenie Cramera raz jeszcze (6.03)</a>
+  
+  1. <a class="XqQF9c" href="https://drive.google.com/file/d/1KSAfLC5BDYgKjaOnMNAzt-osn6jhhkba/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Ogólna teoria (13.03)</a>
+  
+  1. <a class="XqQF9c" href="https://drive.google.com/file/d/1lUw-owbDoOW_Lrm82YBmHJ6Q7UvUsAro/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Lemat Varadhana (20.03)</a>
+  
+  1. <a class="XqQF9c" href="https://drive.google.com/file/d/1DP0sSVpP1IzQqgrzg0dXecCnZnm0R7FJ/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Twierdzenie Sanowa raz jeszcze (27.03)</a>
+  
+  1. <a class="XqQF9c" href="https://drive.google.com/file/d/17T0fXALDKVUH4Sm_qPEpWV7zQAmQPMtH/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Całka Bochnera (3.04)</a>
+  
+  1. <a class="XqQF9c" href="https://drive.google.com/file/d/1UsdAA27qUUxIN29rLog1XeIkk08j4cGw/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Duże odchylenia na C[0,1] (11.04)</a>
+  
+  1. <a class="XqQF9c" href="https://drive.google.com/file/d/1f6_FeqSbsZ6Q23hpZyWFrzsKF4SxyFFU/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Prawo iterowanego logarytmu (17.04)</a>
+  
+  1. <a class="XqQF9c" href="https://drive.google.com/file/d/1kTNjn7eQgJsvqt52RIFknsgeFKyiHy9N/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Twierdzenie Gratnera-Ellisa (24.04)</a>
+  
+  1. <a class="XqQF9c" href="https://drive.google.com/file/d/1JzUhg43htYqA2CeRG4K9c78hS71Yq-KC/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Twierdzenie Gratnera-Ellisa 2 (8.05)</a>
+  
+  1. <a class="XqQF9c" href="https://drive.google.com/file/d/1o_XzMi3EG75HBGcY8ng2aJnj62O5SLs5/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Łańcuchy Markowa (15.05)</a>
+  
+  1. <a class="XqQF9c" href="https://drive.google.com/file/d/1yxkOqxLo-FQKfec9Uuiyz1oU831mc55C/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Minimalizacja entropii (22.05)</a>
+  
+  1. <a class="XqQF9c" href="https://drive.google.com/file/d/1T5RXPPT8-3JW3LBz38DlmrD0R-4bPwZ3/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Dyfuzje (5.06)</span></a>
+  
+  1. <a class="XqQF9c" href="https://drive.google.com/file/d/1ZJqU-SbWz3TSNb2Wcn_36myn8ctzlqU6/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Problem wyjścia (12.06)</span></a>
+  
+  
+## Listy zadań
+
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1ceKv5SnnyFlo8sW76VLxlhTs6jsLdY1C/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Kilka bezpośrednich rachunków</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1Erc6wbb8fV-hyYUx3oS3aV5t2hLmA2xR/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Twierdzenie Sanowa po raz pierwszy</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1Q-1_dUhq3PQQWLWg-FUW_fjRVI0JCpf8/view?usp=drive_link" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Transformata Legenre&#39;a</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1L1t3dJbNTyodYBWsQ7d7TPlFLG7MIjXJ/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Twierdzenie Cramera</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1mP2hsM10Sw6MFrSXJXNtp_CJhtVW2_bA/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Zasada wielkich odchyleń</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1gIF2onMKJnrvEfVR8S20u_pxmQoycwsU/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Lemat Varadhana</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1aJ32mmd_OmZ-hhi8m7kAAZiFLA0BfNVR/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Lemat Bryca</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1xPt5WrIBsO06qQckQDe9OeV87-kTRlGw/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Entropia</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1Dlm1lB_ExxYBGSibuh-20mWFUpi-cb1S/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">C[0,1]</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1E27HMHkhfPjlZKtgk-UZgInUDZy7ksUz/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Zmienne zależne</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1etDqz5I7SGlx-XeYoE239kpNPI3RGzNT/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Twierdzenie Sanowa dla par</span></a>
+  
+  
+## Zadania domowe  
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1LRAcz36zr48y7Sc93fSRtDiWrFOl04eK/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Zadanie 1: termin 6.03</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1H8eYtFwoqbUc8xEIcIoJcOMxpfCBFMuG/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Zadanie 2: termin 13.03</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1dPPSzEp1Sgv3o92g40jKmgmO2IMsINNT/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Zadanie 3: termin 20.03</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1DwZnCPagOWqpxWTGIaTNp4E4fKsG7XvN/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Zadanie 4: termin 27.03</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1YR2G_YzlaKEGDebLjurUTovvhmMp7ZLD/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Zadanie 5: termin 3.04</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1RHTJEQ7GbxgDsr-2vD76b0JYOsthU7k7/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Zadanie 6: termin 10.04</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1te09EcTg8vpMhUSV9-ue9QP3K5trA4SO/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Zadanie 7: termin 17.04</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1OYukee_oE5PBvto0XwtFtNIPxqZ9Se5k/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Zadanie 8: termin 8.05</span></a>
+  
+  - <a class="XqQF9c" href="https://drive.google.com/file/d/1RnF0jW6M9_6C0cYKkMuH0C-6e7O_v5Q5/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Zadanie 9: termin 29.05</span></a>
+

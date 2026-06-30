@@ -1,0 +1,9 @@
+---
+title: "Tytuł grantu"
+date: 2025-10-01
+role: "PI / Co-PI / wykonawca"
+funder: "NCN / NCBR / Horizon Europe"
+amount: "000 000 PLN"
+description: "Krótki opis celu grantu."
+categories: [grant, badania]
+---

@@ -1,0 +1,49 @@
+```{=html}
+<div class="notes-grid list">
+<% for (const item of items) {
+  const href = item.link || "#";
+%>
+  <a class="note-card" href="<%- href %>" <%= metadataAttrs(item) %>>
+    <% if (item.image) { %>
+      <div class="note-card-image-wrap">
+        <img
+          class="note-card-image"
+          src="<%- item.image %>"
+          alt="<%- item.image_alt || item.title || 'Lecture notes cover' %>"
+          loading="lazy"
+        />
+      </div>
+    <% } %>
+
+    <div class="note-card-body">
+
+      <h3 class="note-card-title listing-title">
+        <%- item.title || "" %>
+      </h3>
+
+      <% if (item.description) { %>
+        <p class="note-card-description">
+          <%- item.description %>
+        </p>
+      <% } %>
+
+      <% if (item.status || item.language) { %>
+        <div class="note-card-meta">
+          <% if (item.status) { %>
+            <span class="listing-status"><%- item.status %></span>
+          <% } %>
+
+          <% if (item.status && item.language) { %>
+            <span class="note-card-meta-separator">·</span>
+          <% } %>
+
+          <% if (item.language) { %>
+            <span class="listing-language"><%- item.language %></span>
+          <% } %>
+        </div>
+      <% } %>
+    </div>
+  </a>
+<% } %>
+</div>
+```
