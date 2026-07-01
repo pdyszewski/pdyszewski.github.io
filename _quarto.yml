@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: docs
   resources:
-    - google1234567890abcdef.html
+    - google727caa38f556160a.html
 
 website:
   title: "Piotr Dyszewski"
