@@ -1,9 +1,13 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - google1234567890abcdef.html
 
 website:
   title: "Piotr Dyszewski"
+  site-url: "https://pdyszewski.github.io"
+  open-graph: true
   search: true
   navbar:
     left:

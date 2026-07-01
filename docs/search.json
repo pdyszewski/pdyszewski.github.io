@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "news/2026-06-19-test.html",
-    "href": "news/2026-06-19-test.html",
-    "title": "Nowy projekt badawczy",
-    "section": "",
-    "text": "bla bla bla"
-  },
-  {
     "objectID": "lecture_notes/index.html",
     "href": "lecture_notes/index.html",
     "title": "Lecture notes",
@@ -168,6 +161,13 @@
     "text": "University of Wrocław | Assistant Professor | Oct 2021 - present\nTechnical University of Munich | Alexander von Humboldt Research Fellow | Oct 2020 - Sept 2021\nTechnical University of Munich | Wissenschaftlicher Mitarbeiter | Oct 2019 - Sept 2020\nUniversity of Wrocław | Assistant Professor | Oct 2018 - Sept 2019"
   },
   {
+    "objectID": "index.html#news",
+    "href": "index.html#news",
+    "title": "Piotr Dyszewski",
+    "section": "News",
+    "text": "News\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew lecture notes\n\n\nI’m drafting new lecture notes Matematyczne podstawy sieci neuronowych. Comments are welcome!\n\n\n\n\n\nJun 30, 2026\n\n\n\n\n\nNo matching items\n\nold news →"
+  },
+  {
     "objectID": "courses/index.html",
     "href": "courses/index.html",
     "title": "Courses",
@@ -250,12 +250,5 @@
     "title": "Piotr Dyszewski",
     "section": "",
     "text": "Latest news\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew lecture notes\n\n\nI’m drafting new lecture notes Matematyczne podstawy sieci neuronowych. Comments are welcome!\n\n\n\n\n\nJun 30, 2026\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html#news",
-    "href": "index.html#news",
-    "title": "Piotr Dyszewski",
-    "section": "News",
-    "text": "News\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew lecture notes\n\n\nI’m drafting new lecture notes Matematyczne podstawy sieci neuronowych. Comments are welcome!\n\n\n\n\n\nJun 30, 2026\n\n\n\n\n\nNo matching items\n\nold news →"
   }
 ]

@@ -6,8 +6,11 @@
     "papers/index.qmd": [
       "pubs.yml"
     ],
+    "index.qmd": [
+      "news/*.qmd"
+    ],
     "courses/index.qmd": [
-      "*.qmd"
+      "courses.yml"
     ],
     "events/index.qmd": [
       "events.yml"
@@ -19,28 +22,6 @@
       "notes.yml"
     ],
     "news/index.qmd": [
-      "*.qmd"
-    ],
-    "papers\\index.qmd": [
-      "pubs.yml"
-    ],
-    "presentations\\index.qmd": [
-      "presentations.yml"
-    ],
-    "events\\index.qmd": [
-      "events.yml"
-    ],
-    "courses\\index.qmd": [
-      "*.qmd",
-      "courses.yml"
-    ],
-    "lecture_notes\\index.qmd": [
-      "notes.yml"
-    ],
-    "index.qmd": [
-      "news/*.qmd"
-    ],
-    "news\\index.qmd": [
       "*.qmd"
     ]
   }
