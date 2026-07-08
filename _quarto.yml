@@ -28,6 +28,8 @@ website:
       - text: Lecture notes
         href: lecture_notes/
     right:
+      - icon: linkedin
+        href: https://www.linkedin.com/in/piotr-dyszewski-9b034a111/
       - icon: github
         href: https://github.com/pdyszewski
       - icon: envelope
