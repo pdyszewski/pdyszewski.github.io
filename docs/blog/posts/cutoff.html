@@ -6,9 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="semestr letni 2023/2024">
+<meta name="author" content="Piotr Dyszewski">
+<meta name="dcterms.date" content="2026-09-04">
+<meta name="description" content="A writeup of my talk at BSBH2026">
 
-<title>Teoria wielkich odchyleń – Piotr Dyszewski</title>
+<title>Card Shuffling, Mixing Times, and the Cutoff Phenomenon – Piotr Dyszewski</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,30 +26,49 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-e8964db687007ca8dd88d9d9ce58e3ef.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-e8964db687007ca8dd88d9d9ce58e3ef.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -76,14 +97,40 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Teoria wielkich odchyleń – Piotr Dyszewski">
-<meta property="og:description" content="semestr letni 2023/2024">
-<meta property="og:image" content="https://pdyszewski.github.io/courses/TWO.png">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Card Shuffling, Mixing Times, and the Cutoff Phenomenon – Piotr Dyszewski">
+<meta property="og:description" content="A writeup of my talk at BSBH2026">
 <meta property="og:site_name" content="Piotr Dyszewski">
-<meta property="og:image:height" content="819">
-<meta property="og:image:width" content="1652">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -255,7 +302,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Piotr Dyszewski</span>
     </a>
   </div>
@@ -266,31 +313,31 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../papers"> 
+    <a class="nav-link" href="../../papers"> 
 <span class="menu-text">Papers</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../presentations/"> 
+    <a class="nav-link" href="../../presentations/"> 
 <span class="menu-text">Talks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../events/"> 
+    <a class="nav-link" href="../../events/"> 
 <span class="menu-text">Events</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../courses/"> 
+    <a class="nav-link" href="../../courses/"> 
 <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../lecture_notes/"> 
+    <a class="nav-link" href="../../lecture_notes/"> 
 <span class="menu-text">Lecture notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../blog/"> 
+    <a class="nav-link" href="../../blog/"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -339,19 +386,31 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Teoria wielkich odchyleń</h1>
+<h1 class="title">Card Shuffling, Mixing Times, and the Cutoff Phenomenon</h1>
 </div>
 
 <div>
   <div class="description">
-    semestr letni 2023/2024
+    A writeup of my talk at BSBH2026
   </div>
 </div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Piotr Dyszewski </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 4, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -361,69 +420,316 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Zajęcia odbywają się w środy w godzinach 8-12 w sali 602</p>
-<section id="aktualności" class="level2">
-<h2 class="anchored" data-anchor-id="aktualności">Aktualności:</h2>
+<p>There is a long-standing question in probability theory concerning the way in which dynamical systems achieve equilibrium that we have only recently begun to understand. The story begins in the eighties with a question which is interesting by its own right, namely how many times one needs to shuffle of cards? First we need to decipher what that even mean. We will begin with a general setup which will allows us to comment on the answer later on.</p>
+<section id="a-general-setup" class="level2">
+<h2 class="anchored" data-anchor-id="a-general-setup">A general setup</h2>
+<p>We will work on a finite state space <span class="math inline">\(E\)</span>. Imagine that a particle moves randomly on <span class="math inline">\(E\)</span> such that it jumps from <span class="math inline">\(x\)</span> to <span class="math inline">\(y\)</span> with probability <span class="math inline">\(P(x,y)\)</span>. One can imagine that the particle moves on a directed weighted graph.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 159.67 229.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 225)">
+<title>Markov</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-225 155.67,-225 155.67,4 -4,4"></polygon>
+<!-- x -->
+<g id="node1" class="node">
+<title>x</title>
+<ellipse fill="none" stroke="black" cx="59.39" cy="-201.77" rx="19.47" ry="19.47"></ellipse>
+<text text-anchor="middle" x="59.39" y="-196.97" font-family="Times,serif" font-size="16.00">x</text>
+</g>
+<!-- y -->
+<g id="node2" class="node">
+<title>y</title>
+<ellipse fill="none" stroke="black" cx="54.39" cy="-110.5" rx="19.47" ry="19.47"></ellipse>
+<text text-anchor="middle" x="54.39" y="-105.7" font-family="Times,serif" font-size="16.00">y</text>
+</g>
+<!-- x&#45;&gt;y -->
+<g id="edge1" class="edge">
+<title>x-&gt;y</title>
+<path fill="none" stroke="black" d="M41.28,-194.61C27.99,-189.03 10.91,-179.38 2.78,-164.53 -6.01,-148.46 11,-133.84 27.81,-124.04"></path>
+<polygon fill="black" stroke="black" points="29.81,-126.94 36.95,-119.11 26.49,-120.77 29.81,-126.94"></polygon>
+<text text-anchor="middle" x="20.7" y="-151.93" font-family="Times,serif" font-size="14.00">P(x,y)</text>
+</g>
+<!-- z -->
+<g id="node3" class="node">
+<title>z</title>
+<ellipse fill="none" stroke="black" cx="81.39" cy="-19.23" rx="19.47" ry="19.47"></ellipse>
+<text text-anchor="middle" x="81.39" y="-14.43" font-family="Times,serif" font-size="16.00">z</text>
+</g>
+<!-- x&#45;&gt;z -->
+<g id="edge2" class="edge">
+<title>x-&gt;z</title>
+<path fill="none" stroke="black" d="M74.89,-189.91C82.63,-183.52 91.2,-174.7 95.39,-164.53 113.7,-120.13 104.2,-103.68 95.39,-56.47 94.78,-53.15 93.87,-49.75 92.8,-46.42"></path>
+<polygon fill="black" stroke="black" points="96.01,-45 89.28,-36.81 89.43,-47.41 96.01,-45"></polygon>
+<text text-anchor="middle" x="123.31" y="-106.3" font-family="Times,serif" font-size="14.00">P(x,z)</text>
+</g>
+<!-- y&#45;&gt;x -->
+<g id="edge3" class="edge">
+<title>y-&gt;x</title>
+<path fill="none" stroke="black" d="M55.43,-129.97C56.11,-142.18 57.02,-158.41 57.8,-172.26"></path>
+<polygon fill="black" stroke="black" points="54.3,-172.48 58.36,-182.27 61.29,-172.09 54.3,-172.48"></polygon>
+<text text-anchor="middle" x="74.7" y="-151.93" font-family="Times,serif" font-size="14.00">P(y,x)</text>
+</g>
+<!-- y&#45;&gt;z -->
+<g id="edge4" class="edge">
+<title>y-&gt;z</title>
+<path fill="none" stroke="black" d="M55.24,-90.97C56.12,-80.61 57.91,-67.59 61.57,-56.47 62.84,-52.59 64.53,-48.65 66.38,-44.86"></path>
+<polygon fill="black" stroke="black" points="69.55,-46.36 71.19,-35.89 63.38,-43.05 69.55,-46.36"></polygon>
+<text text-anchor="middle" x="79.31" y="-60.67" font-family="Times,serif" font-size="14.00">P(y,z)</text>
+</g>
+<!-- z&#45;&gt;z -->
+<g id="edge5" class="edge">
+<title>z-&gt;z</title>
+<path fill="none" stroke="black" d="M99.02,-27.03C109.17,-28.62 118.63,-26.02 118.63,-19.23 118.63,-14.88 114.75,-12.25 109.29,-11.34"></path>
+<polygon fill="black" stroke="black" points="108.98,-7.85 99.02,-11.44 109.05,-14.85 108.98,-7.85"></polygon>
+<text text-anchor="middle" x="135.15" y="-15.03" font-family="Times,serif" font-size="14.00">P(z,z)</text>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>The particle continues to move on <span class="math inline">\(E\)</span> according to these rules. Let <span class="math inline">\(P^k(x,y)\)</span> denote the probability of going from <span class="math inline">\(x\)</span> to <span class="math inline">\(y\)</span> in exactly <span class="math inline">\(k \in \mathbb{N}\)</span> steps. Equivalently, <span class="math inline">\(P^k(x, \cdot)\)</span> is the distribution of the position at the <span class="math inline">\(k\)</span>th step of the particle that started at <span class="math inline">\(x\)</span>.</p>
+<p>It is not hard to convince oneself that as <span class="math inline">\(k \to \infty\)</span>, <span class="math inline">\(P^k(x,\cdot)\)</span>’s should stabilise. It is indeed the case provided that</p>
 <ul>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1_2Yr74j1qVPhPYzpFv8CyHpK1Y8wpy2c/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Sylabus</span></a></p></li>
-<li><p>Pierwsze spotkanie odbędzie się 21.02</p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1cjE2RytPYXm7RF-Q6PIHgLIxsPmgn4PM/view" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">wstępna wersja notatek</span></a></p></li>
+<li><span class="math inline">\(P\)</span> is aperiodic, <span class="math inline">\(\mathrm{GCD}\{ k \: : \: P^k(x,x)&gt;0\}=1\)</span> for all <span class="math inline">\(x \in E\)</span></li>
+<li><span class="math inline">\(P\)</span> is irreducible, for all <span class="math inline">\(x,y \in E\)</span>, <span class="math inline">\(P^k(x,y)&gt;0\)</span> for some <span class="math inline">\(k \in \mathbb{N}\)</span>.</li>
 </ul>
+<p>The first condition asserts that the aforementioned directed graph is not periodic (for example bipartite), while the second condition says that it is connected. Then there exist <span class="math inline">\(\{\pi(y)\}_{y\in E}\)</span> for any <span class="math inline">\(x,y\in E\)</span>, <span class="math display">\[\begin{equation*}
+  \lim_{k \to \infty} P^k(x,y) = \pi(y).
+\end{equation*}\]</span> In particular, the limiting distribution does not depend on the starting point. This means in particular that <span class="math display">\[\begin{equation*}
+   \mathrm{d}_{\rm TV}\left(P^k(x, \cdot), \pi \right) =
+    \sum_{y\in E} \left| P^k(x,y) - \pi(y) \right| \to 0.
+\end{equation*}\]</span> Denote <span class="math display">\[\begin{equation*}
+  \mathrm{d}(k) = \max_{x \in E}
+  \mathrm{d}_{\rm TV}\left( P^k(x, \cdot), \pi \right).
+\end{equation*}\]</span></p>
+<div id="exr-subm" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 1</strong></span> For any <span class="math inline">\(k,m \in \mathbb{N}\)</span>, <span class="math display">\[\begin{equation*}
+    \mathrm{d}(k+m) \leq \mathrm{d}(k)\mathrm{d}(m).
+  \end{equation*}\]</span></p>
+</div>
+<div id="cor-spectral-gap" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 1</strong></span> There exists <span class="math inline">\(\lambda&gt;0\)</span> such that <span class="math display">\[\begin{equation*}
+      \mathrm{d}(k) = \exp\{-\lambda k + o(k) \} \quad \mbox{and}
+      \quad \mathrm{d}(k) \geq \frac 12\exp\{-\lambda k\}.
+   \end{equation*}\]</span></p>
+</div>
+<div id="rem-spectral-gap" class="proof remark">
+<p><span class="proof-title"><em>Remark 1</em>. </span>We have <span class="math display">\[\begin{equation*}
+    e^{-\lambda} = \max_{ \rho \in \mathrm{spec}(P) \setminus \{1\}} |\rho|.
+  \end{equation*}\]</span></p>
+</div>
+<div id="def-mixing-time" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1</strong></span> For <span class="math inline">\(\varepsilon \in (0,1)\)</span> let <span class="math display">\[\begin{equation*}
+    t_{\rm mix}(\varepsilon) =
+    \inf \left\{ k \: : \:  \mathrm{d}(k) &lt; \varepsilon \right\}.
+  \end{equation*}\]</span></p>
+</div>
+<div id="rem-ineq" class="proof remark">
+<p><span class="proof-title"><em>Remark 2</em>. </span><span class="math display">\[\begin{equation*}
+      t_{\rm mix}(\varepsilon) \geq \frac{\log(1/(2\varepsilon))}{\lambda}.
+   \end{equation*}\]</span></p>
+</div>
+<p>Our main question is the following.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="❓ Question">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>❓ Question
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What is the behaviour of <span class="math inline">\(t_{\rm mix}(\varepsilon)\)</span> as <span class="math inline">\(|E|\to \infty\)</span>?</p>
+</div>
+</div>
 </section>
-<section id="notatki" class="level2">
-<h2 class="anchored" data-anchor-id="notatki">Notatki</h2>
+<section id="riffle-shuffles" class="level2">
+<h2 class="anchored" data-anchor-id="riffle-shuffles">Riffle shuffles</h2>
+<p>The above discussion connects to the following problem.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="❓ Question">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>❓ Question
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>How many times should you shuffle a deck of cards?</p>
+</div>
+</div>
+<p>We can view a configuration of a deck of <span class="math inline">\(n\)</span> cards as a permutation of <span class="math inline">\(n\)</span> elements. Then shuffling the deck corresponds to applying another permutation. This leads us to considering <span class="math inline">\(E = S_n\)</span>. The answer to our question depends on the type of shuffle one uses. We will focus on riffle shuffle. Let <span class="math inline">\(P(x,y)\)</span> denote the probability that we go from configuration <span class="math inline">\(x\)</span> to <span class="math inline">\(y\)</span> by performing one riffle shuffle. If we denote by <span class="math inline">\(\Pi\)</span> a random element of <span class="math inline">\(S_n\)</span> corresponding to a random riffle shuffle then <span class="math display">\[\begin{equation*}
+  P_{RS}(x,y) = \mathbb{P} \left[ \Pi x=y \right].
+\end{equation*}\]</span> In a perfectly shuffled deck each configuration is equally probable. This corresponds to the uniform measure on <span class="math inline">\(S_n\)</span>. In other words <span class="math display">\[\begin{equation*}
+  \pi(x) = 1/n!, \qquad x \in S_n.
+\end{equation*}\]</span> By relabeling the cards, we can without loss assume that we start with an ordered deck, i.e.&nbsp;<span class="math inline">\(x = e\)</span>, the identity permutation. In this setting <span class="math inline">\(P(e,y)\)</span> is the probability that our random riffle shuffle is equal to <span class="math inline">\(y\)</span> and for <span class="math inline">\(k\in \mathbb{N}\)</span>, <span class="math inline">\(P^k(e,y)\)</span> is the probability that the composition of <span class="math inline">\(k\)</span> independent riffle shuffles is equal to <span class="math inline">\(y\)</span>. We want to understand the mixing time <span class="math inline">\(t_{\rm mix}(\varepsilon)\)</span> in the asymptotic sense, as <span class="math inline">\(n \to \infty\)</span>.</p>
+<div id="thm-riffle-cutoff" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1</strong></span> For every fixed <span class="math inline">\(\varepsilon\in(0,1)\)</span>,</p>
+<p><span id="eq-riffle-mixing-asymptotic"><span class="math display">\[
+t_{\mathrm{mix}}(\varepsilon)
+\sim
+\frac{3}{2}\log_2 n.
+\tag{1}\]</span></span></p>
+</div>
+<p>Notice that <span class="math display">\[\begin{equation*}
+   P_{RS}(e,y^{-1}) = \mathbb{P} \left[ \Pi^{-1} = y \right].
+\end{equation*}\]</span> There is a convenient way to describe <span class="math inline">\(\Pi^{-1}\)</span>. Independently for every card <span class="math inline">\(i\in\{1,\ldots,n\}\)</span>, choose a label <span class="math display">\[
+  \epsilon_i\in\{0,1\}
+\]</span> uniformly at random, and then sort the cards according to their labels, preserving the relative order of cards carrying the same label.</p>
+<p>Note that <span class="math display">\[\begin{equation*}
+   \mathrm{d}_{\rm TV}\left(P^k_{RS}(e, \cdot),\pi \right)
+  = \frac 12 \sum_{y\in S_n} \left| P^k_{RS}\left(e,y^{-1}\right) - \pi(y) \right|.
+\end{equation*}\]</span> We can interpret <span class="math inline">\(P^k_{RS}\left(e,y^{-1}\right)\)</span> as the probability that the composition of <span class="math inline">\(k\)</span> independent inverse riffle shuffles is equal to <span class="math inline">\(y\)</span>. This means that the mixing time for the riffle shuffle and its inverse is exactly the same.</p>
+<div id="exr-riffle-iteration" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 2</strong></span> <span class="math inline">\(k\)</span> random inverse riffle shuffles are equivalent to the following procedure</p>
 <ol type="1">
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1GKzcD9KFU5K01No_XgaMEoIBprVI85Qa/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Rzuty monetą (21.02)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1TYHRLedKI6DNOMeWcnPcTKj6a9KPYFZS/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Twierdzenie Cramera (28.02)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1_s1ypfoCgcYOV3M5tbjoZeG6ar0dylnC/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Twierdzenie Cramera raz jeszcze (6.03)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1KSAfLC5BDYgKjaOnMNAzt-osn6jhhkba/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Ogólna teoria (13.03)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1lUw-owbDoOW_Lrm82YBmHJ6Q7UvUsAro/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Lemat Varadhana (20.03)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1DP0sSVpP1IzQqgrzg0dXecCnZnm0R7FJ/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Twierdzenie Sanowa raz jeszcze (27.03)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/17T0fXALDKVUH4Sm_qPEpWV7zQAmQPMtH/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Całka Bochnera (3.04)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1UsdAA27qUUxIN29rLog1XeIkk08j4cGw/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Duże odchylenia na C[0,1] (11.04)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1f6_FeqSbsZ6Q23hpZyWFrzsKF4SxyFFU/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Prawo iterowanego logarytmu (17.04)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1kTNjn7eQgJsvqt52RIFknsgeFKyiHy9N/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Twierdzenie Gratnera-Ellisa (24.04)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1JzUhg43htYqA2CeRG4K9c78hS71Yq-KC/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Twierdzenie Gratnera-Ellisa 2 (8.05)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1o_XzMi3EG75HBGcY8ng2aJnj62O5SLs5/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Łańcuchy Markowa (15.05)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1yxkOqxLo-FQKfec9Uuiyz1oU831mc55C/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Minimalizacja entropii (22.05)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1T5RXPPT8-3JW3LBz38DlmrD0R-4bPwZ3/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Dyfuzje (5.06)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1ZJqU-SbWz3TSNb2Wcn_36myn8ctzlqU6/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Problem wyjścia (12.06)</span></a></p></li>
+<li>assign independently to every card a uniform label from <span class="math inline">\(\{1,\ldots,2^k\}\)</span>;</li>
+<li>stably sort the cards according to these labels.</li>
 </ol>
+</div>
+<p>For a permutation <span class="math inline">\(y=(y_1,\ldots,y_n)\in S_n\)</span>, define its number of descents by <span class="math display">\[
+D(y)
+=
+\left|\left\{
+    1\leq j&lt;n:
+    y_j&gt;y_{j+1}
+\right\}\right|.
+\]</span> The number <span class="math inline">\(R(y)=D(y)+1\)</span> is called the number of <strong>rising sequences</strong> of <span class="math inline">\(y\)</span>.</p>
+<div id="lem-riffle-probability" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 1</strong></span> For every <span class="math inline">\(y\in S_n\)</span>, <span class="math display">\[
+P^{k}_{RS}\left(e,y^{-1}\right)
+=
+2^{-kn}
+\binom{2^k+n-R(y)}{n}.
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Suppose that the cards receive labels <span class="math display">\[
+  \epsilon_1,\ldots,\epsilon_n\in \left\{1,\ldots,2^k\right\}.
+\]</span> For the stable sorting procedure to produce the permutation <span class="math inline">\(y=(y_1,\ldots,y_n)\)</span>, the labels must satisfy <span class="math display">\[
+\epsilon_{y_1}
+\leq
+\epsilon_{y_2}
+\leq
+\cdots
+\leq
+\epsilon_{y_n}.
+\]</span></p>
+<p>Moreover, whenever <span class="math inline">\(y_j&gt;y_{j+1}\)</span>, the corresponding inequality has to be strict: <span class="math inline">\(\epsilon_{y_j}&lt;\epsilon_{y_{j+1}}\)</span>. Indeed, cards carrying the same label retain their original relative order.</p>
+<p>Suppose that <span class="math inline">\(R(y)=r\)</span>, so that <span class="math inline">\(y\)</span> has <span class="math inline">\(r-1\)</span> descents. The usual shift transformation removing the <span class="math inline">\(r-1\)</span> required strict inequalities gives a bijection with weakly increasing sequences <span class="math display">\[
+  1\leq z_1\leq\cdots\leq z_n\leq 2^k-r+1.
+\]</span> The number of such sequences is <span class="math display">\[
+  \binom{2^k+n-r}{n}.
+\]</span></p>
+<p>Since there are <span class="math inline">\(2^{kn}\)</span> possible labellings altogether, the claim follows.</p>
+</div>
+<p>We have <span class="math display">\[\begin{equation*}
+  \mathrm{d}_{\rm TV}\left( P^k_{RS}(e, \cdot),\pi \right)
+  = \frac 1{n!} \sum_{y\in S_n} \left(1- n!P^k_{RS}\left(e,y^{-1}\right) \right)_+,
+\end{equation*}\]</span> where <span id="eq-1"><span class="math display">\[
+n! P^k_{RS}\left(e, y^{-1}\right)
+=
+\frac{n!}{2^{nk}}
+\binom{2^k+n-R(y)}{n}.
+\tag{2}\]</span></span> Consider <span class="math inline">\(R\)</span> as a random variable. Since <span class="math display">\[\begin{equation*}
+  R(y) = 1+ \sum_{j=1}^{n-1} \mathbf{1}_{\{ y_j&gt;y_{j+1} \}}
+\end{equation*}\]</span> one can compute relatively easily that</p>
+<p><span class="math display">\[
+\mathbb{E}[R]
+=
+\frac{n+1}{2},
+\qquad
+\mathbb{V}\operatorname{ar}(R)
+=
+\frac{n+1}{12}.
+\]</span></p>
+<p>In particular,</p>
+<p><span class="math display">\[
+R-\frac{n+1}{2}
+=
+O_{\mathbb{P}}(\sqrt n).
+\]</span> If we plug this into <a href="#eq-1" class="quarto-xref">Equation&nbsp;2</a>, using <span class="math inline">\(\log(1+\delta) \sim \delta- \delta^2/2 + o(\delta^3)\)</span> as <span class="math inline">\(\delta \to 0\)</span> and get <span class="math display">\[\begin{equation*}
+n! P^k{RS}\left(e, y^{-1}\right) = \exp\left\{ - \frac{n^3}{24\cdot 2^{2k}} +  O_\mathbb{P} \left(n^{3/2}2^{-k} \right) \right\}.
+\end{equation*}\]</span> If <span class="math inline">\(n^32^{-2k} \to 0\)</span>, <span class="math inline">\(n! P^k_{RS}\left(e, y^{-1}\right)\to 1\)</span> and <span class="math display">\[\begin{equation*}
+  \mathrm{d}_{\rm TV}\left(P^k_{RS}(e, \cdot),  \pi \right) \to 0
+\end{equation*}\]</span> and therefore <span class="math display">\[\begin{equation*}
+  t_{\rm mix}(\varepsilon) \leq \frac{3}{2} \log_2(n)(1+o(1)).
+\end{equation*}\]</span> If <span class="math inline">\(n^32^{-2k}\to \infty\)</span>, <span class="math inline">\(n! P^k_{RS}\left(e, y^{-1}\right)\to 0\)</span> and <span class="math display">\[\begin{equation*}
+  \mathrm{d}_{\rm TV}\left( P^k_{RS}(e, \cdot), \pi\right) \to 1
+\end{equation*}\]</span> and therefore <span class="math display">\[\begin{equation*}
+  t_{\rm mix}(\varepsilon) \geq \frac{3}{2} \log_2(n)(1+o(1)).
+\end{equation*}\]</span></p>
 </section>
-<section id="listy-zadań" class="level2">
-<h2 class="anchored" data-anchor-id="listy-zadań">Listy zadań</h2>
-<ul>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1ceKv5SnnyFlo8sW76VLxlhTs6jsLdY1C/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Kilka bezpośrednich rachunków</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1Erc6wbb8fV-hyYUx3oS3aV5t2hLmA2xR/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Twierdzenie Sanowa po raz pierwszy</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1Q-1_dUhq3PQQWLWg-FUW_fjRVI0JCpf8/view?usp=drive_link" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Transformata Legenre'a</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1L1t3dJbNTyodYBWsQ7d7TPlFLG7MIjXJ/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Twierdzenie Cramera</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1mP2hsM10Sw6MFrSXJXNtp_CJhtVW2_bA/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Zasada wielkich odchyleń</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1gIF2onMKJnrvEfVR8S20u_pxmQoycwsU/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Lemat Varadhana</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1aJ32mmd_OmZ-hhi8m7kAAZiFLA0BfNVR/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Lemat Bryca</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1xPt5WrIBsO06qQckQDe9OeV87-kTRlGw/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Entropia</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1Dlm1lB_ExxYBGSibuh-20mWFUpi-cb1S/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">C[0,1]</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1E27HMHkhfPjlZKtgk-UZgInUDZy7ksUz/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Zmienne zależne</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1etDqz5I7SGlx-XeYoE239kpNPI3RGzNT/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Twierdzenie Sanowa dla par</span></a></p></li>
-</ul>
-</section>
-<section id="zadania-domowe" class="level2">
-<h2 class="anchored" data-anchor-id="zadania-domowe">Zadania domowe</h2>
-<ul>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1LRAcz36zr48y7Sc93fSRtDiWrFOl04eK/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Zadanie 1: termin 6.03</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1H8eYtFwoqbUc8xEIcIoJcOMxpfCBFMuG/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Zadanie 2: termin 13.03</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1dPPSzEp1Sgv3o92g40jKmgmO2IMsINNT/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Zadanie 3: termin 20.03</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1DwZnCPagOWqpxWTGIaTNp4E4fKsG7XvN/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Zadanie 4: termin 27.03</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1YR2G_YzlaKEGDebLjurUTovvhmMp7ZLD/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Zadanie 5: termin 3.04</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1RHTJEQ7GbxgDsr-2vD76b0JYOsthU7k7/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Zadanie 6: termin 10.04</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1te09EcTg8vpMhUSV9-ue9QP3K5trA4SO/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Zadanie 7: termin 17.04</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1OYukee_oE5PBvto0XwtFtNIPxqZ9Se5k/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Zadanie 8: termin 8.05</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1RnF0jW6M9_6C0cYKkMuH0C-6e7O_v5Q5/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Zadanie 9: termin 29.05</span></a></p></li>
-</ul>
+<section id="cutoff" class="level2">
+<h2 class="anchored" data-anchor-id="cutoff">Cutoff</h2>
+<p>The last section describes <span class="math inline">\(t_{\rm mix}(\varepsilon)\)</span> of riffle shuffle with <span class="math inline">\(1+o(1)\)</span> precision. In particular the first order term does not depend on <span class="math inline">\(\varepsilon\)</span>.</p>
+<div id="def-cutoff" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2</strong></span> We will say that the model exhibits cutoff if <span class="math display">\[\begin{equation*}
+    t_{\rm mix}(\varepsilon) / t_{\rm mix}(1-\varepsilon) \to 1
+  \end{equation*}\]</span> for any <span class="math inline">\(\varepsilon \in (0,1/2)\)</span> as <span class="math inline">\(|E|\to \infty\)</span>.</p>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Goal">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Goal
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Find an easily verifiable and model-independent criterion for predicting cutoff without having to determine mixing times within a <span class="math inline">\(1 + o(1)\)</span> precision.</p>
+</div>
+</div>
+<p>There was a famous attempt of providing such condition.</p>
+<div id="cnj-pt" class="theorem conjecture">
+<p><span class="theorem-title"><strong>Conjecture 1 (the product condition (Peres, 2004))</strong></span> <span class="math display">\[\begin{equation*}
+  \lambda \cdot t_{\rm mix}(1/2)  \to \infty
+\end{equation*}\]</span> implies cutoff.</p>
+</div>
+<p>The product condition is necessary for cutoff. It is tempting to conjecture that it is also sufficient, but this is false in general.</p>
+<div id="rem-rank-one" class="proof remark">
+<p><span class="proof-title"><em>Remark 3</em>. </span>Suppose that <span class="math inline">\(P\)</span> exhibits cutoff. Put <span class="math display">\[\begin{equation*}
+   \tilde P(x,y)  = (1-\theta)P(x,y) +\theta \pi(y)
+\end{equation*}\]</span> for <span class="math display">\[\begin{equation*}
+   t_{\rm mix}^{-1} \ll \theta \ll \lambda
+\end{equation*}\]</span> Then <span class="math display">\[\begin{equation*}
+   \tilde\lambda = \lambda \qquad \tilde t_{\rm mix}(\varepsilon) \sim \frac {1}{\theta}\log\left(\frac 1\varepsilon\right)
+\end{equation*}\]</span> In particular, <span class="math inline">\(\tilde P\)</span> satisfies the product condition but does not exhibit cutoff.</p>
+</div>
+<p>The proper condition is given in <span class="citation" data-cites="salez2023cutoff">Salez (<a href="#ref-salez2023cutoff" role="doc-biblioref">2023</a>)</span>.</p>
+<div id="thm-salez" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 2</strong></span> A non-negatively curved chain satisfying <span class="math display">\[\begin{equation*}
+      \lambda^2 \cdot t_{\rm mix}(1/2)  \gg \log(\Delta)^2
+   \end{equation*}\]</span> where <span class="math display">\[\begin{equation*}
+      \Delta = \max \left\{ \frac{1}{P(x,y)} \: : \: P(x,y)&gt;0 \right\}
+   \end{equation*}\]</span></p>
+</div>
+<p>For a broad introduction to cutoff, entropy, and curvature, see Salez’s lecture notes and the accompanying Saint-Flour lectures <span class="citation" data-cites="salez2025modern salez2025saintflour">(<a href="#ref-salez2025modern" role="doc-biblioref">Salez 2025b</a>, <a href="#ref-salez2025saintflour" role="doc-biblioref">2025a</a>)</span>.</p>
 
 
+
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-salez2023cutoff" class="csl-entry" role="listitem">
+Salez, Justin. 2023. <span>“Cutoff for Non-Negatively Curved Markov Chains.”</span> <em>Journal of the European Mathematical Society</em> 26 (11): 4375–92.
+</div>
+<div id="ref-salez2025saintflour" class="csl-entry" role="listitem">
+Salez, Justin. 2025a. <em>Modern Aspects of Markov Chains: Entropy, Curvature, and the Cutoff Phenomenon</em>. Lecture series at the Saint-Flour Summer School. <a href="https://www.youtube.com/playlist?list=PL79F_c_jsxZFLOtTtwrKaG7DaWCFza1jS">https://www.youtube.com/playlist?list=PL79F_c_jsxZFLOtTtwrKaG7DaWCFza1jS</a>.
+</div>
+<div id="ref-salez2025modern" class="csl-entry" role="listitem">
+Salez, Justin. 2025b. <span>“Modern Aspects of Markov Chains: Entropy, Curvature and the Cutoff Phenomenon.”</span> <em>arXiv Preprint arXiv:2508.21055</em>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

@@ -64,5 +64,29 @@
   },
   "lecture_notes/index.qmd": {
     "index.html": "63deea72"
+  },
+  "blog/blog.qmd": {
+    "blog.html": "ccab71d3"
+  },
+  "blog/test.qmd": {
+    "test.html": "5223c3a3"
+  },
+  "blog.qmd": {
+    "blog.html": "ecfbd942"
+  },
+  "posts/example.qmd": {
+    "example.html": "323a706e"
+  },
+  "blog/index.qmd": {
+    "index.html": "582b7f27"
+  },
+  "blog/posts/example.qmd": {
+    "example.html": "15fba928"
+  },
+  "blog/posts/cutoff.qmd": {
+    "cutoff.html": "93a846d4"
+  },
+  "news/2026-09-04.qmd": {
+    "2026-09-04.html": "cae8402b"
   }
 }

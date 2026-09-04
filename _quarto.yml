@@ -27,6 +27,8 @@ website:
         href: courses/
       - text: Lecture notes
         href: lecture_notes/
+      - text: "Blog"
+        href: blog/
     right:
       - icon: linkedin
         href: https://www.linkedin.com/in/piotr-dyszewski-9b034a111/

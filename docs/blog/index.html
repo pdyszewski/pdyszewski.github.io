@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="semestr letni 2023/2024">
 
-<title>Teoria wielkich odchyleń – Piotr Dyszewski</title>
+<title>myblog – Piotr Dyszewski</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,6 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -75,18 +76,72 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Teoria wielkich odchyleń – Piotr Dyszewski">
-<meta property="og:description" content="semestr letni 2023/2024">
-<meta property="og:image" content="https://pdyszewski.github.io/courses/TWO.png">
+<meta property="og:title" content="myblog – Piotr Dyszewski">
 <meta property="og:site_name" content="Piotr Dyszewski">
-<meta property="og:image:height" content="819">
-<meta property="og:image:width" content="1652">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -332,21 +387,17 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Teoria wielkich odchyleń</h1>
+<h1 class="title">myblog</h1>
 </div>
 
-<div>
-  <div class="description">
-    semestr letni 2023/2024
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -361,69 +412,40 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Zajęcia odbywają się w środy w godzinach 8-12 w sali 602</p>
-<section id="aktualności" class="level2">
-<h2 class="anchored" data-anchor-id="aktualności">Aktualności:</h2>
-<ul>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1_2Yr74j1qVPhPYzpFv8CyHpK1Y8wpy2c/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Sylabus</span></a></p></li>
-<li><p>Pierwsze spotkanie odbędzie się 21.02</p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1cjE2RytPYXm7RF-Q6PIHgLIxsPmgn4PM/view" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">wstępna wersja notatek</span></a></p></li>
-</ul>
-</section>
-<section id="notatki" class="level2">
-<h2 class="anchored" data-anchor-id="notatki">Notatki</h2>
-<ol type="1">
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1GKzcD9KFU5K01No_XgaMEoIBprVI85Qa/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Rzuty monetą (21.02)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1TYHRLedKI6DNOMeWcnPcTKj6a9KPYFZS/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Twierdzenie Cramera (28.02)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1_s1ypfoCgcYOV3M5tbjoZeG6ar0dylnC/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Twierdzenie Cramera raz jeszcze (6.03)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1KSAfLC5BDYgKjaOnMNAzt-osn6jhhkba/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Ogólna teoria (13.03)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1lUw-owbDoOW_Lrm82YBmHJ6Q7UvUsAro/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Lemat Varadhana (20.03)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1DP0sSVpP1IzQqgrzg0dXecCnZnm0R7FJ/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Twierdzenie Sanowa raz jeszcze (27.03)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/17T0fXALDKVUH4Sm_qPEpWV7zQAmQPMtH/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Całka Bochnera (3.04)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1UsdAA27qUUxIN29rLog1XeIkk08j4cGw/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Duże odchylenia na C[0,1] (11.04)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1f6_FeqSbsZ6Q23hpZyWFrzsKF4SxyFFU/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Prawo iterowanego logarytmu (17.04)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1kTNjn7eQgJsvqt52RIFknsgeFKyiHy9N/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Twierdzenie Gratnera-Ellisa (24.04)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1JzUhg43htYqA2CeRG4K9c78hS71Yq-KC/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Twierdzenie Gratnera-Ellisa 2 (8.05)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1o_XzMi3EG75HBGcY8ng2aJnj62O5SLs5/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Łańcuchy Markowa (15.05)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1yxkOqxLo-FQKfec9Uuiyz1oU831mc55C/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="text-decoration: underline;">Minimalizacja entropii (22.05)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1T5RXPPT8-3JW3LBz38DlmrD0R-4bPwZ3/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Dyfuzje (5.06)</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1ZJqU-SbWz3TSNb2Wcn_36myn8ctzlqU6/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Problem wyjścia (12.06)</span></a></p></li>
-</ol>
-</section>
-<section id="listy-zadań" class="level2">
-<h2 class="anchored" data-anchor-id="listy-zadań">Listy zadań</h2>
-<ul>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1ceKv5SnnyFlo8sW76VLxlhTs6jsLdY1C/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Kilka bezpośrednich rachunków</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1Erc6wbb8fV-hyYUx3oS3aV5t2hLmA2xR/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Twierdzenie Sanowa po raz pierwszy</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1Q-1_dUhq3PQQWLWg-FUW_fjRVI0JCpf8/view?usp=drive_link" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Transformata Legenre'a</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1L1t3dJbNTyodYBWsQ7d7TPlFLG7MIjXJ/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Twierdzenie Cramera</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1mP2hsM10Sw6MFrSXJXNtp_CJhtVW2_bA/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Zasada wielkich odchyleń</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1gIF2onMKJnrvEfVR8S20u_pxmQoycwsU/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Lemat Varadhana</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1aJ32mmd_OmZ-hhi8m7kAAZiFLA0BfNVR/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Lemat Bryca</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1xPt5WrIBsO06qQckQDe9OeV87-kTRlGw/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Entropia</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1Dlm1lB_ExxYBGSibuh-20mWFUpi-cb1S/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">C[0,1]</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1E27HMHkhfPjlZKtgk-UZgInUDZy7ksUz/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Zmienne zależne</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1etDqz5I7SGlx-XeYoE239kpNPI3RGzNT/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Twierdzenie Sanowa dla par</span></a></p></li>
-</ul>
-</section>
-<section id="zadania-domowe" class="level2">
-<h2 class="anchored" data-anchor-id="zadania-domowe">Zadania domowe</h2>
-<ul>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1LRAcz36zr48y7Sc93fSRtDiWrFOl04eK/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Zadanie 1: termin 6.03</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1H8eYtFwoqbUc8xEIcIoJcOMxpfCBFMuG/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Zadanie 2: termin 13.03</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1dPPSzEp1Sgv3o92g40jKmgmO2IMsINNT/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Zadanie 3: termin 20.03</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1DwZnCPagOWqpxWTGIaTNp4E4fKsG7XvN/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Zadanie 4: termin 27.03</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1YR2G_YzlaKEGDebLjurUTovvhmMp7ZLD/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Zadanie 5: termin 3.04</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1RHTJEQ7GbxgDsr-2vD76b0JYOsthU7k7/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Zadanie 6: termin 10.04</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1te09EcTg8vpMhUSV9-ue9QP3K5trA4SO/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Zadanie 7: termin 17.04</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1OYukee_oE5PBvto0XwtFtNIPxqZ9Se5k/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Zadanie 8: termin 8.05</span></a></p></li>
-<li><p><a class="XqQF9c" href="https://drive.google.com/file/d/1RnF0jW6M9_6C0cYKkMuH0C-6e7O_v5Q5/view?usp=sharing" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc" style="text-decoration: underline;">Zadanie 9: termin 29.05</span></a></p></li>
-</ul>
 
 
-</section>
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1788472800000" data-listing-file-modified-sort="1788506089723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1358">
+<div class="thumbnail"><a href="../blog/posts/cutoff.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blog/posts/cutoff.html" class="no-external">Card Shuffling, Mixing Times, and the Cutoff Phenomenon</a>
+</h3>
+<div class="delink listing-description"><a href="../blog/posts/cutoff.html" class="no-external">
+<p>A writeup of my talk at BSBH2026</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blog/posts/cutoff.html" class="no-external">
+<div class="listing-date">
+Sep 4, 2026
+</div>
+<div class="listing-author">
+Piotr Dyszewski
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

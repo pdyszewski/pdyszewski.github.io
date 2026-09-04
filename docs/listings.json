@@ -1,6 +1,35 @@
 [
   {
-    "listing": "/lecture_notes/index.html",
+    "listing": "/presentations/index.html",
+    "items": []
+  },
+  {
+    "listing": "/news/index.html",
+    "items": [
+      "/news/2026-09-04.html",
+      "/news/2026-06-19-test.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/news/index.html",
+      "/news/2026-09-04.html",
+      "/news/2026-06-19-test.html"
+    ]
+  },
+  {
+    "listing": "/courses/index.html",
+    "items": []
+  },
+  {
+    "listing": "/blog/index.html",
+    "items": [
+      "/blog/posts/cutoff.html"
+    ]
+  },
+  {
+    "listing": "/events/index.html",
     "items": []
   },
   {
@@ -10,32 +39,11 @@
     ]
   },
   {
+    "listing": "/lecture_notes/index.html",
+    "items": []
+  },
+  {
     "listing": "/papers/index.html",
     "items": []
-  },
-  {
-    "listing": "/presentations/index.html",
-    "items": []
-  },
-  {
-    "listing": "/index.html",
-    "items": [
-      "/news/index.html",
-      "/news/2026-06-19-test.html"
-    ]
-  },
-  {
-    "listing": "/courses/index.html",
-    "items": []
-  },
-  {
-    "listing": "/events/index.html",
-    "items": []
-  },
-  {
-    "listing": "/news/index.html",
-    "items": [
-      "/news/2026-06-19-test.html"
-    ]
   }
 ]

@@ -1,28 +1,31 @@
 {
   "listingMap": {
-    "presentations/index.qmd": [
-      "presentations.yml"
+    "blog\\index.qmd": [
+      "posts"
     ],
-    "papers/index.qmd": [
-      "pubs.yml"
+    "courses\\index.qmd": [
+      "courses.yml"
+    ],
+    "events\\index.qmd": [
+      "events.yml"
+    ],
+    "grants\\index.qmd": [
+      "*.qmd"
     ],
     "index.qmd": [
       "news/*.qmd"
     ],
-    "courses/index.qmd": [
-      "courses.yml"
-    ],
-    "events/index.qmd": [
-      "events.yml"
-    ],
-    "grants/index.qmd": [
-      "*.qmd"
-    ],
-    "lecture_notes/index.qmd": [
+    "lecture_notes\\index.qmd": [
       "notes.yml"
     ],
-    "news/index.qmd": [
+    "news\\index.qmd": [
       "*.qmd"
+    ],
+    "papers\\index.qmd": [
+      "pubs.yml"
+    ],
+    "presentations\\index.qmd": [
+      "presentations.yml"
     ]
   }
 }

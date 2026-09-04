@@ -1,0 +1,388 @@
+---
+title: "Card Shuffling, Mixing Times, and the Cutoff Phenomenon"
+description: "A writeup of my talk at BSBH2026"
+author: "Piotr Dyszewski"
+bibliography: cutoff.bib
+date: "9/4/2026"
+---
+
+There is a long-standing question in probability theory 
+concerning the way in which dynamical systems achieve equilibrium
+that we have only recently begun to understand.
+The story begins in the eighties with a question which is interesting
+by its own right, namely how many times one needs to shuffle 
+of cards? First we need to decipher what that even mean.
+We will begin with a general setup which will allows us to
+comment on the answer later on.
+
+## A general setup
+
+We will work on a finite state space $E$.
+Imagine that a particle moves randomly on $E$
+such that it jumps from $x$ to $y$ with probability 
+$P(x,y)$. One can imagine that the particle 
+moves on a directed weighted graph.
+
+```{dot}
+
+digraph Markov {
+  graph [layout = dot]
+  
+  node [
+    shape = circle,
+    fontsize = 16
+  ]
+
+  edge [
+    fontsize = 14
+  ]
+
+  x -> y [label = "P(x,y)"]
+  x -> z [label = "P(x,z)"]
+
+  y -> x [label = "P(y,x)"]
+  y -> z [label = "P(y,z)"]
+
+  z -> z [label = "P(z,z)"]
+}
+```
+
+The particle continues to move on $E$ according to these rules.
+Let $P^k(x,y)$ denote the probability of going from $x$ to $y$ in exactly 
+$k \in \mathbb{N}$ steps. Equivalently, $P^k(x, \cdot)$ is the distribution
+of the position at the $k$th step of the particle that started at $x$.
+
+
+It is not hard to convince oneself that as $k \to \infty$, $P^k(x,\cdot)$'s should 
+stabilise.
+It is indeed the case provided that
+
+  - $P$ is aperiodic, $\mathrm{GCD}\{ k \: : \: P^k(x,x)>0\}=1$ for all $x \in E$
+  - $P$ is irreducible, for all $x,y \in E$, $P^k(x,y)>0$ for some $k \in \mathbb{N}$.  
+
+The first condition asserts that the aforementioned directed graph is not periodic (for example bipartite), 
+while the second condition says that it is connected. Then 
+there exist $\{\pi(y)\}_{y\in E}$ for any $x,y\in E$, 
+\begin{equation*}
+  \lim_{k \to \infty} P^k(x,y) = \pi(y).
+\end{equation*}
+In particular, the limiting distribution does not depend on the starting point.
+This means in particular that
+\begin{equation*}
+   \mathrm{d}_{\rm TV}\left(P^k(x, \cdot), \pi \right) = 
+    \sum_{y\in E} \left| P^k(x,y) - \pi(y) \right| \to 0.
+\end{equation*}
+Denote
+\begin{equation*}
+  \mathrm{d}(k) = \max_{x \in E}
+  \mathrm{d}_{\rm TV}\left( P^k(x, \cdot), \pi \right). 
+\end{equation*}
+
+::: {#exr-subm}
+  For any $k,m \in \mathbb{N}$,
+  \begin{equation*}
+    \mathrm{d}(k+m) \leq \mathrm{d}(k)\mathrm{d}(m).
+  \end{equation*}
+:::
+
+::: {#cor-spectral-gap}
+   There exists $\lambda>0$ such that
+   \begin{equation*}
+      \mathrm{d}(k) = \exp\{-\lambda k + o(k) \} \quad \mbox{and}
+      \quad \mathrm{d}(k) \geq \frac 12\exp\{-\lambda k\}.
+   \end{equation*}
+:::
+
+::: {#rem-spectral-gap}
+  We have
+  \begin{equation*}
+    e^{-\lambda} = \max_{ \rho \in \mathrm{spec}(P) \setminus \{1\}} |\rho|.
+  \end{equation*}
+:::
+
+::: {#def-mixing-time}
+  For $\varepsilon \in (0,1)$ let
+  \begin{equation*}
+    t_{\rm mix}(\varepsilon) = 
+    \inf \left\{ k \: : \:  \mathrm{d}(k) < \varepsilon \right\}. 
+  \end{equation*}
+:::
+
+::: {#rem-ineq}
+   \begin{equation*}
+      t_{\rm mix}(\varepsilon) \geq \frac{\log(1/(2\varepsilon))}{\lambda}.
+   \end{equation*}
+:::
+
+Our main question is the following.
+
+::: {.callout-note title="❓ Question" icon=false}
+  What is the behaviour of $t_{\rm mix}(\varepsilon)$ as $|E|\to \infty$?
+:::
+
+## Riffle shuffles
+
+The above discussion connects to the following problem.
+
+::: {.callout-note title="❓ Question" icon=false}
+  How many times should you shuffle a deck of cards?
+:::
+
+We can view a configuration of a deck of $n$ cards as a permutation of $n$ elements. 
+Then shuffling the deck corresponds to applying another permutation.
+This leads us to considering $E = S_n$.
+The answer to our question depends on the type of shuffle one uses. 
+We will focus on riffle shuffle. Let $P(x,y)$ denote the probability that we go
+from configuration $x$ to $y$ by performing one riffle shuffle.
+If we denote by $\Pi$ a random element of $S_n$ corresponding to a random riffle shuffle
+then
+\begin{equation*}
+  P_{RS}(x,y) = \mathbb{P} \left[ \Pi x=y \right].
+\end{equation*}
+In a perfectly shuffled deck each configuration is equally probable. 
+This corresponds to the uniform measure on $S_n$. In other words 
+\begin{equation*}
+  \pi(x) = 1/n!, \qquad x \in S_n.
+\end{equation*}
+By relabeling the cards, we can without loss assume that we start with an ordered deck, i.e. $x = e$, the 
+identity permutation. 
+In this setting $P(e,y)$ is the probability that our random riffle shuffle is equal to $y$
+and for $k\in \mathbb{N}$, $P^k(e,y)$ is the probability that the composition of $k$
+independent riffle shuffles is equal to $y$. 
+We want to understand the mixing time $t_{\rm mix}(\varepsilon)$ in the asymptotic sense, as $n \to \infty$.
+
+::: {#thm-riffle-cutoff}
+
+For every fixed $\varepsilon\in(0,1)$,
+
+$$
+t_{\mathrm{mix}}(\varepsilon)
+\sim
+\frac{3}{2}\log_2 n.
+$$ {#eq-riffle-mixing-asymptotic}
+
+:::
+
+
+Notice that
+\begin{equation*}
+   P_{RS}(e,y^{-1}) = \mathbb{P} \left[ \Pi^{-1} = y \right]. 
+\end{equation*}
+There is a convenient way to describe $\Pi^{-1}$. 
+Independently for every
+card $i\in\{1,\ldots,n\}$, choose a label
+$$
+  \epsilon_i\in\{0,1\}
+$$
+uniformly at random, and then sort the cards according to their labels,
+preserving the relative order of cards carrying the same label.
+
+
+Note that
+\begin{equation*}
+   \mathrm{d}_{\rm TV}\left(P^k_{RS}(e, \cdot),\pi \right)
+  = \frac 12 \sum_{y\in S_n} \left| P^k_{RS}\left(e,y^{-1}\right) - \pi(y) \right|.
+\end{equation*}
+We can interpret $P^k_{RS}\left(e,y^{-1}\right)$ as the probability that the composition
+of $k$ independent inverse riffle shuffles is equal to $y$. This means 
+that the mixing time for the riffle shuffle and its inverse is exactly the same.
+
+
+::: {#exr-riffle-iteration}
+
+$k$ random inverse riffle shuffles are equivalent to the following procedure 
+
+1. assign independently to every card a uniform label from
+   $\{1,\ldots,2^k\}$;
+2. stably sort the cards according to these labels.
+
+:::
+
+
+For a permutation $y=(y_1,\ldots,y_n)\in S_n$,
+define its number of descents by
+$$
+D(y)
+=
+\left|\left\{
+    1\leq j<n:
+    y_j>y_{j+1}
+\right\}\right|.
+$$
+The number $R(y)=D(y)+1$ is called the number of **rising sequences** of $y$.
+
+
+::: {#lem-riffle-probability}
+
+For every $y\in S_n$,
+$$
+P^{k}_{RS}\left(e,y^{-1}\right)
+=
+2^{-kn}
+\binom{2^k+n-R(y)}{n}.
+$$
+:::
+
+::: {.proof}
+
+Suppose that the cards receive labels
+$$
+  \epsilon_1,\ldots,\epsilon_n\in \left\{1,\ldots,2^k\right\}.
+$$
+For the stable sorting procedure to produce the permutation
+$y=(y_1,\ldots,y_n)$,
+the labels must satisfy
+$$
+\epsilon_{y_1}
+\leq
+\epsilon_{y_2}
+\leq
+\cdots
+\leq
+\epsilon_{y_n}.
+$$
+
+Moreover, whenever $y_j>y_{j+1}$,
+the corresponding inequality has to be strict:
+$\epsilon_{y_j}<\epsilon_{y_{j+1}}$.
+Indeed, cards carrying the same label retain their original relative order.
+
+Suppose that $R(y)=r$, so that $y$ has $r-1$ descents. The usual
+shift transformation removing the $r-1$ required strict inequalities
+gives a bijection with weakly increasing sequences
+$$
+  1\leq z_1\leq\cdots\leq z_n\leq 2^k-r+1.
+$$
+The number of such sequences is
+$$
+  \binom{2^k+n-r}{n}.
+$$
+
+Since there are $2^{kn}$ possible labellings altogether, the claim follows.
+:::
+
+We have
+\begin{equation*}
+  \mathrm{d}_{\rm TV}\left( P^k_{RS}(e, \cdot),\pi \right) 
+  = \frac 1{n!} \sum_{y\in S_n} \left(1- n!P^k_{RS}\left(e,y^{-1}\right) \right)_+,
+\end{equation*}
+where
+$$
+ n! P^k_{RS}\left(e, y^{-1}\right)
+=
+\frac{n!}{2^{nk}}
+\binom{2^k+n-R(y)}{n}.
+$$ {#eq-1}
+Consider $R$ as a random variable. Since
+\begin{equation*}
+  R(y) = 1+ \sum_{j=1}^{n-1} \mathbf{1}_{\{ y_j>y_{j+1} \}}
+\end{equation*}
+one can compute relatively easily that
+
+$$
+\mathbb{E}[R]
+=
+\frac{n+1}{2},
+\qquad
+\mathbb{V}\operatorname{ar}(R)
+=
+\frac{n+1}{12}.
+$$
+
+In particular,
+
+$$
+R-\frac{n+1}{2}
+=
+O_{\mathbb{P}}(\sqrt n).
+$$
+If we plug this into @eq-1, using $\log(1+\delta) \sim \delta- \delta^2/2 + o(\delta^3)$ as $\delta \to 0$ and get
+\begin{equation*}
+ n! P^k{RS}\left(e, y^{-1}\right) = \exp\left\{ - \frac{n^3}{24\cdot 2^{2k}} +  O_\mathbb{P} \left(n^{3/2}2^{-k} \right) \right\}. 
+\end{equation*}
+If $n^32^{-2k} \to 0$, 
+$n! P^k_{RS}\left(e, y^{-1}\right)\to 1$ and 
+\begin{equation*}
+  \mathrm{d}_{\rm TV}\left(P^k_{RS}(e, \cdot),  \pi \right) \to 0
+\end{equation*}
+and therefore
+\begin{equation*}
+  t_{\rm mix}(\varepsilon) \leq \frac{3}{2} \log_2(n)(1+o(1)).
+\end{equation*}
+If $n^32^{-2k}\to \infty$, 
+$n! P^k_{RS}\left(e, y^{-1}\right)\to 0$ and 
+\begin{equation*}
+  \mathrm{d}_{\rm TV}\left( P^k_{RS}(e, \cdot), \pi\right) \to 1
+\end{equation*}
+and therefore
+\begin{equation*}
+  t_{\rm mix}(\varepsilon) \geq \frac{3}{2} \log_2(n)(1+o(1)).
+\end{equation*}
+
+
+## Cutoff
+
+The last section describes $t_{\rm mix}(\varepsilon)$ of riffle shuffle with $1+o(1)$ precision. 
+In particular the first order term does not depend on $\varepsilon$.
+
+::: {#def-cutoff}
+  We will say that the model exhibits cutoff if
+  \begin{equation*}
+	t_{\rm mix}(\varepsilon) / t_{\rm mix}(1-\varepsilon) \to 1
+  \end{equation*}
+  for any $\varepsilon \in (0,1/2)$ as $|E|\to \infty$.
+:::
+
+
+::: {.callout-note title="Goal" icon=false}
+
+  Find an easily verifiable and model-independent criterion for predicting cutoff without having to determine mixing times within a $1 + o(1)$ precision.
+:::
+
+There was a famous attempt of providing such condition.
+
+::: {#cnj-pt}
+
+## the product condition (Peres, 2004)
+
+\begin{equation*}
+  \lambda \cdot t_{\rm mix}(1/2)  \to \infty
+\end{equation*}
+implies cutoff.
+:::
+
+The product condition is necessary for cutoff. It is tempting to conjecture that it is also sufficient, but this is false in general.
+
+::: {#rem-rank-one}
+Suppose that $P$ exhibits cutoff. Put 
+\begin{equation*}
+   \tilde P(x,y)  = (1-\theta)P(x,y) +\theta \pi(y)
+\end{equation*}
+for 
+\begin{equation*}
+   t_{\rm mix}^{-1} \ll \theta \ll \lambda
+\end{equation*}
+Then 
+\begin{equation*}
+   \tilde\lambda = \lambda \qquad \tilde t_{\rm mix}(\varepsilon) \sim \frac {1}{\theta}\log\left(\frac 1\varepsilon\right)
+\end{equation*}
+In particular, $\tilde P$ satisfies the product condition but does not exhibit cutoff.
+:::
+
+The proper condition is given in @salez2023cutoff.
+
+::: {#thm-salez}
+
+   A non-negatively curved chain satisfying
+   \begin{equation*}
+      \lambda^2 \cdot t_{\rm mix}(1/2)  \gg \log(\Delta)^2
+   \end{equation*}
+   where 
+   \begin{equation*}
+      \Delta = \max \left\{ \frac{1}{P(x,y)} \: : \: P(x,y)>0 \right\}
+   \end{equation*}
+:::
+
+For a broad introduction to cutoff, entropy, and curvature, see Salez's
+lecture notes and the accompanying Saint-Flour lectures
+[@salez2025modern; @salez2025saintflour].
