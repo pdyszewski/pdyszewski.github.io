@@ -1,8 +1,10 @@
 ---
-title: "myblog"
+title: "Scribbles"
 listing:
   contents: posts
   sort: "date desc"
   type: default
   categories: true
 ---
+Here I post some of my short notes and scribbles, mostly based on popular math talks I have given. 
+The language and level vary: graduate (EN), student (PL), liceum (PL). 

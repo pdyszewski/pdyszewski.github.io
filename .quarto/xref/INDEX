@@ -88,5 +88,9 @@
   },
   "news/2026-09-04.qmd": {
     "2026-09-04.html": "cae8402b"
+  },
+  "blog/posts/dowod.qmd": {
+    "dowod.html": "bb6f9b91",
+    "dowod.tex": "b01d3dfe"
   }
 }

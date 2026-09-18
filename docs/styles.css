@@ -79,6 +79,13 @@ h1, h2, h3, h4, h5, h6,
    General layout
    ============================================================ */
 
+/* Justified article text */
+
+#quarto-document-content p {
+  text-align: justify;
+  hyphens: auto;
+}
+
 .quarto-about-trestles {
   margin-bottom: 2rem;
 }
@@ -431,4 +438,43 @@ h2 {
   .notes-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Symbol końca dowodu */
+div.proof::after {
+  content: "□";
+  display: block;
+  text-align: right;
+  font-size: 1.1em;
+  line-height: 1;
+  margin-top: 0.25rem;
+}
+
+:is(
+  div[id^="thm-"],
+  div[id^="lem-"],
+  div[id^="cor-"],
+  div[id^="prp-"],
+  div[id^="cnj-"],
+  div[id^="def-"],
+  div[id^="exm-"],
+  div[id^="exr-"],
+  div[id^="sol-"],
+  div[id^="rem-"],
+  div[id^="alg-"]
+) {
+  margin: 1.25rem 0;
+  padding: 1rem 1.15rem;
+
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  background-color: color-mix(
+    in srgb,
+    var(--bs-body-bg) 94%,
+    var(--bs-body-color) 6%
+  );
+
+  border: 1px solid var(--bs-border-color);
+  border-left: 0.3rem solid var(--bs-primary);
+  border-radius: 0.45rem;
 }

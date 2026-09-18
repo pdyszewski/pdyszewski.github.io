@@ -9,6 +9,7 @@ website:
   site-url: "https://pdyszewski.github.io"
   open-graph: true
   search: true
+  draft-mode: unlinked
   navbar:
     left:
       - text: "Home"

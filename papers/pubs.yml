@@ -300,7 +300,7 @@
   type: "Journal article"
   venue: "Journal of the London Mathematical Society"
   description: "This publication develops a probabilistic approach to the Jacobian conjecture using branching processes, tree labellings, and subtree shuffling of Catalan trees."
-  doi: "https://doi.org/10.xxxx/example"
+  doi: "https://doi.org/10.1112/jlms.70416"
   pdf: "jlms2026/jlms2026.pdf"
   cite: "jlms2026/jlms2026.bib"
   image: "jlms2026/jlms2026.png"
@@ -350,10 +350,10 @@
     - "Tamara Mika"
   date: 2026-04-10
   year: 2026
-  type: "submitted"
-  venue: ""
+  type: "accepted"
+  venue: "Stochastic Processes and their Applications"
   description: "This publication studies multivariate regular variation for Markov chains and random linear models, showing how innovations and chain structure determine tail behavior."
-  doi: ""
+  doi: "https://doi.org/10.1016/j.spa.2026.105092"
   pdf: ""
   cite: ""
   image: "images/ar.png"

@@ -3,7 +3,10 @@ title: "Card Shuffling, Mixing Times, and the Cutoff Phenomenon"
 description: "A writeup of my talk at BSBH2026"
 author: "Piotr Dyszewski"
 bibliography: cutoff.bib
+image: cutoff.jpg
 date: "9/4/2026"
+categories:
+    - graduate
 ---
 
 There is a long-standing question in probability theory 
@@ -89,7 +92,7 @@ Denote
    There exists $\lambda>0$ such that
    \begin{equation*}
       \mathrm{d}(k) = \exp\{-\lambda k + o(k) \} \quad \mbox{and}
-      \quad \mathrm{d}(k) \geq \frac 12\exp\{-\lambda k\}.
+      \quad \mathrm{d}(k) \geq \exp\{-\lambda k\}.
    \end{equation*}
 :::
 

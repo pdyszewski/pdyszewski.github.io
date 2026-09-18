@@ -1,0 +1,951 @@
+---
+title: "Dowody, obalenia i produktywne porażki"
+description: "Notatki z pierszego wykładu podczas dni wstępnych na wydziale Matematyki i Informatyki UWr"
+author: "Piotr Dyszewski"
+lang: pl
+bibliography: dowod.bib
+image: cutoff.jpg
+css: dowod.css
+date: "9/15/2026"
+categories:
+    - student
+draft: true
+crossref:
+  cnj-title: "Hipoteza"
+  cnj-prefix: "Hipoteza"
+  exr-title: "Pytanie"
+---
+
+## Czym właściwie jest matematyka?
+
+Chciałbym zacząć od próby wyjaśniania powszechnego zjawiska związanego z szokiem
+jaki przeżywa student pierwszego roku podczas pierwszych tygodni zajęć. Wiąże się on 
+przede wszystkim z przeskokiem między matematyką licealną a uniwersytecką. 
+Dobre wytłumaczenie tego zjawiska ma @devlin2012mathematicalthinking. 
+
+Znaczna część matematyki szkolnej jest archaiczna. Niektóre jej elementy pochodzą jeszcze 
+ze starożytności, wiele innych ukształtowało się w średniowieczu, 
+a niemal cała reszta — najpóźniej w XVII wieku. Do szkoły trafia niewiele matematyki 
+powstałej w ciągu ostatnich trzystu lat. Nie oznacza to oczywiście, że szkolne treści 
+są niepotrzebne. Są fundamentem. Problem pojawia się dopiero wtedy, gdy fundament 
+bierzemy za cały budynek.
+
+W XIX wieku dokonała się zasadnicza zmiana w sposobie myślenia o matematyce. 
+Po pierwsze, stała się ona znacznie bardziej abstrakcyjna. Po drugie, punkt ciężkości 
+zaczął przesuwać się z wykonywania obliczeń i stosowania procedur na badanie struktur oraz 
+zależności. Coraz ważniejsze stawały się pytania: dlaczego dane twierdzenie jest prawdziwe, 
+od jakich założeń zależy, czy można je uogólnić i co się stanie, jeśli któreś z założeń usuniemy.
+
+Obliczenia oczywiście nie zniknęły. Nadal są niezbędne, podobnie jak znajomość podstawowych metod. 
+Same procedury przestały jednak wystarczać. W świecie coraz bardziej skomplikowanych 
+modeli, struktur i zależności potrzebne jest przede wszystkim rozumienie.
+
+W systemie edukacji tę zmianę perspektywy odczuwa się zwykle przy przejściu z liceum na uniwersytet. 
+Nagle nie wystarczy już wiedzieć, jak coś policzyć. Trzeba nauczyć się czytać definicje, 
+tworzyć przykłady i kontrprzykłady, formułować przypuszczenia oraz uzasadniać, 
+że dane rozumowanie działa w każdym rozważanym przypadku. 
+Odpowiedź przestaje być końcem zadania — równie ważne staje się wyjaśnienie, 
+dlaczego właśnie taka odpowiedź musi być prawdziwa.
+
+Ta zmiana bywa dezorientująca. Student może mieć wrażenie, że matematyka, 
+z którą spotyka się na studiach, jest czymś zupełnie innym niż przedmiot znany mu ze szkoły. 
+I pod pewnym względem rzeczywiście tak jest. Nie oznacza to jednak, że nagle przestał 
+być „dobry z matematyki”. Zmieniły się po prostu zasady gry — a jednym z pierwszych 
+zadań na studiach jest nauczenie się tych nowych zasad.
+
+## Klątwa procedur
+
+Matematyka szkolna kładzie wysoki nacisk na procedury. 
+Wiąże się on z tym, że system szkolny nie nagradza twórczej zabawy z obiektami 
+matematycznymi, tylko łatwą do zmierzenia utylitarność i efektywność.
+
+Paul Lockhart opisuje matematyków jako ludzi, którzy układają wzory z 
+idei [@lockhart2002mathematicians]. Najchętniej wybierają przy tym obiekty możliwie proste — 
+takie, które istnieją jedynie w wyobraźni. 
+
+::: {#exr-trojkat}
+
+Rozważmy trójkąt umieszczony w 
+prostokącie. Jaką część prostokąta on zajmuje? 
+
+:::
+
+Nie stoi za tym żadne praktyczne zastosowanie. 
+To po prostu zabawa ideami, a zarazem początek matematycznego problemu.
+
+
+```{=html}
+<div style="text-align: center;">
+  <svg
+    viewBox="0 0 320 180"
+    style="width: 100%; max-width: 500px; color: var(--bs-body-color, black);"
+    xmlns="http://www.w3.org/2000/svg">
+
+    <rect
+      x="30" y="20"
+      width="260" height="130"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2">
+    </rect>
+
+    <path
+      d="M 30 150 L 116 20 L 290 150"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linejoin="round">
+    </path>
+  </svg>
+</div>
+```
+
+
+Nie pytamy o rzeczywisty rysunek ani o figurę wykonaną z metalu. 
+Interesuje nas idealny trójkąt w idealnym prostokącie. 
+Tworząc takie obiekty, możemy swobodnie ustalić ich własności i reguły gry. 
+Kiedy jednak już to zrobimy, tracimy kontrolę nad wynikającymi z nich konsekwencjami. 
+Nie możemy zdecydować, jaką część prostokąta zajmuje trójkąt — musimy to odkryć. 
+Na tym polega niezwykłość matematycznych obiektów: są wytworami naszej wyobraźni, 
+a mimo to dyktują własne zasady.
+
+```{=html}
+<div style="text-align: center;">
+  <svg
+    viewBox="0 0 320 180"
+    style="width: 100%; max-width: 500px; color: var(--bs-body-color, black);"
+    xmlns="http://www.w3.org/2000/svg"
+    role="img"
+    aria-label="Trójkąt wpisany w prostokąt z dodatkową pionową linią">
+
+    <!-- Prostokąt -->
+    <rect
+      x="30" y="20"
+      width="260" height="130"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2">
+    </rect>
+
+    <!-- Trójkąt -->
+    <path
+      d="M 30 150 L 116 20 L 290 150"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linejoin="round">
+    </path>
+
+    <!-- Pionowa linia pomocnicza -->
+    <line
+      x1="116" y1="20"
+      x2="116" y2="150"
+      stroke="currentColor"
+      stroke-width="1.7"
+      stroke-dasharray="7 5">
+    </line>
+
+  </svg>
+</div>
+```
+
+Wystarczy poprowadzić pionową linię z górnego wierzchołka trójkąta do jego podstawy. 
+Linia ta dzieli duży prostokąt na dwa mniejsze, a boki trójkąta stają się ich przekątnymi. 
+Ponieważ przekątna dzieli każdy prostokąt na dwa przystające trójkąty, wewnątrz trójkąta 
+znajduje się dokładnie tyle samo powierzchni, co na zewnątrz. 
+Trójkąt zajmuje więc połowę prostokąta. Jedna pomocnicza linia zmienia zagadkę w coś oczywistego — 
+i właśnie takie chwile odkrycia stanowią istotę matematycznej twórczości.
+
+W szkole cały ten proces bywa zastępowany gotowym wzorem 
+$$
+P= bh/2,
+$$ 
+który należy zapamiętać i zastosować w serii podobnych zadań. 
+Problem nie leży w samym wzorze, lecz w pominięciu pytania, pomysłu i wyjaśnienia, 
+które do niego prowadzą. Matematyka nie jest jedynie zbiorem prawdziwych zdań i skutecznych 
+procedur. Polega na zadawaniu pytań, formułowaniu przypuszczeń, popełnianiu błędów i 
+budowaniu argumentów. Jeśli pozostawimy uczniom tylko wyniki, a odbierzemy im 
+możliwość odkrywania, w nauczaniu matematyki może zabraknąć właśnie matematyki.
+
+## Po co matematyce dowód?
+
+W matematyce chcemy zrozumieć abstrakcyjne obiekty
+(jak trójkąty w prostokącie). Robimy to poprzez szukanie różnych ich własności. 
+Niektóre z nich są ciekawe i zaskakujące, a inne całkiem zwyczajne. Skąd
+jednak mieć pewność, że odkryta przez nas własność jest prawdziwa?
+
+Jedną z podstawowych umiejętności matematyka jest szukanie schematów i analogii. 
+To drugie wymaga pewnej wprawy. Skupimy się na tym pierwszym. Rozważmy pierwszy ciąg obserwacji
+\begin{align*}
+ 1 & = 1 \\
+ 1+3 & = 4\\
+ 1+3+5 & = 9\\
+ 1+3+5+7 & = 16.
+\end{align*}
+Na jago podstawie jesteśmy w stanie wysnuć, że prawdziwa będzie też równość
+\begin{equation*}
+ 1+3+5+7+9+11  = 36
+\end{equation*}
+co jesteśmy w stanie zweryfikować w pamięci.
+Możemy się też pokusić o
+\begin{equation*}
+ 1+3+5+ \ldots +2023+  2025+2027 = 1014^2
+\end{equation*}
+co może być nieco trudniejsze do sprawdzenia. Przykłady te są przejawem pewnej ogólnej zasady.
+
+::: {#cnj-suma}
+  Dla każdej liczby naturalnej $n$ zachodzi
+  \begin{equation*}
+    1+3+\ldots + (2n-3)+ (2n-1) = n^2.
+  \end{equation*}
+:::
+
+Rozważmy teraz drugi ciąg obserwacji
+\begin{align*}
+  1^2+1+41 & = 43 \\
+  2^2+2+41 & = 47 \\
+  3^2+3+41 & = 53 \\
+  4^2+4+41 & = 61.
+\end{align*}
+Tutaj struktura jest nieco bardziej złożona. Rozważmy kilka kolejnych przykładów
+\begin{align*}
+  5^2+5+41 & = 71 \\
+  6^2+6+41 & = 83 \\
+  7^2+7+41 & = 97 \\
+  8^2+8+41 & = 113.
+\end{align*}
+Wszystkie te liczby są pierwsze! Analogicznie
+\begin{equation*}
+  13^2+13 +41 = 251.
+\end{equation*}
+
+::: {#cnj-pierwsze}
+  Dla każdej liczby naturalnej $n$ liczba
+  \begin{equation*}
+    n^2+n+41
+  \end{equation*}
+  jest pierwsza.
+:::
+
+Dla $n=23$ dostajemy
+\begin{equation*}
+  23^2+23+41 = 593
+\end{equation*}
+Wzór ten działa zaskakująco dobrze. Za dobrze. Do $n=39$ jest ok,
+\begin{equation*}
+   39^2+93+41=1601
+\end{equation*}
+jest liczbą pierwszą, ale
+\begin{equation*}
+  40^2+40+41=41^2
+\end{equation*}
+już nią nie jest. @cnj-pierwsze nie jest zatem prawdziwe. Nie jest prawdą, że dla każdej $n$ wzór
+$n^2+n+41$ produkuje liczbę pierwszą. Widzimy, że $n=40$ jest przykładem takiego $n$ dla którego 
+to nie zachodzi. Okazuje się, że mimo, że wzór zachodzi dla wielu początkowych liczb (bo aż $39$),
+to z pewnych przyczyn zaczyna się psuć.
+
+Jak w tym momencie należy zapatrywać się na @cnj-suma? Możemy sprawdzić poprawność
+wzoru dla pierwszych stu liczb. Nie mamy wtedy pewności, że tożsamość nie popsuje 
+się na sto pierwszej. Po sprawdzeniu sto pierwszej, nie mamy pewności, że nie popsuje 
+się na sto drugiej...
+
+Potrzebny jest nam argument, który zadziała jednocześnie dla wszystkich liczb, niezależnie 
+od ich wartości. 
+
+::: {#def-dwod}
+   Dowód matematyczny to publicznie sprawdzalne rozumowanie, 
+   które pokazuje, że dane twierdzenie musi być prawdziwe, 
+   ponieważ wynika z jasno określonych założeń, definicji i wcześniej uznanych faktów.
+:::
+
+Kluczowe jest tutaj słowo *musi*. Sprawdzenie wielu przykładów może mocno sugerować, 
+że twierdzenie jest prawdziwe, ale nie wyklucza istnienia wyjątku — tak jak w 
+przypadku wzoru $n^2+n+41$, który przez długi czas daje liczby pierwsze, lecz 
+dla $n=40$ zawodzi. Dowód nie mówi więc jedynie: *to działa w każdym z dotychczas 
+sprawdzonych przypadków*, ale wyjaśnia, dlaczego kontrprzykład nie może istnieć.
+
+::: {.proof}
+
+## @cnj-suma
+
+Niech $n$ będzie dowolną liczbą naturalną. Oznaczmy
+\begin{equation*}
+  1+3+5+ \ldots + (2n-1) =A.
+\end{equation*}
+Rozważmy
+\begin{align*}
+  1 +  3   +  \ldots   +  (2n-3) +  (2n-1) & =A \\
+  (2n-1)  +  (2n-3)  + \ldots  +  3 +  1 & = A.
+\end{align*}
+Dodając stronami otrzymujemy
+\begin{equation*}
+ 2n + 2n + \ldots + 2n + 2n =2A.
+\end{equation*}
+Stąd $n \times 2n = 2A$. Czyli
+\begin{equation*}
+  n^2 = A = 1+3+ \ldots + (2n-1).
+\end{equation*}
+:::
+
+W powyższym rozumowaniu ważne jest to, że nie korzystaliśmy 
+w nim z żadnych szczególnych własności liczb (jak podzielność przez $7$). 
+Istotnie, $n$ może przyjmować dowolną wartość i w dalszym ciągu
+wszystkie kroki rozumowania będą poprawne.
+
+Dobry dowód robi jednak często coś więcej niż samo potwierdzenie prawdziwości twierdzenia. 
+Odsłania mechanizm stojący za obserwowanym zjawiskiem. Zrozumienie tego
+mechanizmu pozwala często na prowadzenie własnych rozumowań. 
+Aby zrozumieć siłę z tego płynącą rozważmy kolejny ciąg równości
+\begin{align*}
+  1+2 & = 3 \\
+  1+2+3 & = 6 \\
+  1+2+3+4 & = 10 \\
+  1+2+3+4+5 & = 15.
+\end{align*}
+Czy widzimy tutaj ogólną zależność? Czy potrafimy powiedzieć ile będzie wynosić
+\begin{equation*}
+  1+2+3+\ldots + 2026?
+\end{equation*}
+Sam udowodniony przez nas wcześniej wzór się nam nie przyda.
+Jego dowód natomiast odsłania pewien mechanizm, który możemy 
+wykorzystać. W praktyce jest to po prostu zastosowanie tej samej sztuczki.
+\begin{align*}
+  1  +  2  +  \ldots  +  2025  +  2026 & = B \\
+  2026  +  2025  +  \ldots  +  2  +  1 & = B
+\end{align*}
+Stąd po dodaniu stronami i podzieleniu przez dwa
+\begin{equation*}
+   B = 1013\times 2027.
+\end{equation*}
+Możemy z tym pójść dalej. Mianowicie oznaczając
+\begin{equation*}
+  1+2+3+ \ldots +n = C
+\end{equation*}
+i stosując ten sam manewr otrzymujemy $2C = n(n+1)$, czyli
+\begin{equation*}
+  1+2+3+ \ldots +n = n(n+1)/2.
+\end{equation*}
+Samo stwierdzenie w @cnj-suma niesie ze sobą pewne zjawisko. Dowód natomiast
+to zjawisko tłumaczy. Kiedy zrozumiemy dowód zrozumiemy też zjawisko i będziemy 
+mogli stosować je w wielu innych kontekstach. 
+
+W tym konkretnym przypadku zjawisko sprowadza się do prostej sztuczki, 
+ale w trakcie studiów matematycznych powyższa filozofia staje się bardzo pomocna.
+
+## Dowody nie leżą na ziemi
+
+Gotowe dowody matematyczne bywają zwodnicze. 
+Są krótkie, uporządkowane i prowadzą prosto od założeń do tezy.
+Student wielokrotnie widząc taki dowód po raz pierwszy myśli 
+*ja bym na to nie wpadł/a*.
+Nie pokazują jednak prób, błędnych pomysłów ani ślepych uliczek, z których 
+często się narodziły. 
+
+Wyobraźmy sobie spotkanie, w którym każda para osób albo się zna, albo się nie zna. 
+
+:::{#exr-osoby}
+
+Jak duża musi być grupa, abyśmy mieli pewność, że znajdą się w niej trzy osoby, które wszystkie się znają, albo trzy osoby, z których żadne dwie się nie znają? 
+
+:::
+
+Przedstawmy osoby jako punkty. 
+Dwa punkty łączymy czerwoną linią, jeśli odpowiadające im osoby się znają, oraz niebieską, 
+jeśli się nie znają. 
+W języku naszego  trzy osoby o których mowa w pytaniu to trójkąt, 
+którego wszystkie boki mają ten sam kolor.
+
+Oczywiście dla czterech punktów łatwo jest podać takie kolorowanie bez monochromatycznego 
+trójkąta.
+
+
+:::: {#fig-ramsey-k3}
+
+```{=html}
+<div class="ramsey-graph" style="width: min(100%, 23rem);">
+  <svg
+    viewBox="0 0 520 430"
+    role="img"
+    aria-labelledby="k3-title k3-description"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title id="k3-title">
+      Dwukolorowanie grafu K3 bez monochromatycznego trójkąta
+    </title>
+
+    <desc id="k3-description">
+      Dwie krawędzie trójkąta mają pierwszy kolor,
+      a trzecia krawędź ma drugi kolor.
+    </desc>
+
+    <!-- Dwie krawędzie w pierwszym kolorze -->
+    <g class="ramsey-edge ramsey-edge--primary">
+      <line x1="260" y1="45"  x2="450" y2="370" />
+      <line x1="450" y1="370" x2="70"  y2="370" />
+    </g>
+
+    <!-- Jedna krawędź w drugim kolorze -->
+    <g class="ramsey-edge ramsey-edge--secondary">
+      <line x1="70" y1="370" x2="260" y2="45" />
+    </g>
+
+    <!-- Wierzchołki -->
+    <g>
+      <circle class="ramsey-vertex" cx="260" cy="45"  r="16" />
+      <circle class="ramsey-vertex" cx="450" cy="370" r="16" />
+      <circle class="ramsey-vertex" cx="70"  cy="370" r="16" />
+    </g>
+  </svg>
+</div>
+```
+
+Kolorowanie na trzech punktach bez monochromatycznego trójkąta.
+
+::::
+
+Oznacza to, że w grupie trzech osób może się zdarzyć, że jednocześnie pewne dwie osoby 
+się znają i pewne dwie osoby się nie znają. Jak to jest w przypadku czterech osób?
+
+:::: {#fig-ramsey-k4-planar}
+
+```{=html}
+<div class="ramsey-graph" style="width: min(100%, 23rem);">
+  <svg
+    viewBox="0 0 520 440"
+    role="img"
+    aria-labelledby="k4-planar-title k4-planar-description"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title id="k4-planar-title">
+      Planarne włożenie grafu K4
+    </title>
+
+    <desc id="k4-planar-description">
+      Trzy wierzchołki tworzą zewnętrzny trójkąt, a czwarty
+      znajduje się wewnątrz. Krawędzie są pokolorowane dwoma
+      kolorami i nie tworzą monochromatycznego trójkąta.
+    </desc>
+
+    <!-- Krawędzie w pierwszym kolorze -->
+    <g class="ramsey-edge ramsey-edge--primary">
+      <!-- dwie krawędzie zewnętrzne -->
+      <line x1="260" y1="45"  x2="455" y2="380" />
+      <line x1="455" y1="380" x2="65"  y2="380" />
+
+      <!-- dwie krawędzie wewnętrzne -->
+      <line x1="260" y1="245" x2="260" y2="45" />
+      <line x1="260" y1="245" x2="65"  y2="380" />
+    </g>
+
+    <!-- Krawędzie w drugim kolorze -->
+    <g class="ramsey-edge ramsey-edge--secondary">
+      <!-- trzecia krawędź zewnętrzna -->
+      <line x1="65" y1="380" x2="260" y2="45" />
+
+      <!-- trzecia krawędź wewnętrzna -->
+      <line x1="260" y1="245" x2="455" y2="380" />
+    </g>
+
+    <!-- Wierzchołki -->
+    <g>
+      <circle class="ramsey-vertex" cx="260" cy="45"  r="16" />
+      <circle class="ramsey-vertex" cx="455" cy="380" r="16" />
+      <circle class="ramsey-vertex" cx="65"  cy="380" r="16" />
+      <circle class="ramsey-vertex" cx="260" cy="245" r="16" />
+    </g>
+  </svg>
+</div>
+```
+
+Kolorowanie na czterech punktach bez monochromatycznego trójkąta.
+
+::::
+
+:::: {#fig-ramsey-k5-inner-vertex}
+
+```{=html}
+<div class="ramsey-graph">
+  <svg
+    viewBox="0 0 520 480"
+    role="img"
+    aria-labelledby="k5-inner-title k5-inner-description"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title id="k5-inner-title">
+      Nieudane kolorowanie grafu K5 z wierzchołkiem wewnętrznym
+    </title>
+
+    <desc id="k5-inner-description">
+      Cztery wierzchołki grafu tworzą czworokąt, a piąty znajduje
+      się w jego wnętrzu. Kolorowanie zawiera monochromatyczny
+      trójkąt.
+    </desc>
+
+    <!-- Monochromatyczny trójkąt -->
+    <polygon
+      class="ramsey-triangle ramsey-triangle--primary"
+      points="75,70 450,110 200,245"
+    />
+
+    <!-- Krawędzie czworokąta -->
+    <g class="ramsey-edge ramsey-edge--primary">
+      <line x1="75"  y1="70"  x2="450" y2="110" />
+      <line x1="450" y1="110" x2="410" y2="400" />
+      <line x1="410" y1="400" x2="95"  y2="425" />
+      <line x1="95"  y1="425" x2="75"  y2="70" />
+    </g>
+
+    <!-- Przekątne czworokąta -->
+    <g class="ramsey-edge ramsey-edge--secondary">
+      <line x1="75"  y1="70"  x2="410" y2="400" />
+      <line x1="450" y1="110" x2="95"  y2="425" />
+    </g>
+
+    <!-- Krawędzie do wierzchołka wewnętrznego:
+         pierwszy kolor -->
+    <g class="ramsey-edge ramsey-edge--primary">
+      <line x1="200" y1="245" x2="75"  y2="70" />
+      <line x1="200" y1="245" x2="450" y2="110" />
+    </g>
+
+    <!-- Krawędzie do wierzchołka wewnętrznego:
+         drugi kolor -->
+    <g class="ramsey-edge ramsey-edge--secondary">
+      <line x1="200" y1="245" x2="410" y2="400" />
+      <line x1="200" y1="245" x2="95"  y2="425" />
+    </g>
+
+    <!-- Wierzchołki -->
+    <g>
+      <circle class="ramsey-vertex" cx="75"  cy="70"  r="14" />
+      <circle class="ramsey-vertex" cx="450" cy="110" r="14" />
+      <circle class="ramsey-vertex" cx="410" cy="400" r="14" />
+      <circle class="ramsey-vertex" cx="95"  cy="425" r="14" />
+      <circle class="ramsey-vertex" cx="200" cy="245" r="14" />
+    </g>
+  </svg>
+</div>
+```
+
+Pierwsza próba kolorowania na pięciu punktach.
+
+:::
+
+Nasza pierwsza próba jest nieudana. Zauważmy jednak, że przeniesienie środkowego 
+punktu poza czworokąt utworzony przez pozostałę punkty zwiększa jego czytelność.
+Przejdźmy do drugiej próby.
+
+:::: {#fig-ramsey-k5-irregular-failed}
+
+```{=html}
+<div class="ramsey-graph">
+  <svg
+    viewBox="0 0 520 470"
+    role="img"
+    aria-labelledby="k5-irregular-title k5-irregular-description"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title id="k5-irregular-title">
+      Nieudane nieregularne kolorowanie grafu K5
+    </title>
+
+    <desc id="k5-irregular-description">
+      Dwukolorowanie grafu pełnego na pięciu nieregularnie
+      rozmieszczonych wierzchołkach, zawierające monochromatyczny
+      trójkąt.
+    </desc>
+
+    <!-- Monochromatyczny trójkąt -->
+    <polygon
+      class="ramsey-triangle ramsey-triangle--primary"
+      points="85,85 420,55 60,330"
+    />
+
+    <!-- Krawędzie w pierwszym kolorze -->
+    <g class="ramsey-edge ramsey-edge--primary">
+      <!-- zewnętrzny pięciokąt -->
+      <line x1="85"  y1="85"  x2="420" y2="55" />
+      <line x1="420" y1="55"  x2="465" y2="300" />
+      <line x1="465" y1="300" x2="270" y2="415" />
+      <line x1="270" y1="415" x2="60"  y2="330" />
+      <line x1="60"  y1="330" x2="85"  y2="85" />
+
+      <!-- przekątna zamykająca monochromatyczny trójkąt -->
+      <line x1="420" y1="55" x2="60" y2="330" />
+    </g>
+
+    <!-- Pozostałe przekątne w drugim kolorze -->
+    <g class="ramsey-edge ramsey-edge--secondary">
+      <line x1="85"  y1="85"  x2="465" y2="300" />
+      <line x1="85"  y1="85"  x2="270" y2="415" />
+      <line x1="420" y1="55"  x2="270" y2="415" />
+      <line x1="465" y1="300" x2="60"  y2="330" />
+    </g>
+
+    <!-- Wierzchołki -->
+    <g>
+      <circle class="ramsey-vertex" cx="85"  cy="85"  r="14" />
+      <circle class="ramsey-vertex" cx="420" cy="55"  r="14" />
+      <circle class="ramsey-vertex" cx="465" cy="300" r="14" />
+      <circle class="ramsey-vertex" cx="270" cy="415" r="14" />
+      <circle class="ramsey-vertex" cx="60"  cy="330" r="14" />
+    </g>
+  </svg>
+</div>
+```
+
+Kolejna próba kolorowania na pięciu punktach.
+
+::::
+
+W tym momencie widać, jak poprawić to kolorowanie.
+
+:::: {#fig-ramsey-k5}
+
+```{=html}
+<div class="ramsey-graph">
+  <svg
+    viewBox="0 0 520 455"
+    role="img"
+    aria-labelledby="k5-title k5-description"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title id="k5-title">Dwukolorowanie krawędzi grafu K5</title>
+    <desc id="k5-description">
+      Graf pełny na pięciu wierzchołkach. Krawędzie zewnętrznego
+      pięciokąta mają pierwszy kolor, a przekątne drugi kolor.
+    </desc>
+
+    <!-- Zewnętrzny pięciokąt -->
+    <g class="ramsey-edge ramsey-edge--primary">
+      <line x1="260" y1="35"  x2="455" y2="180" />
+      <line x1="455" y1="180" x2="380" y2="410" />
+      <line x1="380" y1="410" x2="140" y2="410" />
+      <line x1="140" y1="410" x2="65"  y2="180" />
+      <line x1="65"  y1="180" x2="260" y2="35" />
+    </g>
+
+    <!-- Przekątne tworzące pentagram -->
+    <g class="ramsey-edge ramsey-edge--secondary">
+      <line x1="260" y1="35"  x2="380" y2="410" />
+      <line x1="380" y1="410" x2="65"  y2="180" />
+      <line x1="65"  y1="180" x2="455" y2="180" />
+      <line x1="455" y1="180" x2="140" y2="410" />
+      <line x1="140" y1="410" x2="260" y2="35" />
+    </g>
+
+    <!-- Wierzchołki -->
+    <g>
+      <circle class="ramsey-vertex" cx="260" cy="35"  r="14" />
+      <circle class="ramsey-vertex" cx="455" cy="180" r="14" />
+      <circle class="ramsey-vertex" cx="380" cy="410" r="14" />
+      <circle class="ramsey-vertex" cx="140" cy="410" r="14" />
+      <circle class="ramsey-vertex" cx="65"  cy="180" r="14" />
+    </g>
+  </svg>
+</div>
+```
+
+Dwukolorowanie krawędzi grafu pełnego \(K_5\).
+
+::::
+
+Narysuj pięć punktów i połącz każdą ich parę. Spróbuj pokolorować wszystkie odcinki na czerwono lub niebiesko tak, aby nie powstał żaden jednobarwny trójkąt.
+
+Dla pięciu punktów zadanie da się wykonać. Ustawmy je w wierzchołkach pięciokąta, jego boki pokolorujmy na czerwono, a przekątne na niebiesko. Czerwone krawędzie tworzą pięciokąt, więc nie ma wśród nich trójkąta. Niebieskie przekątne również układają się w pięciokąt i także nie tworzą trójkąta. Otrzymaliśmy więc kolorowanie bez trzech wzajemnie połączonych krawędzi tego samego koloru.
+
+To mały, ale ważny sukces. Wiemy już, że pięć osób nie wystarcza, aby zagwarantować istnienie poszukiwanej trójki. Sukces ten zachęca jednak do kolejnej próby: być może podobną konstrukcję uda się stworzyć również dla sześciu punktów?
+
+::: {.callout-warning title="Druga próba: dodajemy szósty punkt"}
+
+Dodaj do rysunku szósty punkt i połącz go z pozostałymi. Pokoloruj nowe krawędzie tak, aby nadal nie było jednobarwnego trójkąta.
+
+Jeżeli się nie uda, możesz zmienić także wcześniejsze kolorowanie. Być może problem tkwi nie w szóstym punkcie, lecz w całej konstrukcji.
+
+:::
+
+W tym miejscu zaczyna się najciekawsza część doświadczenia. 
+Jedna próba kończy się czerwonym trójkątem, inna niebieskim. 
+Poprawienie jednego fragmentu psuje drugi. 
+Można odnieść wrażenie, że właściwe kolorowanie istnieje, tylko ciągle nie potrafimy go znaleźć. 
+Niepowodzenia nie są jeszcze dowodem: fakt, że nie znaleźliśmy konstrukcji, nie oznacza przecież, 
+że żadna konstrukcja nie istnieje.
+
+Zamiast wykonywać kolejne przypadkowe próby, przyjrzyjmy się temu, co nieustannie 
+pojawia się na naszych rysunkach. 
+
+::: {.callout-tip}
+
+Co się dzieje, kiedy dodajemy szósty punkt?
+
+:::
+
+Wychodzi z niego pięć krawędzi, a do dyspozycji mamy tylko dwa kolory. 
+Co najmniej trzy z tych krawędzi muszą więc mieć ten sam kolor. 
+
+
+Udowodniliśmy zatem, że w każdym dwukolorowym kolorowaniu połączeń między sześcioma punktami musi pojawić się jednobarwny trójkąt. W języku wyjściowego problemu:
+
+> Wśród dowolnych sześciu osób znajdziemy trzy, które parami się znają, albo trzy, z których żadne dwie się nie znają.
+
+::: {.proof}
+
+Załóżmy, że czerwone są krawędzie $AB$, $AC$ i $AD$. 
+Pozostaje przyjrzeć się połączeniom między punktami $B$, 
+$C$ i $D$. Jeśli choć jedna z krawędzi $BC$, $BD$ lub $CD$ jest czerwona, to wraz z 
+punktem $A$ tworzy czerwony trójkąt. Jeżeli natomiast żadna z nich nie jest czerwona, 
+wszystkie trzy muszą być niebieskie — wtedy $B$, $C$ i $D$ tworzą niebieski trójkąt. 
+Trzeciej możliwości nie ma.
+:::
+
+Najważniejszy nie jest jednak sam wynik. 
+Istotne jest to, skąd wziął się dowód. 
+Próbowaliśmy zbudować kolorowanie, które przeczyłoby twierdzeniu, i obserwowaliśmy, 
+w jaki sposób każda konstrukcja się psuje. 
+W końcu przestaliśmy pytać: *Jak pokolorować następny odcinek?*, a zaczęliśmy pytać: 
+*Dlaczego każda próba musi się nie udać?*. 
+Pięć krawędzi wychodzących z jednego punktu, trzy krawędzie tego samego koloru i 
+trójkąt powstający niezależnie od dalszego wyboru — 
+oto mechanizm ukryty za wszystkimi wcześniejszymi porażkami.
+
+To właśnie może być produktywna porażka. Nieudane rysunki nie były czasem straconym. 
+Dostarczyły materiału, z którego wyłonił się argument. Gotowy dowód jest krótki i 
+wygląda niemal na oczywisty, ale dopiero po jego odkryciu. 
+Wcześniejsze błądzenie pozwala zobaczyć coś, co czysty zapis dowodu łatwo ukrywa: 
+dowód nie tylko potwierdza, że twierdzenie jest prawdziwe. 
+Wyjaśnia również, dlaczego żadna próba obejścia go nie może się udać.
+
+
+## Dowody i obalenia
+
+
+W podręczniku matematycznym historia twierdzenia jest zwykle bardzo krótka: najpierw pojawia się precyzyjne sformułowanie, a zaraz po nim poprawny dowód. Można odnieść wrażenie, że twierdzenia od początku mają swoją ostateczną postać, a jedynym zadaniem matematyka jest znalezienie argumentu, który tę postać uzasadni.
+
+Imre Lakatos proponuje zupełnie inny obraz matematyki. W książce *Proofs and Refutations* umieszcza nas w wyobrażonej klasie, w której nauczyciel i uczniowie badają wzór Eulera dla wielościanów. Pojawiają się kolejne hipotezy, dowody, zastrzeżenia i kontrprzykłady. Każda porażka zmusza uczestników nie tylko do poprawienia dowodu, lecz także do ponownego zastanowienia się, co właściwie próbują udowodnić.
+
+### Od przykładów do hipotezy
+
+Zacznijmy od kilku dobrze znanych brył. Oznaczmy przez \(V\) liczbę wierzchołków, przez \(E\) liczbę krawędzi, a przez \(F\) liczbę ścian.
+
+| Wielościan      | \(V\) | \(E\) | \(F\) | \(V-E+F\) |
+| --------------- | ----: | ----: | ----: | --------: |
+| czworościan     |     4 |     6 |     4 |         2 |
+| sześcian        |     8 |    12 |     6 |         2 |
+| ośmiościan      |     6 |    12 |     8 |         2 |
+| dwunastościan   |    20 |    30 |    12 |         2 |
+| dwudziestościan |    12 |    30 |    20 |         2 |
+
+Za każdym razem otrzymujemy tę samą liczbę:
+
+$$
+V-E+F=2.
+$$
+
+Nietrudno więc sformułować hipotezę:
+
+> Dla każdego wielościanu liczba wierzchołków minus liczba krawędzi plus liczba ścian jest równa \(2\).
+
+Sprawdziliśmy ją dla wielu przykładów. Możemy sprawdzić kolejne graniastosłupy, ostrosłupy i inne znajome bryły. Nie znajdziemy w ten sposób żadnego wyjątku. To jednak nadal tylko dobrze potwierdzona hipoteza. Potrzebujemy dowodu.
+
+### Dowód, który wygląda przekonująco
+
+Rozumowanie przypisywane Cauchy’emu ma postać prostego eksperymentu myślowego.
+
+Wyobraźmy sobie, że powierzchnia wielościanu jest wykonana z cienkiej gumy. Usuwamy jedną ścianę, a pozostałą powierzchnię rozciągamy na płaszczyźnie. Usunięcie ściany zmniejsza \(F\) o jeden, powinniśmy więc otrzymać płaską mapę spełniającą
+
+$$
+V-E+F=1.
+$$
+
+Następnie dzielimy wszystkie ściany tej mapy na trójkąty. Za każdym razem, gdy rysujemy nową przekątną, liczba krawędzi i liczba ścian zwiększają się o jeden. Wartość \(V-E+F\) się zatem nie zmienia.
+
+Na koniec usuwamy trójkąty jeden po drugim. Przy każdym kroku znika albo jedna ściana i jedna krawędź, albo jedna ściana, dwie krawędzie i jeden wierzchołek. Również te operacje nie zmieniają wartości \(V-E+F\). Ostatecznie pozostaje pojedynczy trójkąt, dla którego
+
+$$
+V-E+F=3-3+1=1.
+$$
+
+Przed usunięciem pierwszej ściany wartość musiała więc wynosić \(2\). Hipoteza została udowodniona.
+
+A może jednak nie?
+
+### Pierwsza rysa
+
+Jeden z uczniów zauważa, że trójkąt można usunąć również ze środka mapy. Wtedy znika jedna ściana, ale nie znika żadna krawędź ani żaden wierzchołek. Wartość \(V-E+F\) zmienia się, wbrew temu, co głosił dowód.
+
+Nie jest to jeszcze kontrprzykład dla wzoru Eulera. Sześcian, od którego zaczęliśmy, nadal spełnia równanie. Znaleźliśmy natomiast błąd w samym rozumowaniu. Lakatos nazywa taki przykład **kontrprzykładem lokalnym**: nie obala on głównej hipotezy, lecz jedną z pomocniczych tez użytych w dowodzie.
+
+Nauczyciel próbuje naprawić argument. Nie należy usuwać dowolnych trójkątów, lecz tylko trójkąty leżące na brzegu. Szybko okazuje się jednak, że i to nie wystarcza: nieodpowiednia kolejność może rozłączyć pozostałą mapę. Potrzebujemy takiego porządku usuwania trójkątów, który na każdym etapie zachowuje odpowiednią strukturę.
+
+Dowód nie rozpadł się całkowicie. Pokazał natomiast, że skrywał dodatkowe założenie, którego wcześniej nie zauważyliśmy.
+
+### Pojawia się prawdziwy kontrprzykład
+
+Wyobraźmy sobie teraz duży sześcian, wewnątrz którego znajduje się mniejszy sześcian. Interesuje nas bryła zawarta pomiędzy ich powierzchniami — sześcienna skorupa z zamkniętą pustą komorą.
+
+Jej brzeg składa się z dwóch powierzchni: zewnętrznego i wewnętrznego sześcianu. Łącznie mamy więc
+
+$$
+V=16,\qquad E=24,\qquad F=12,
+$$
+
+a zatem
+
+$$
+V-E+F=16-24+12=4.
+$$
+
+To już nie jest jedynie usterka dowodu. Otrzymaliśmy **kontrprzykład globalny**, czyli obiekt spełniający przyjętą definicję wielościanu, dla którego główna hipoteza jest fałszywa.
+
+Co powinniśmy teraz zrobić?
+
+Najprostsza reakcja brzmi:
+
+> To nie jest prawdziwy wielościan!
+
+Lakatos nazywa taką strategię **wykluczaniem potworów** (*monster-barring*). Kiedy pojawia się niewygodny przykład, zmieniamy definicję tak, aby przestał należeć do rozważanej klasy. Być może właśnie to należy zrobić, ale samo nazwanie przykładu „patologicznym” niczego jeszcze nie wyjaśnia. Musimy umieć powiedzieć, która jego własność jest istotna i dlaczego przeszkadza ona w dowodzie.
+
+### Dowód podpowiada, jak poprawić twierdzenie
+
+Wróćmy więc do pierwszego kroku rozumowania. Po usunięciu jednej ściany powierzchnia miała dać się rozciągnąć na płaszczyźnie bez rozrywania i bez rozdzielania jej na kilka części. W przypadku sześciennej skorupy jest to niemożliwe: usunięcie jednej ściany nie otwiera jednocześnie powierzchni zewnętrznej i powierzchni otaczającej wewnętrzną komorę.
+
+Kontrprzykład wskazał zatem „winny” fragment dowodu. Możemy włączyć ujawnione założenie do treści twierdzenia:
+
+> Jeżeli powierzchnię wielościanu można po usunięciu jednej ściany rozciągnąć na płaszczyźnie, to
+>
+> $$
+> V-E+F=2.
+> $$
+
+Lakatos nazywa tę strategię **włączaniem lematu do twierdzenia** (*lemma incorporation*). Nie usuwamy kontrprzykładu arbitralną decyzją. Analizujemy dowód, odnajdujemy założenie, którego kontrprzykład nie spełnia, i czynimy je jawną częścią poprawionej hipotezy.
+
+Twierdzenie nie zostało jedynie osłabione. Lepiej teraz rozumiemy, od czego naprawdę zależy jego prawdziwość.
+
+### Kolejny potwór
+
+Historia jednak się nie kończy. Weźmy duży sześcian i umieśćmy na środku jego górnej ściany mniejszy sześcian. Jeżeli podstawę małego sześcianu potraktujemy jako wewnętrzną granicę jednej dużej, „pierścieniowej” ściany, otrzymamy
+
+$$
+V=16,\qquad E=24,\qquad F=11,
+$$
+
+czyli
+
+$$
+V-E+F=3.
+$$
+
+Powierzchnia tej bryły jest podobna topologicznie do powierzchni zwykłego sześcianu. Po usunięciu odpowiedniej ściany można ją rozłożyć na płaszczyźnie. Dlaczego więc wzór nadal zawodzi?
+
+Tym razem problem ukrywa się w drugim kroku dowodu. Zakładaliśmy, że każdą ścianę można podzielić przekątnymi na trójkąty oraz że dodanie jednej przekątnej zwiększa jednocześnie liczbę krawędzi i liczbę ścian o jeden. Nie musi tak być, gdy ściana ma dziurę. Dowód korzystał więc z kolejnego niewypowiedzianego założenia: każda ściana powinna być topologicznym dyskiem, bez otworów i wewnętrznych brzegów.
+
+Kontrprzykład ponownie nie tylko obalił twierdzenie. Powiedział nam, czego w nim brakuje.
+
+### Co w końcu zostało udowodnione?
+
+Współczesna wersja twierdzenia może mówić, że jeśli skończony graf tworzy na sferze poprawny podział na ściany będące topologicznymi dyskami, to
+
+$$
+V-E+F=2.
+$$
+
+Słowo „wielościan” zostało zastąpione dokładniejszym opisem struktury, której rzeczywiście dotyczy dowód. Co więcej, „potwory” otwierają drogę do szerszej teorii. Dla powierzchni z \(g\) uchwytami, czyli orientowalnej powierzchni rodzaju \(g\), otrzymujemy
+
+$$
+V-E+F=2-2g.
+$$
+
+Dla sfery mamy \(g=0\) i wartość \(2\). Dla torusa, przypominającego obwarzanek albo ramkę z otworem, mamy \(g=1\) i wartość \(0\). Dawny kontrprzykład staje się więc zwyczajnym przykładem bardziej ogólnego zjawiska.
+
+### Dowód jako narzędzie odkrycia
+
+Historia opowiedziana przez Lakatosa nie przebiega według schematu
+
+$$
+\text{twierdzenie}\longrightarrow\text{dowód}.
+$$
+
+Bardziej przypomina powtarzający się cykl:
+
+$$
+\text{hipoteza}
+\longrightarrow
+\text{próba dowodu}
+\longrightarrow
+\text{kontrprzykład}
+\longrightarrow
+\text{analiza błędu}
+\longrightarrow
+\text{lepsze twierdzenie}.
+$$
+
+Dowód nie jest tutaj jedynie certyfikatem prawdziwości gotowego zdania. Rozkłada hipotezę na mniejsze kroki i ujawnia założenia, których wcześniej nie byliśmy świadomi. Kontrprzykład zaś nie musi oznaczać końca pracy. Może pokazać, który fragment rozumowania wymaga naprawy, gdzie definicja jest zbyt szeroka albo jak sformułować głębsze twierdzenie.
+
+Ostatecznie zmienia się nie tylko dowód. Zmienia się również znaczenie słowa „wielościan”, treść twierdzenia oraz nasze rozumienie tego, co w całym zjawisku jest naprawdę istotne. Matematyka nie rozwija się więc wyłącznie przez gromadzenie kolejnych niepodważalnych faktów. Rozwija się także przez krytykę, nieudane próby i twórcze wykorzystywanie kontrprzykładów.
+
+*Tekst jest swobodną rekonstrukcją głównego argumentu z książki Imre Lakatosa [Proofs and Refutations: The Logic of Mathematical Discovery](https://www.cambridge.org/core/books/proofs-and-refutations/628F9DB1210B3055C682A1474EE9C75F).*
+@lakatos1976proofs,
+
+## Zadania 
+
+wstępna lista zadań:
+
+ - dowód sumy z $n^2$ poprzez rysunek, jak to uogólnić do n^3?
+
+```{=html}
+<div style="max-width: 350px; margin: 1.5rem auto;">
+<svg
+  viewBox="0 0 280 280"
+  width="100%"
+  role="img"
+  aria-label="Kwadrat podzielony na kolejne warstwy"
+  xmlns="http://www.w3.org/2000/svg">
+
+  <g transform="translate(15,15)"
+     stroke="#374151"
+     stroke-width="2"
+     stroke-linejoin="round">
+
+    <path
+      d="M 0 0 H 250 V 250 H 200 V 50 H 0 Z"
+      fill="#f1948a" />
+
+    <path
+      d="M 0 50 H 200 V 250 H 150 V 100 H 0 Z"
+      fill="#c39bd3" />
+
+    <path
+      d="M 0 100 H 150 V 250 H 100 V 150 H 0 Z"
+      fill="#85c1e9" />
+
+    <path
+      d="M 0 150 H 100 V 250 H 50 V 200 H 0 Z"
+      fill="#82e0aa" />
+
+    <rect
+      x="0" y="200"
+      width="50" height="50"
+      fill="#f7dc6f" />
+
+    <g stroke="#374151" stroke-width="1">
+      <line x1="50"  y1="0" x2="50"  y2="250" />
+      <line x1="100" y1="0" x2="100" y2="250" />
+      <line x1="150" y1="0" x2="150" y2="250" />
+      <line x1="200" y1="0" x2="200" y2="250" />
+
+      <line x1="0" y1="50"  x2="250" y2="50" />
+      <line x1="0" y1="100" x2="250" y2="100" />
+      <line x1="0" y1="150" x2="250" y2="150" />
+      <line x1="0" y1="200" x2="250" y2="200" />
+    </g>
+  </g>
+</svg>
+</div>
+```
+
+ - zadanie z podzielnością przez 11
+ - Suma dwóch kolejnych liczb nieparzystych jest parzysta.
+ - Liczba dwucyfrowa i liczba o odwróconych cyfrach dają sumę podzielną przez \(11\).
+ - Sprawdzić, czy liczby fermata są pierwsze $F_n = 2^{2^n} +1$. Jest pierwsza dla $n \leq 4$. $F_5 = 641 \cdot 6700417$.
+
+## Referencje

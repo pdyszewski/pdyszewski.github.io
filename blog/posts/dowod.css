@@ -1,0 +1,53 @@
+/* ============================================================
+   Ramsey graphs
+   ============================================================ */
+
+.ramsey-graph {
+  width: min(100%, 32rem);
+  margin: 1.5rem auto;
+}
+
+.ramsey-graph svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ramsey-edge {
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.ramsey-edge--primary {
+  stroke: var(--bs-primary);
+}
+
+.ramsey-edge--secondary {
+  stroke: var(--bs-danger);
+}
+
+.ramsey-vertex {
+  fill: var(--bs-body-bg);
+  stroke: var(--bs-body-color);
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
+}
+
+.ramsey-triangle {
+  stroke: none;
+  opacity: 0.16;
+}
+
+.ramsey-triangle--primary {
+  fill: var(--bs-primary);
+}
+
+.ramsey-triangle--secondary {
+  fill: var(--bs-danger);
+}
+
+[data-bs-theme="dark"] .ramsey-triangle {
+  opacity: 0.24;
+}
