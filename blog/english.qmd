@@ -1,0 +1,28 @@
+---
+title: "Scribbles: In English"
+lang: en
+description: "Lecture notes, expository texts, and mathematical scribbles written in English."
+listing:
+  id: english-notes
+  contents: posts
+  include:
+    lang: "en"
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: true
+  page-size: 10
+---
+
+Lecture notes, expository texts, and assorted mathematical scribbles written
+in English. Their intended audiences and levels vary.
+
+::: {.d-flex .flex-wrap .gap-2 .mb-4}
+[All notes](index.qmd){.btn .btn-outline-primary}
+[For high-school students](liceum.qmd){.btn .btn-outline-primary}
+[For students](studenci.qmd){.btn .btn-outline-primary}
+[Advanced material](zaawansowane.qmd){.btn .btn-outline-primary}
+[In English](english.qmd){.btn .btn-primary}
+:::
+

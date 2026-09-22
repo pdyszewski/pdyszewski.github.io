@@ -1,0 +1,28 @@
+---
+title: "Scribbles: Materiały zaawansowane"
+description: "Bardziej zaawansowane notatki, również dla doktorantów i osób zainteresowanych współczesną matematyką."
+listing:
+  id: advanced-notes
+  contents: posts
+  include:
+    audience: "advanced"
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: true
+  page-size: 10
+---
+
+Bardziej zaawansowane teksty, zwykle zakładające znajomość podstawowych kursów
+uniwersyteckich. Etykieta oznacza poziom materiału, a nie zamkniętą grupę
+odbiorców — ambitni studenci są tu bardzo mile widziani.
+
+::: {.d-flex .flex-wrap .gap-2 .mb-4}
+[Wszystkie notatki](index.qmd){.btn .btn-outline-primary}
+[Dla licealistów](liceum.qmd){.btn .btn-outline-primary}
+[Dla studentów](studenci.qmd){.btn .btn-outline-primary}
+[Materiały zaawansowane](zaawansowane.qmd){.btn .btn-primary}
+[In English](english.qmd){.btn .btn-outline-primary}
+:::
+

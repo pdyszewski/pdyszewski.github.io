@@ -1,16 +1,13 @@
 ---
 title: "Dowody i produktywne porażki"
-description: "Notatki z pierwszego wykładu podczas dni wstępnych na Wydziale Matematyki i Informatyki UWr"
+description: "Notatki z pierszego wykładu podczas dni wstępnych na wydziale Matematyki i Informatyki UWr"
 author: "Piotr Dyszewski"
-audience:
-  - undergraduate
-  - high-school
 lang: pl
 bibliography: dowod.bib
 image: dowod.png
 css: dowod.css
 date: "9/15/2026"
-draft: false
+draft: true
 crossref:
   cnj-title: "Hipoteza"
   cnj-prefix: "Hipoteza"
@@ -19,10 +16,10 @@ crossref:
 
 ## Czym właściwie jest matematyka?
 
-Chciałbym zacząć od próby wyjaśnienia powszechnego zjawiska związanego z szokiem,
+Chciałbym zacząć od próby wyjaśniania powszechnego zjawiska związanego z szokiem
 jaki przeżywa student pierwszego roku podczas pierwszych tygodni zajęć. Wiąże się on 
 przede wszystkim z przeskokiem między matematyką licealną a uniwersytecką. 
-Trafnie opisuje to zjawisko @devlin2012mathematicalthinking. 
+Dobre wytłumaczenie tego zjawiska ma @devlin2012mathematicalthinking. 
 
 Znaczna część matematyki szkolnej jest archaiczna. Niektóre jej elementy pochodzą jeszcze 
 ze starożytności, wiele innych ukształtowało się w średniowieczu, 
@@ -39,8 +36,7 @@ od jakich założeń zależy, czy można je uogólnić i co się stanie, jeśli 
 
 Obliczenia oczywiście nie zniknęły. Nadal są niezbędne, podobnie jak znajomość podstawowych metod. 
 Same procedury przestały jednak wystarczać. W świecie coraz bardziej skomplikowanych 
-modeli, struktur i zależności potrzebna jest przede wszystkim umiejętność analitycznego
-myślenia.
+modeli, struktur i zależności potrzebna jest przede wszystkim umiejętność matematycznego myślenia.
 
 W systemie edukacji tę zmianę perspektywy odczuwa się zwykle przy przejściu z liceum na uniwersytet. 
 Nagle nie wystarczy już wiedzieć, jak coś policzyć. Trzeba nauczyć się czytać definicje, 
@@ -57,13 +53,14 @@ zadań na studiach jest nauczenie się tych nowych zasad.
 
 ## Klątwa procedur
 
-Matematyka szkolna kładzie duży nacisk na procedury. 
+Zanim całkowicie odejdziemy od matematyki licealnej chciałbym 
+skomentować jeden jej aspekt. Kładzie ona wysoki nacisk na procedury. 
 Wiąże się on z tym, że system szkolny nie nagradza twórczej zabawy z obiektami 
-matematycznymi, tylko łatwą do zmierzenia utylitarność i efektywność.
+matematycznymi, tylko łatwą do zmierzenia umiejętność znalezienia poprawnego wyniku.
 
-@lockhart2002mathematicians opisuje matematyków jako ludzi, którzy układają wzory z
-idei. Najchętniej wybierają przy tym obiekty możliwie proste —
-takie, które istnieją jedynie w wyobraźni.
+@lockhart2002mathematicians opisuje matematyków jako ludzi, którzy układają wzory z 
+idei. Najchętniej wybierają przy tym obiekty możliwie proste — 
+takie, które istnieją jedynie w wyobraźni. 
 
 ::: {#exr-trojkat}
 
@@ -101,6 +98,7 @@ To po prostu zabawa ideami, a zarazem początek matematycznego problemu.
   </svg>
 </div>
 ```
+
 
 Nie pytamy o rzeczywisty rysunek ani o figurę wykonaną z metalu. 
 Interesuje nas idealny trójkąt w idealnym prostokącie. 
@@ -183,17 +181,16 @@ To drugie wymaga pewnej wprawy. Skupimy się na tym pierwszym. Rozważmy pierwsz
  1+3+5 & = 9\\
  1+3+5+7 & = 16.
 \end{align*}
-Na jego podstawie możemy przypuszczać, że
+Na jago podstawie jesteśmy w stanie wysnuć, że prawdziwa będzie też równość
 \begin{equation*}
  1+3+5+7+9+11  = 36
 \end{equation*}
 co jesteśmy w stanie zweryfikować w pamięci.
 Możemy się też pokusić o
 \begin{equation*}
- 1+3+5+ \ldots +2025+2027 = 1014^2
+ 1+3+ \ldots +  2025+2027 = 1014^2
 \end{equation*}
-co może być nieco trudniejsze do sprawdzenia. 
-Przykłady te są przejawem pewnej ogólnej zasady,
+co może być nieco trudniejsze do sprawdzenia. Przykłady te są przejawem pewnej ogólnej zasady
 co do której nie mamy jeszcze stuprocentowej pewności. 
 
 ::: {#def-hip}
@@ -211,12 +208,11 @@ Przeliczone przez nas przykłady pozwalają postawić naszą pierwszą hipotezę
   \end{equation*}
 :::
 
-Do zadań matematyki uniwersyteckiej należy rozstrzyganie prawdziwości 
+Do zadań matematyki uniwersyteckiej należy rozstrzyganie poprawności 
 hipotez. W przypadku @cnj-suma należy odpowiedzieć na pytanie
-czy istnieje liczba $n$, dla której wzór w niej zawarty nie jest prawdziwy?
+czy istnieje liczba $n$ dla który wzór w niej zawarty nie jest prawdziwy?
 
-Zanim odpowiemy sobie na to pytanie, zobaczmy jeszcze jeden przykład. 
-
+Zanim odpowiemy sobie na to pytanie zobaczmy jeszcze jeden przykład. 
 Rozważmy teraz drugi ciąg obserwacji
 \begin{align*}
   1^2+1+41 & = 43 \\
@@ -224,7 +220,7 @@ Rozważmy teraz drugi ciąg obserwacji
   3^2+3+41 & = 53 \\
   4^2+4+41 & = 61.
 \end{align*}
-Tutaj struktura jest nieco bardziej złożona. Rozważmy kilka kolejnych przykładów
+Tutaj struktura jest nieco bardziej złożona. Czasami pomaga kilka kolejnych przykładów
 \begin{align*}
   5^2+5+41 & = 71 \\
   6^2+6+41 & = 83 \\
@@ -233,7 +229,7 @@ Tutaj struktura jest nieco bardziej złożona. Rozważmy kilka kolejnych przykł
 \end{align*}
 Wszystkie te liczby są pierwsze! Analogicznie
 \begin{equation*}
-  13^2+13 +41 = 233.
+  13^2+13 +41 = 251.
 \end{equation*}
 
 ::: {#cnj-pierwsze}
@@ -246,13 +242,13 @@ Wszystkie te liczby są pierwsze! Analogicznie
 
 Dla $n=23$ dostajemy
 \begin{equation*}
-  23^2+23+41 = 593
+  23^2+23+41 = 593.
 \end{equation*}
 Wzór ten działa zaskakująco dobrze. 
 Jednak liczba $41$ obecna we wzorze budzi pewne podejrzenia.
 Dlaczego właśnie ona? 
 Podejrzenie nie jest jednak jeszcze krytyką. 
-Hipoteza może zignorować naszą nieufność czy niechęć; nie może natomiast zignorować kontrprzykładu (@lakatos1976proofs).
+Hipoteza może zignorować naszą nieufność czy niechęć; nie może natomiast zignorować kontrprzykładu.
 
 ::: {#def-kontr}
 
@@ -267,20 +263,19 @@ Jeśli więc chcemy zakwestionować działanie wzoru, nie wystarczy stwierdzić,
 Musimy znaleźć takie $n$, dla którego $n^2+n+41$ nie jest liczbą pierwszą.
 Okazuje się, że do $n=39$ wzór działa poprawnie,
 \begin{equation*}
-   39^2+39+41=1601
+   39^2+93+41=1601
 \end{equation*}
 jest liczbą pierwszą, ale
 \begin{equation*}
   40^2+40+41=41^2
 \end{equation*}
-już nią nie jest. @cnj-pierwsze jest zatem fałszywa. Nie jest prawdą, że dla każdej liczby naturalnej 
-$n$ wzór
-$n^2+n+41$ produkuje liczbę pierwszą. Widzimy, że $n=40$ jest przykładem takiego $n$, dla którego 
-to nie zachodzi. Okazuje się, że mimo że wzór zachodzi dla wielu początkowych liczb (bo aż $39$),
+już nią nie jest. @cnj-pierwsze nie jest zatem prawdziwa. Nie jest prawdą, że dla każdej $n$ wzór
+$n^2+n+41$ produkuje liczbę pierwszą. Widzimy, że $n=40$ jest przykładem takiego $n$ dla którego 
+to nie zachodzi. Okazuje się, że mimo, że wzór zachodzi dla wielu początkowych liczb (bo aż $39$),
 to z pewnych przyczyn zaczyna się psuć.
 
 Jak w tym momencie należy zapatrywać się na @cnj-suma? Możemy sprawdzić poprawność
-wzoru dla pierwszych stu liczb. Nie mamy wtedy pewności że tożsamość nie popsuje 
+wzoru dla pierwszych stu liczb. Nie mamy wtedy pewności, że tożsamość nie popsuje 
 się na sto pierwszej. Po sprawdzeniu sto pierwszej, nie mamy pewności, że nie popsuje 
 się na sto drugiej...
 
@@ -312,7 +307,7 @@ Rozważmy
   1 +  3   +  \ldots   +  (2n-3) +  (2n-1) & =A \\
   (2n-1)  +  (2n-3)  + \ldots  +  3 +  1 & = A.
 \end{align*}
-Dodając stronami, otrzymujemy
+Dodając stronami otrzymujemy
 \begin{equation*}
  2n + 2n + \ldots + 2n + 2n =2A.
 \end{equation*}
@@ -325,8 +320,7 @@ Stąd $n \times 2n = 2A$. Czyli
 W powyższym rozumowaniu ważne jest to, że nie korzystaliśmy 
 w nim z żadnych szczególnych własności liczb (jak chociażby podzielność przez $7$). 
 Istotnie, $n$ może przyjmować dowolną wartość i w dalszym ciągu
-wszystkie kroki rozumowania będą poprawne.
-Nasza hipoteza stała się teraz twierdzeniem.
+wszystkie kroki rozumowania będą poprawne. Nasza hipoteza stała się teraz twierdzeniem.
 
 ::: {#def-twr}
 
@@ -339,25 +333,26 @@ aksjomatach i wcześniej udowodnionych wynikach.
 Dobry dowód robi jednak często coś więcej niż samo potwierdzenie prawdziwości twierdzenia. 
 Odsłania mechanizm stojący za obserwowanym zjawiskiem. Zrozumienie tego
 mechanizmu pozwala często na prowadzenie własnych rozumowań. 
-Aby zrozumieć siłę z tego płynącą, rozważmy kolejny ciąg równości
+Aby zrozumieć siłę z tego płynącą rozważmy kolejny ciąg równości
 \begin{align*}
   1+2 & = 3 \\
   1+2+3 & = 6 \\
   1+2+3+4 & = 10 \\
   1+2+3+4+5 & = 15.
 \end{align*}
-Czy widzimy tutaj ogólną zależność? Czy potrafimy powiedzieć, ile będzie wynosić
+Czy widzimy tutaj ogólną zależność? Czy potrafimy powiedzieć ile będzie wynosić
 \begin{equation*}
   1+2+3+\ldots + 2026?
 \end{equation*}
 Sam udowodniony przez nas wcześniej wzór się nam nie przyda.
 Jego dowód natomiast odsłania pewien mechanizm, który możemy 
 wykorzystać. W praktyce jest to po prostu zastosowanie tej samej sztuczki.
+Mamy
 \begin{align*}
   1  +  2  +  \ldots  +  2025  +  2026 & = B \\
   2026  +  2025  +  \ldots  +  2  +  1 & = B
 \end{align*}
-Stąd po dodaniu stronami i podzieleniu przez dwa
+i po dodaniu stronami i podzieleniu przez dwa
 \begin{equation*}
    B = 1013\times 2027.
 \end{equation*}
@@ -369,50 +364,48 @@ i stosując ten sam manewr otrzymujemy $2C = n(n+1)$, czyli
 \begin{equation*}
   1+2+3+ \ldots +n = n(n+1)/2.
 \end{equation*}
-W ten sposób wyprowadziliśmy samodzielnie i udowodniliśmy następujący rezultat.
+Otrzymaliśmy w ten sposób następujący rezultat
 
 ::: {#thm-suma1}
-  Dla każdej liczby naturalnej $n$, 
+  Dla każdej liczby naturalnej $n$ zachodzi
   \begin{equation*}
-    1+2+ \ldots + n =n(n+1)/2.
+    1+2+3+ \ldots +n = n(n+1)/2.
   \end{equation*}
 :::
 
-W tym momencie warto zwrócić uwagę na sam mechanizm. 
-Dowód poznaliśmy przed dokładnym sformułowaniem twierdzenia. 
+Warto zauważyć, że w tym wypadku znaliśmy dowód powyższego twierdzenia 
+zanim znaliśmy jego dokładne sformułowanie. We współczesnej matematyce jest
+to bardzo częsta sytuacja: dowód idzie przed dokładnym twierdzeniem.
 
 Samo stwierdzenie w @cnj-suma niesie ze sobą pewne zjawisko. Dowód natomiast
-to zjawisko tłumaczy. Kiedy zrozumiemy dowód, zrozumiemy też zjawisko i będziemy 
-mogli stosować je w wielu innych kontekstach. 
+to zjawisko tłumaczy. 
+Zrozumienie tego zjawiska pozwoliło nam odkryć nowe twierdzenie.
 
 W tym konkretnym przypadku zjawisko sprowadza się do prostej sztuczki, 
 ale w trakcie studiów matematycznych powyższa filozofia staje się bardzo pomocna.
 
-## Produktywne porażki
+## Produktywne porażki 
 
 Gotowe dowody matematyczne bywają zwodnicze. 
 Są krótkie, uporządkowane i prowadzą prosto od założeń do tezy.
-Widząc taki dowód po raz pierwszy  student myśli 
+Student wielokrotnie widząc taki dowód po raz pierwszy myśli 
 *ja bym na to nie wpadł/a*.
-Gotowe dowody nie pokazują prób, błędnych pomysłów ani ślepych uliczek, z których 
+Dowody te nie pokazują jednak prób, błędnych pomysłów ani ślepych uliczek, z których 
 często się narodziły. 
 
-Aby zobaczyć, jak tak naprawdę rodzi się dowód rozważmy następujący problem.
-Wyobraźmy sobie spotkanie, w którym bierze udział pewna ustalona liczba osób. 
-Siłą rzeczy każda para osób albo się zna, albo się nie zna. 
+Wyobraźmy sobie spotkanie, w którym każda para osób albo się zna, albo się nie zna. 
 
 :::{#exr-osoby}
 
-Jak duża musi być grupa, abyśmy mieli pewność, że znajdą się w niej trzy osoby, 
-które wszystkie się znają, albo trzy osoby, z których żadne dwie się nie znają? 
+Jak duża musi być grupa, abyśmy mieli pewność, że znajdą się w niej trzy osoby, które wszystkie się znają, albo trzy osoby, z których żadne dwie się nie znają? 
 
 :::
 
-Samo sformułowanie jest dość zawiłe. Przetłumaczymy je geometrycznie. Przedstawmy osoby jako punkty. 
-Dwa punkty łączymy niebieską linią, jeśli odpowiadające im osoby się znają, oraz czerwoną, 
+Przedstawmy osoby jako punkty. 
+Dwa punkty łączymy czerwoną linią, jeśli odpowiadające im osoby się znają, oraz niebieską, 
 jeśli się nie znają. 
-W tym języku trzy osoby, o których mowa w pytaniu, to monochromatyczny trójkąti, czyli taki
-którego wszystkie boki mają ten sam kolor.
+W języku naszego  trzy osoby o których mowa w pytaniu to trójkąt, 
+którego wszystkie boki mają ten sam kolor. Postawmy 
 
 Oczywiście dla trzech punktów łatwo jest podać takie kolorowanie bez monochromatycznego 
 trójkąta.
@@ -463,7 +456,6 @@ Kolorowanie na trzech punktach bez monochromatycznego trójkąta.
 
 Oznacza to, że w grupie trzech osób może się zdarzyć, że jednocześnie pewne dwie osoby 
 się znają i pewne dwie osoby się nie znają. Jak to jest w przypadku czterech osób?
-Zauważmy, że możemy zacząć kolejny rysunek, dodając do poprzedniego jeden punkt.
 
 :::: {#fig-ramsey-k4-planar}
 
@@ -520,9 +512,7 @@ Kolorowanie na czterech punktach bez monochromatycznego trójkąta.
 
 ::::
 
-Tutaj też względnie łatwo wskazać konfigurację bez monochromatycznego 
-trójkąta.
-Spróbujmy teraz z pięcioma punktami. 
+Widzimy, że na czterech punktach 
 
 :::: {#fig-ramsey-k5-inner-vertex}
 
@@ -595,8 +585,8 @@ Pierwsza próba kolorowania na pięciu punktach.
 :::
 
 Nasza pierwsza próba jest nieudana. Zauważmy jednak, że przeniesienie środkowego 
-punktu poza czworokąt utworzony przez pozostałe punkty zwiększa jego czytelność.
-Spróbujmy raz jeszcze.
+punktu poza czworokąt utworzony przez pozostałę punkty zwiększa jego czytelność.
+Przejdźmy do drugiej próby.
 
 :::: {#fig-ramsey-k5-irregular-failed}
 
@@ -709,306 +699,51 @@ W tym momencie widać, jak poprawić to kolorowanie.
 </div>
 ```
 
-Udane kolorowanie na pięciu punktach.
+Dwukolorowanie krawędzi grafu pełnego \(K_5\).
 
 ::::
 
+Narysuj pięć punktów i połącz każdą ich parę. Spróbuj pokolorować wszystkie odcinki na czerwono lub niebiesko tak, aby nie powstał żaden jednobarwny trójkąt.
 
-To mały, ale ważny sukces. Wiemy już, że pięć osób nie wystarcza, aby zagwarantować istnienie poszukiwanej trójki. 
-Sukces ten zachęca jednak do kolejnej próby: być może podobną konstrukcję uda się stworzyć również dla sześciu punktów?
+Dla pięciu punktów zadanie da się wykonać. Ustawmy je w wierzchołkach pięciokąta, jego boki pokolorujmy na czerwono, a przekątne na niebiesko. Czerwone krawędzie tworzą pięciokąt, więc nie ma wśród nich trójkąta. Niebieskie przekątne również układają się w pięciokąt i także nie tworzą trójkąta. Otrzymaliśmy więc kolorowanie bez trzech wzajemnie połączonych krawędzi tego samego koloru.
 
-### Szósty punkt: pierwsza krawędź jest niebieska
+To mały, ale ważny sukces. Wiemy już, że pięć osób nie wystarcza, aby zagwarantować istnienie poszukiwanej trójki. Sukces ten zachęca jednak do kolejnej próby: być może podobną konstrukcję uda się stworzyć również dla sześciu punktów?
 
-Do naszego rysunku dodajemy szósty punkt. Załóżmy, że pierwsza dorysowana krawędź jest niebieska. 
-Zauważmy, że chcąc uniknąć monochromatycznych trójkątów, kolory krawędzi przy szóstym wierzchołku są 
-wymuszone.
+::: {.callout-warning title="Druga próba: dodajemy szósty punkt"}
 
-:::: {#fig-ramsey-k6-failed}
+Dodaj do rysunku szósty punkt i połącz go z pozostałymi. Pokoloruj nowe krawędzie tak, aby nadal nie było jednobarwnego trójkąta.
 
-```{=html}
-<div class="ramsey-graph">
-  <svg
-    viewBox="0 0 520 500"
-    role="img"
-    aria-labelledby="k6-failed-title k6-failed-description"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <title id="k6-failed-title">
-      Nieudana próba kolorowania grafu K6
-    </title>
-
-    <desc id="k6-failed-description">
-      Poprawne kolorowanie grafu K5 zostało częściowo rozszerzone
-      o szósty wierzchołek umieszczony w środku. Powstał przy tym
-      czerwony monochromatyczny trójkąt.
-    </desc>
-
-    <!-- Zaznaczenie czerwonego trójkąta -->
-    <polygon
-      class="ramsey-triangle ramsey-triangle--secondary"
-      points="55,195 465,195 260,260"
-    />
-
-    <!-- Niebieski cykl zewnętrzny -->
-    <g class="ramsey-edge ramsey-edge--primary">
-      <line x1="260" y1="45"  x2="465" y2="195" />
-      <line x1="465" y1="195" x2="385" y2="435" />
-      <line x1="385" y1="435" x2="135" y2="435" />
-      <line x1="135" y1="435" x2="55"  y2="195" />
-      <line x1="55"  y1="195" x2="260" y2="45" />
-
-      <!-- Niebieska krawędź do wierzchołka na godzinie 12 -->
-      <line x1="260" y1="260" x2="260" y2="45" />
-    </g>
-
-    <!-- Czerwone przekątne tworzące gwiazdę -->
-    <g class="ramsey-edge ramsey-edge--secondary">
-      <line x1="260" y1="45"  x2="385" y2="435" />
-      <line x1="385" y1="435" x2="55"  y2="195" />
-      <line x1="55"  y1="195" x2="465" y2="195" />
-      <line x1="465" y1="195" x2="135" y2="435" />
-      <line x1="135" y1="435" x2="260" y2="45" />
-
-      <!-- Czerwone krawędzie do wierzchołków na godzinach 2 i 11 -->
-      <line x1="260" y1="260" x2="465" y2="195" />
-      <line x1="260" y1="260" x2="55"  y2="195" />
-    </g>
-
-    <!-- Wierzchołki -->
-    <g>
-      <circle class="ramsey-vertex" cx="260" cy="45"  r="16" />
-      <circle class="ramsey-vertex" cx="465" cy="195" r="16" />
-      <circle class="ramsey-vertex" cx="385" cy="435" r="16" />
-      <circle class="ramsey-vertex" cx="135" cy="435" r="16" />
-      <circle class="ramsey-vertex" cx="55"  cy="195" r="16" />
-
-      <!-- Nowy wierzchołek -->
-      <circle class="ramsey-vertex" cx="260" cy="260" r="16" />
-    </g>
-  </svg>
-</div>
-```
-Próba kolorowania na sześciu punktach.
-
-::::
-
-Zauważmy, że nie musimy nawet używać wszystkich krawędzi (odcinków) nowego wierzchołka,
-aby wymusić monochromatyczny trójkąt. Kolejną ważną umiejętnością
-dla matematyka jest abstrahowanie, czyli pomijanie w analizie rzeczy nieistotnych. 
-W tym przypadku dokonamy tego
-poprzez usunięcie wierzchołków, z których nie korzystamy 
-przy wymuszaniu monochromatycznego trójkąta.
-
-:::: {#fig-ramsey-obstruction}
-
-```{=html}
-<div class="ramsey-graph" style="width: min(100%, 28rem);">
-  <svg
-    viewBox="0 0 520 320"
-    role="img"
-    aria-labelledby="ramsey-obstruction-title ramsey-obstruction-description"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <title id="ramsey-obstruction-title">
-      Mechanizm powstawania monochromatycznego trójkąta
-    </title>
-
-    <desc id="ramsey-obstruction-description">
-      Cztery wierzchołki połączone sześcioma krawędziami.
-      Trzy czerwone krawędzie tworzą monochromatyczny trójkąt.
-    </desc>
-
-    <!-- Monochromatyczny trójkąt -->
-    <polygon
-      class="ramsey-triangle ramsey-triangle--secondary"
-      points="55,195 465,195 260,260"
-    />
-
-    <!-- Niebieskie krawędzie -->
-    <g class="ramsey-edge ramsey-edge--primary">
-      <line x1="260" y1="45"  x2="465" y2="195" />
-      <line x1="260" y1="45"  x2="55"  y2="195" />
-      <line x1="260" y1="45"  x2="260" y2="260" />
-    </g>
-
-    <!-- Czerwone krawędzie -->
-    <g class="ramsey-edge ramsey-edge--secondary">
-      <line x1="55"  y1="195" x2="465" y2="195" />
-      <line x1="55"  y1="195" x2="260" y2="260" />
-      <line x1="465" y1="195" x2="260" y2="260" />
-    </g>
-
-    <!-- Wierzchołki -->
-    <g>
-      <circle class="ramsey-vertex" cx="260" cy="45"  r="16" />
-      <circle class="ramsey-vertex" cx="465" cy="195" r="16" />
-      <circle class="ramsey-vertex" cx="55"  cy="195" r="16" />
-      <circle class="ramsey-vertex" cx="260" cy="260" r="16" />
-    </g>
-  </svg>
-</div>
-```
-
-Fragment kolorowania odpowiedzialny za powstanie monochromatycznego trójkąta.
+Jeżeli się nie uda, możesz zmienić także wcześniejsze kolorowanie. Być może problem tkwi nie w szóstym punkcie, lecz w całej konstrukcji.
 
 :::
 
-### Szósty punkt: pierwsza krawędź jest czerwona
+W tym miejscu zaczyna się najciekawsza część doświadczenia. 
+Jedna próba kończy się czerwonym trójkątem, inna niebieskim. 
+Poprawienie jednego fragmentu psuje drugi. 
+Można odnieść wrażenie, że właściwe kolorowanie istnieje, tylko ciągle nie potrafimy go znaleźć. 
+Niepowodzenia nie są jeszcze dowodem: fakt, że nie znaleźliśmy konstrukcji, nie oznacza przecież, 
+że żadna konstrukcja nie istnieje.
 
-Załóżmy teraz, że pierwsza dorysowana krawędź do szóstego wierzchołka jest czerwona. Wówczas 
-kolejne kolory są już wymuszone.
+Zamiast wykonywać kolejne przypadkowe próby, przyjrzyjmy się temu, co nieustannie 
+pojawia się na naszych rysunkach. 
 
-:::: {#fig-ramsey-k6-second-failure}
+::: {.callout-tip}
 
-```{=html}
-<div class="ramsey-graph">
-  <svg
-    viewBox="0 0 520 500"
-    role="img"
-    aria-labelledby="k6-second-title k6-second-description"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <title id="k6-second-title">
-      Druga nieudana próba kolorowania grafu K6
-    </title>
+Co się dzieje, kiedy dodajemy szósty punkt?
 
-    <desc id="k6-second-description">
-      Do poprawnie pokolorowanego grafu K5 dodano szósty
-      wierzchołek. Niebieskie krawędzie tworzą monochromatyczny
-      trójkąt w dolnej części rysunku.
-    </desc>
-
-    <!-- Powstały niebieski trójkąt -->
-    <polygon
-      class="ramsey-triangle ramsey-triangle--primary"
-      points="135,435 385,435 260,260"
-    />
-
-    <!-- Niebieski cykl zewnętrzny -->
-    <g class="ramsey-edge ramsey-edge--primary">
-      <line x1="260" y1="45"  x2="465" y2="195" />
-      <line x1="465" y1="195" x2="385" y2="435" />
-      <line x1="385" y1="435" x2="135" y2="435" />
-      <line x1="135" y1="435" x2="55"  y2="195" />
-      <line x1="55"  y1="195" x2="260" y2="45" />
-
-      <!-- Krawędzie od środka do wierzchołków na 5 i 9 -->
-      <line x1="260" y1="260" x2="385" y2="435" />
-      <line x1="260" y1="260" x2="135" y2="435" />
-    </g>
-
-    <!-- Czerwone przekątne tworzące gwiazdę -->
-    <g class="ramsey-edge ramsey-edge--secondary">
-      <line x1="260" y1="45"  x2="385" y2="435" />
-      <line x1="385" y1="435" x2="55"  y2="195" />
-      <line x1="55"  y1="195" x2="465" y2="195" />
-      <line x1="465" y1="195" x2="135" y2="435" />
-      <line x1="135" y1="435" x2="260" y2="45" />
-
-      <!-- Czerwona krawędź od środka do wierzchołka na 12 -->
-      <line x1="260" y1="260" x2="260" y2="45" />
-    </g>
-
-    <!-- Wierzchołki -->
-    <g>
-      <circle class="ramsey-vertex" cx="260" cy="45"  r="16" />
-      <circle class="ramsey-vertex" cx="465" cy="195" r="16" />
-      <circle class="ramsey-vertex" cx="385" cy="435" r="16" />
-      <circle class="ramsey-vertex" cx="135" cy="435" r="16" />
-      <circle class="ramsey-vertex" cx="55"  cy="195" r="16" />
-      <circle class="ramsey-vertex" cx="260" cy="260" r="16" />
-    </g>
-  </svg>
-</div>
-```
-
-Kolejna próba kolorowania na sześciu punktach.
-
-::::
-
-W tym przypadku również nie musimy korzystać ze wszystkich wierzchołków.
-
-:::: {#fig-ramsey-blue-obstruction}
-
-```{=html}
-<div class="ramsey-graph" style="width: min(100%, 25rem);">
-  <svg
-    viewBox="0 0 520 500"
-    role="img"
-    aria-labelledby="blue-obstruction-title blue-obstruction-description"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <title id="blue-obstruction-title">
-      Mechanizm powstawania niebieskiego trójkąta
-    </title>
-
-    <desc id="blue-obstruction-description">
-      Cztery wierzchołki połączone sześcioma krawędziami.
-      Trzy niebieskie krawędzie tworzą monochromatyczny trójkąt.
-    </desc>
-
-    <!-- Monochromatyczny niebieski trójkąt -->
-    <polygon
-      class="ramsey-triangle ramsey-triangle--primary"
-      points="135,435 385,435 260,260"
-    />
-
-    <!-- Niebieskie krawędzie -->
-    <g class="ramsey-edge ramsey-edge--primary">
-      <line x1="135" y1="435" x2="385" y2="435" />
-      <line x1="260" y1="260" x2="385" y2="435" />
-      <line x1="260" y1="260" x2="135" y2="435" />
-    </g>
-
-    <!-- Czerwone krawędzie -->
-    <g class="ramsey-edge ramsey-edge--secondary">
-      <line x1="260" y1="45" x2="385" y2="435" />
-      <line x1="260" y1="45" x2="135" y2="435" />
-      <line x1="260" y1="45" x2="260" y2="260" />
-    </g>
-
-    <!-- Wierzchołki -->
-    <g>
-      <circle class="ramsey-vertex" cx="260" cy="45"  r="16" />
-      <circle class="ramsey-vertex" cx="385" cy="435" r="16" />
-      <circle class="ramsey-vertex" cx="135" cy="435" r="16" />
-      <circle class="ramsey-vertex" cx="260" cy="260" r="16" />
-    </g>
-  </svg>
-</div>
-```
-
-Fragment kolorowania odpowiedzialny za powstanie niebieskiego trójkąta.
-
-::::
-
-### Wspólny mianownik
-
-W obu omówionych przypadkach korzystaliśmy z różnych wierzchołków, 
-ale otrzymaliśmy zasadniczo te same struktury.
-Obie siłą rzeczy mają monochromatyczny trójkąt, a czwarty wierzchołek 
-charakteryzuje się tym, że wszystkie krawędzie z niego wychodzące są tego samego 
-koloru.
-
-> Jeżeli każda para punktów jest połączona krawędzią jednego z dwóch kolorów, 
-to trzy jednakowo pokolorowane krawędzie wychodzące z jednego punktu wymuszają 
-monochromatyczny trójkąt wśród tych czterech punktów.
-
-Zwróćmy uwagę, że w naszym rysunku na pięciu wierzchołkach w każdym
-punkcie dwie krawędzie były niebieskie, a dwie czerwone. Jesteśmy w stanie 
-sformułować i udowodnić twierdzenie.
-
-::: {#thm-ram}
-   Wśród dowolnych sześciu osób znajdziemy trzy, 
-   które parami się znają, albo trzy, z których żadne dwie się nie znają.
 :::
+
+Wychodzi z niego pięć krawędzi, a do dyspozycji mamy tylko dwa kolory. 
+Co najmniej trzy z tych krawędzi muszą więc mieć ten sam kolor. 
+
+
+Udowodniliśmy zatem, że w każdym dwukolorowym kolorowaniu połączeń między sześcioma punktami musi pojawić się jednobarwny trójkąt. W języku wyjściowego problemu:
+
+> Wśród dowolnych sześciu osób znajdziemy trzy, które parami się znają, albo trzy, z których żadne dwie się nie znają.
 
 ::: {.proof}
 
-Wybierzmy dowolny wierzchołek $A$. Wychodzi z niego pięć krawędzi. 
-Trzy z nich muszą być w tym samym kolorze. Możemy założyć, że są one czerwonego koloru. 
-Załóżmy, że czerwone są krawędzie $AB$, $AC$ i $AD$ łączące $A$ 
-odpowiednio z wierzchołkami $B$, $C$ i $D$.
+Załóżmy, że czerwone są krawędzie $AB$, $AC$ i $AD$. 
 Pozostaje przyjrzeć się połączeniom między punktami $B$, 
 $C$ i $D$. Jeśli choć jedna z krawędzi $BC$, $BD$ lub $CD$ jest czerwona, to wraz z 
 punktem $A$ tworzy czerwony trójkąt. Jeżeli natomiast żadna z nich nie jest czerwona, 
@@ -1021,27 +756,24 @@ Istotne jest to, skąd wziął się dowód.
 Próbowaliśmy zbudować kolorowanie, które przeczyłoby twierdzeniu, i obserwowaliśmy, 
 w jaki sposób każda konstrukcja się psuje. 
 W końcu przestaliśmy pytać: *Jak pokolorować następny odcinek?*, a zaczęliśmy pytać: 
-*Dlaczego każda próba nie może się udać?*. 
+*Dlaczego każda próba musi się nie udać?*. 
+Pięć krawędzi wychodzących z jednego punktu, trzy krawędzie tego samego koloru i 
+trójkąt powstający niezależnie od dalszego wyboru — 
+oto mechanizm ukryty za wszystkimi wcześniejszymi porażkami.
 
 To właśnie może być produktywna porażka. Nieudane rysunki nie były czasem straconym. 
 Dostarczyły materiału, z którego wyłonił się argument. Gotowy dowód jest krótki i 
 wygląda niemal na oczywisty, ale dopiero po jego odkryciu. 
-Wcześniejsze błądzenie pozwala zobaczyć coś, co czysty zapis dowodu łatwo ukrywa. 
+Wcześniejsze błądzenie pozwala zobaczyć coś, co czysty zapis dowodu łatwo ukrywa: 
+dowód nie tylko potwierdza, że twierdzenie jest prawdziwe. 
+Wyjaśnia również, dlaczego żadna próba obejścia go nie może się udać.
 
 
-## Zadania
+## Zadania 
 
- 1. Udowodnij, że suma dowolnych dwóch kolejnych liczb 
-    nieparzystych jest parzysta. Przeanalizuj swój dowód. 
-    Czy jesteś w stanie powiedzieć coś więcej o tej sumie? Czy jest ona podzielna przez 4? 
-    Czy jest ona podzielna przez 8?
- 1. Udowodnij, że suma liczby dwucyfrowej i liczby o odwróconych cyfrach jest podzielna
-    przez $11$. Przeanalizuj dowód. Czy widzisz inne dzielniki?
- 1. Sprawdź, czy liczby postaci $2^{2^n} +1$ są pierwsze. 
- 1. Na podstawie poniższego rysunku zaproponuj alternatywny dowód wzoru
-    \begin{equation*}
-    1+3+ \ldots +(2n-3)+(2n-1)=n^2.
-    \end{equation*}
+wstępna lista zadań:
+
+ - dowód sumy z $n^2$ poprzez rysunek, jak to uogólnić do n^3?
 
 ```{=html}
 <div style="max-width: 350px; margin: 1.5rem auto;">
@@ -1093,9 +825,10 @@ Wcześniejsze błądzenie pozwala zobaczyć coś, co czysty zapis dowodu łatwo 
 </svg>
 </div>
 ```
-5. Udowodnij, że dla każdej liczby naturalnej $n$ zachodzi
-   \begin{equation*}
-      1+7+19+ \ldots + (3n^2-3n+1) = n^3.
-   \end{equation*}
+
+ - zadanie z podzielnością przez 11
+ - Suma dwóch kolejnych liczb nieparzystych jest parzysta.
+ - Liczba dwucyfrowa i liczba o odwróconych cyfrach dają sumę podzielną przez \(11\).
+ - Sprawdzić, czy liczby fermata są pierwsze $F_n = 2^{2^n} +1$. Jest pierwsza dla $n \leq 4$. $F_5 = 641 \cdot 6700417$.
 
 ## Referencje

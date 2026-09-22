@@ -1,10 +1,26 @@
 ---
 title: "Scribbles"
+description: "Short notes."
 listing:
+  id: all-notes
   contents: posts
   sort: "date desc"
   type: default
   categories: true
+  sort-ui: false
+  filter-ui: true
+  page-size: 10
 ---
-Here I post some of my short notes and scribbles, mostly based on popular math talks I have given. 
-The language and level vary: graduate (EN), student (PL), liceum (PL). 
+
+Here I share short notes, sketches, and other materials, mostly developed in connection with lectures and public outreach talks. 
+They vary in language and level of difficulty. 
+
+::: {.d-flex .flex-wrap .gap-2 .mb-4}
+[All notes](index.qmd){.btn .btn-primary}
+[Dla licealistów](liceum.qmd){.btn .btn-outline-primary}
+[Dla studentów](studenci.qmd){.btn .btn-outline-primary}
+[Materiały zaawansowane](zaawansowane.qmd){.btn .btn-outline-primary}
+[In English](english.qmd){.btn .btn-outline-primary}
+:::
+
+## Wszystkie notatki

@@ -1,0 +1,27 @@
+---
+title: "Scribbles: Dla licealistów"
+description: "Notatki i materiały dostępne dla zainteresowanych matematyką licealistów."
+listing:
+  id: high-school-notes
+  contents: posts
+  include:
+    audience: "high-school"
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: true
+  page-size: 10
+---
+
+Materiały, które nie wymagają wiedzy wykraczającej daleko poza matematykę
+szkolną. Część z nich może być także interesująca dla studentów pierwszych lat.
+
+::: {.d-flex .flex-wrap .gap-2 .mb-4}
+[Wszystkie notatki](index.qmd){.btn .btn-outline-primary}
+[Dla licealistów](liceum.qmd){.btn .btn-primary}
+[Dla studentów](studenci.qmd){.btn .btn-outline-primary}
+[Materiały zaawansowane](zaawansowane.qmd){.btn .btn-outline-primary}
+[In English](english.qmd){.btn .btn-outline-primary}
+:::
+

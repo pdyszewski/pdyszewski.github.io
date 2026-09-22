@@ -92,5 +92,26 @@
   "blog/posts/dowod.qmd": {
     "dowod.html": "bb6f9b91",
     "dowod.tex": "b01d3dfe"
+  },
+  "blog/english.qmd": {
+    "english.html": "a9b7ef8d"
+  },
+  "blog/liceum.qmd": {
+    "liceum.html": "9ba799a7"
+  },
+  "blog/studenci.qmd": {
+    "studenci.html": "35ddc8d2"
+  },
+  "blog/zaawansowane.qmd": {
+    "zaawansowane.html": "4bf49528"
+  },
+  "blog/posts/dowod2.qmd": {
+    "dowod2.html": "9d19a1fe"
+  },
+  "blog/posts/dowod_kopia_konfliktowa_debian.qmd": {
+    "dowod_kopia_konfliktowa_debian.html": "c62946b6"
+  },
+  "blog/posts/dowod (debian's conflicted copy 2026-09-22).qmd": {
+    "dowod (debian's conflicted copy 2026-09-22).html": "154a2273"
   }
 }

@@ -1,0 +1,1906 @@
+---
+title: "Dowody i obalenia"
+description: "Notatki z ostatniego wykładu podczas dni wstępnych na Wydziale Matematyki i Informatyki UWr"
+author: "Piotr Dyszewski"
+audience:
+  - undergraduate
+  - high-school
+lang: pl
+bibliography: dowod.bib
+image: dowod2.png
+css: dowod.css
+date: "10/1/2026"
+draft: false
+crossref:
+  cnj-title: "Hipoteza"
+  cnj-prefix: "Hipoteza"
+  exr-title: "Pytanie"
+---
+
+W podręcznikach historia twierdzenia jest zwykle bardzo krótka: 
+najpierw pojawia się precyzyjne sformułowanie, a zaraz po nim poprawny dowód. 
+Można odnieść wrażenie, że twierdzenia od początku mają swoją ostateczną postać, 
+a jedynym zadaniem matematyka jest znalezienie argumentu, który tę postać uzasadni.
+
+@lakatos1976proofs proponuje zupełnie inny obraz matematyki. 
+
+### Od przykładów do hipotezy
+
+Zacznijmy od kilku dobrze znanych brył. 
+Oznaczmy przez $V$ liczbę wierzchołków, przez $E$ liczbę krawędzi, 
+a przez $F$ liczbę ścian.
+
+
+| Wielościan      |   V   |  E    |   F   |
+| --------------- | ----: | ----: | ----: |
+| czworościan     |     4 |     6 |     4 |
+| sześcian        |     8 |    12 |     6 |
+| ośmiościan      |     6 |    12 |     8 |
+| dwunastościan   |    20 |    30 |    12 |
+| dwudziestościan |    12 |    30 |    20 |
+
+
+
+
+:::: {#fig-euler-plane}
+
+```{=html}
+<script
+  src="https://cdn.plot.ly/plotly-4.0.0.min.js"
+  charset="utf-8"
+></script>
+
+<div class="euler-3d-figure">
+  <div class="euler-3d-controls">
+    <button
+      id="toggle-euler-plane"
+      type="button"
+      class="btn btn-outline-primary btn-sm"
+      aria-pressed="false"
+    >
+      Pokaż płaszczyznę
+    </button>
+  </div>
+
+  <div
+    id="euler-plane-plot"
+    class="euler-3d-plot"
+    role="img"
+    aria-label="Wykres punktów o współrzędnych V, E i F dla różnych wielościanów"
+  ></div>
+
+  <div class="euler-3d-hint">
+    Przeciągnij wykres, aby go obrócić. Najedź na punkt, aby
+    zobaczyć odpowiadający mu wielościan.
+  </div>
+</div>
+
+<script>
+(() => {
+  const plot = document.getElementById("euler-plane-plot");
+  const button = document.getElementById("toggle-euler-plane");
+
+  if (!plot || !button || typeof Plotly === "undefined") {
+    return;
+  }
+
+  const solids = [
+    { name: "czworościan",                    V: 4,  E: 6,  F: 4 },
+    { name: "ostrosłup czworokątny",          V: 5,  E: 8,  F: 5 },
+    { name: "graniastosłup trójkątny",        V: 6,  E: 9,  F: 5 },
+    { name: "ostrosłup pięciokątny",          V: 6,  E: 10, F: 6 },
+    { name: "ośmiościan",                     V: 6,  E: 12, F: 8 },
+    { name: "sześcian",                       V: 8,  E: 12, F: 6 },
+    { name: "graniastosłup pięciokątny",      V: 10, E: 15, F: 7 },
+    { name: "graniastosłup sześciokątny",     V: 12, E: 18, F: 8 }
+  ];
+
+  let planeVisible = false;
+
+  function themeColors() {
+    const style = getComputedStyle(document.body);
+
+    return {
+      background: style.getPropertyValue("--bs-body-bg").trim(),
+      foreground: style.getPropertyValue("--bs-body-color").trim(),
+      muted: style.getPropertyValue("--bs-secondary-color").trim(),
+      border: style.getPropertyValue("--bs-border-color").trim(),
+      primary: style.getPropertyValue("--bs-primary").trim(),
+      danger: style.getPropertyValue("--bs-danger").trim(),
+      font: style.getPropertyValue("--bs-font-sans-serif").trim()
+    };
+  }
+
+  function drawPlot() {
+    const colors = themeColors();
+
+    /*
+     * Prostokątny fragment płaszczyzny
+     *
+     *     V - E + F = 2.
+     *
+     * Jego wierzchołki zapisujemy w kolejności (V,E,F).
+     */
+    const plane = {
+      type: "mesh3d",
+
+      x: [3, 13, 13, 3],
+      y: [4, 14, 21, 11],
+      z: [3,  3, 10, 10],
+
+      i: [0, 0],
+      j: [1, 2],
+      k: [2, 3],
+
+      color: colors.primary,
+      opacity: 0.22,
+      flatshading: true,
+      hoverinfo: "skip",
+      showlegend: false,
+      visible: planeVisible
+    };
+
+    const points = {
+      type: "scatter3d",
+      mode: "markers",
+
+      x: solids.map(d => d.V),
+      y: solids.map(d => d.E),
+      z: solids.map(d => d.F),
+
+      customdata: solids.map(d => d.name),
+
+      marker: {
+        size: 7,
+        color: colors.danger,
+        opacity: 1,
+        line: {
+          color: colors.background,
+          width: 1.5
+        }
+      },
+
+      hovertemplate:
+        "<b>%{customdata}</b><br>" +
+        "V = %{x}<br>" +
+        "E = %{y}<br>" +
+        "F = %{z}" +
+        "<extra></extra>",
+
+      showlegend: false
+    };
+
+    const axis = (title, range) => ({
+      title: {
+        text: title,
+        font: { color: colors.foreground }
+      },
+      range: range,
+      color: colors.foreground,
+      gridcolor: colors.border,
+      zeroline: false,
+      showbackground: true,
+      backgroundcolor: colors.background
+    });
+
+    const layout = {
+      paper_bgcolor: "rgba(0,0,0,0)",
+      plot_bgcolor: "rgba(0,0,0,0)",
+
+      font: {
+        color: colors.foreground,
+        family: colors.font
+      },
+
+      hoverlabel: {
+        bgcolor: colors.background,
+        bordercolor: colors.border,
+        font: {
+          color: colors.foreground
+        }
+      },
+
+      scene: {
+        xaxis: axis("V — wierzchołki", [3, 13]),
+        yaxis: axis("E — krawędzie", [4, 21]),
+        zaxis: axis("F — ściany", [3, 10]),
+
+        aspectmode: "manual",
+        aspectratio: {
+          x: 1,
+          y: 1.25,
+          z: 0.8
+        },
+
+        camera: {
+          eye: {
+            x: 1.55,
+            y: 1.45,
+            z: 1.15
+          }
+        },
+
+        dragmode: "orbit"
+      },
+
+      margin: {
+        l: 0,
+        r: 0,
+        b: 0,
+        t: 10
+      },
+
+      uirevision: "euler-plane"
+    };
+
+    Plotly.react(
+      plot,
+      [plane, points],
+      layout,
+      {
+        responsive: true,
+        displayModeBar: false,
+        scrollZoom: false
+      }
+    );
+  }
+
+  button.addEventListener("click", () => {
+    planeVisible = !planeVisible;
+
+    button.setAttribute(
+      "aria-pressed",
+      planeVisible ? "true" : "false"
+    );
+
+    button.textContent = planeVisible
+      ? "Ukryj płaszczyznę"
+      : "Pokaż płaszczyznę";
+
+    button.classList.toggle("btn-primary", planeVisible);
+    button.classList.toggle("btn-outline-primary", !planeVisible);
+
+    Plotly.restyle(
+      plot,
+      { visible: planeVisible },
+      [0]
+    );
+  });
+
+  drawPlot();
+
+  /*
+   * Ponowne rysowanie po zmianie jasnego/ciemnego motywu.
+   */
+  const observer = new MutationObserver(() => {
+    window.requestAnimationFrame(drawPlot);
+  });
+
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-bs-theme", "class"]
+  });
+
+  observer.observe(document.body, {
+    attributes: true,
+    attributeFilter: ["data-bs-theme", "class"]
+  });
+})();
+</script>
+```
+
+Punkty w przestrzeni odpowiadające różnym wielościanom.
+
+::::
+
+Widzimy, że punkty $(V,E,F)$ leżą na jednej płaszczyźnie. 
+Matematycznie oznacza to, że istnieją liczby $a, b, c, d$, takie że
+dla dowolnego wielościanu
+\begin{equation*}
+  aV+bE+cF =d.
+\end{equation*}
+
+Dla czworościanu otrzymujemy
+\begin{equation*}
+  4a + 6b +4c=d.
+\end{equation*}
+Dla sześcianu jest to
+\begin{equation*}
+  8a+ 12b+ 6c=d.
+\end{equation*}
+Rozważając kolejne bryły, możemy podać wiele różnych równań, które spełniają liczby $a,b,c,d$. 
+Układ takich równań możemy następnie rozwiązać i otrzymać $a=c=1$, $b=-1$ i $d=2$.
+Nasuwa to przypuszczenie, że dla każdego wielościanu
+$$
+V-E+F=2.
+$$
+
+
+::: {#cnj-eu}
+  Dla każdego wielościanu liczba wierzchołków minus liczba krawędzi plus liczba ścian jest równa $2$.
+:::
+
+
+### Dowód, który wygląda przekonująco
+
+Wyobraźmy sobie, że powierzchnia wielościanu jest wykonana z cienkiej gumy. 
+Usuwamy jedną ścianę, a pozostałą powierzchnię rozciągamy na płaszczyźnie. 
+Obraz rozciągniętego wielościanu na płaszczyźnie nazywamy mapą.
+
+:::: {#fig-cauchy-flattened-cube}
+
+```{=html}
+<div class="cauchy-diagram">
+  <svg
+    viewBox="0 0 520 440"
+    role="img"
+    aria-labelledby="flattened-cube-title flattened-cube-description"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title id="flattened-cube-title">
+      Sześcian rozciągnięty na płaszczyźnie
+    </title>
+
+    <desc id="flattened-cube-description">
+      Po usunięciu jednej ściany pięć pozostałych ścian
+      sześcianu zostaje rozciągniętych na płaszczyźnie.
+      Brzeg usuniętej ściany tworzy zewnętrzny kwadrat.
+    </desc>
+
+    <!-- Pięć pozostałych ścian sześcianu -->
+    <g>
+      <!-- ściana górna -->
+      <polygon
+        class="cauchy-face"
+        points="60,40 460,40 330,150 190,150"
+      />
+
+      <!-- ściana prawa -->
+      <polygon
+        class="cauchy-face"
+        points="460,40 460,400 330,290 330,150"
+      />
+
+      <!-- ściana dolna -->
+      <polygon
+        class="cauchy-face"
+        points="60,400 460,400 330,290 190,290"
+      />
+
+      <!-- ściana lewa -->
+      <polygon
+        class="cauchy-face"
+        points="60,40 190,150 190,290 60,400"
+      />
+
+      <!-- ściana środkowa -->
+      <polygon
+        class="cauchy-face"
+        points="190,150 330,150 330,290 190,290"
+      />
+    </g>
+
+    <!-- Krawędzie wewnętrzne -->
+    <g class="cauchy-edge">
+      <rect
+        x="190"
+        y="150"
+        width="140"
+        height="140"
+      />
+
+      <line x1="60"  y1="40"  x2="190" y2="150" />
+      <line x1="460" y1="40"  x2="330" y2="150" />
+      <line x1="460" y1="400" x2="330" y2="290" />
+      <line x1="60"  y1="400" x2="190" y2="290" />
+    </g>
+
+    <!-- Brzeg usuniętej ściany -->
+    <rect
+      class="cauchy-boundary"
+      x="60"
+      y="40"
+      width="400"
+      height="360"
+    />
+
+    <!-- Wierzchołki -->
+    <g>
+      <circle class="cauchy-vertex" cx="60"  cy="40"  r="10" />
+      <circle class="cauchy-vertex" cx="460" cy="40"  r="10" />
+      <circle class="cauchy-vertex" cx="460" cy="400" r="10" />
+      <circle class="cauchy-vertex" cx="60"  cy="400" r="10" />
+
+      <circle class="cauchy-vertex" cx="190" cy="150" r="10" />
+      <circle class="cauchy-vertex" cx="330" cy="150" r="10" />
+      <circle class="cauchy-vertex" cx="330" cy="290" r="10" />
+      <circle class="cauchy-vertex" cx="190" cy="290" r="10" />
+    </g>
+  </svg>
+</div>
+```
+
+Po usunięciu jednej ściany powierzchnię sześcianu można rozciągnąć na płaszczyźnie. Obszar zewnętrzny odpowiada usuniętej ścianie.
+
+:::
+
+
+Usunięcie ściany zmniejsza $F$ o jeden, powinniśmy więc otrzymać płaską 
+mapę spełniającą
+$$
+V-E+F=1.
+$$
+Następnie dzielimy wszystkie ściany tej mapy na trójkąty. Za każdym razem, gdy rysujemy nową przekątną, 
+liczba krawędzi i liczba ścian zwiększają się o jeden. 
+Wartość $V-E+F$ się zatem nie zmienia.
+
+:::: {#fig-cauchy-triangulated-cube}
+
+```{=html}
+<div class="cauchy-diagram">
+  <svg
+    viewBox="0 0 520 440"
+    role="img"
+    aria-labelledby="triangulated-cube-title triangulated-cube-description"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title id="triangulated-cube-title">
+      Triangulacja rozciągniętego sześcianu
+    </title>
+
+    <desc id="triangulated-cube-description">
+      Pięć pozostałych ścian sześcianu rozciągnięto na
+      płaszczyźnie, a następnie każdą z nich podzielono
+      przekątną na dwa trójkąty.
+    </desc>
+
+    <!-- Pięć ścian przed triangulacją -->
+    <g>
+      <polygon
+        class="cauchy-face"
+        points="60,40 460,40 330,150 190,150"
+      />
+
+      <polygon
+        class="cauchy-face"
+        points="460,40 460,400 330,290 330,150"
+      />
+
+      <polygon
+        class="cauchy-face"
+        points="60,400 460,400 330,290 190,290"
+      />
+
+      <polygon
+        class="cauchy-face"
+        points="60,40 190,150 190,290 60,400"
+      />
+
+      <polygon
+        class="cauchy-face"
+        points="190,150 330,150 330,290 190,290"
+      />
+    </g>
+
+    <!-- Pierwotne krawędzie -->
+    <g class="cauchy-edge">
+      <rect
+        x="190"
+        y="150"
+        width="140"
+        height="140"
+      />
+
+      <line x1="60"  y1="40"  x2="190" y2="150" />
+      <line x1="460" y1="40"  x2="330" y2="150" />
+      <line x1="460" y1="400" x2="330" y2="290" />
+      <line x1="60"  y1="400" x2="190" y2="290" />
+    </g>
+
+    <!-- Brzeg usuniętej ściany -->
+    <rect
+      class="cauchy-boundary"
+      x="60"
+      y="40"
+      width="400"
+      height="360"
+    />
+
+    <!-- Pięć nowych przekątnych -->
+    <g class="cauchy-diagonal">
+      <!-- ściana górna -->
+      <line x1="60"  y1="40"  x2="330" y2="150" />
+
+      <!-- ściana prawa -->
+      <line x1="460" y1="40"  x2="330" y2="290" />
+
+      <!-- ściana dolna -->
+      <line x1="460" y1="400" x2="190" y2="290" />
+
+      <!-- ściana lewa -->
+      <line x1="60"  y1="400" x2="190" y2="150" />
+
+      <!-- ściana środkowa -->
+      <line x1="190" y1="150" x2="330" y2="290" />
+    </g>
+
+    <!-- Wierzchołki -->
+    <g>
+      <circle class="cauchy-vertex" cx="60"  cy="40"  r="10" />
+      <circle class="cauchy-vertex" cx="460" cy="40"  r="10" />
+      <circle class="cauchy-vertex" cx="460" cy="400" r="10" />
+      <circle class="cauchy-vertex" cx="60"  cy="400" r="10" />
+
+      <circle class="cauchy-vertex" cx="190" cy="150" r="10" />
+      <circle class="cauchy-vertex" cx="330" cy="150" r="10" />
+      <circle class="cauchy-vertex" cx="330" cy="290" r="10" />
+      <circle class="cauchy-vertex" cx="190" cy="290" r="10" />
+    </g>
+  </svg>
+</div>
+```
+
+Każdą z pięciu ścian podzielono na dwa trójkąty. Kolorem czerwonym zaznaczono dodane krawędzie.
+
+::::
+
+Na koniec usuwamy trójkąty jeden po drugim. Przy każdym kroku znika albo 
+
+ - jedna ściana i jedna krawędź, 
+ - jedna ściana, dwie krawędzie i jeden wierzchołek. 
+
+Również te operacje nie zmieniają wartości $V-E+F$. Ostatecznie pozostaje pojedynczy trójkąt, dla którego
+$$
+V-E+F=3-3+1=1.
+$$
+Przed usunięciem pierwszej ściany wartość musiała więc wynosić $2$.
+
+
+### Analiza argumentu
+
+Nie traktujmy powyższego dowodu jak niepodzielnego bloku. 
+Należy rozłożyć go na ukryte w nim twierdzenia pomocnicze. 
+Są to co najmniej trzy lematy.
+
+::: {#lem-rozciaganie}
+
+Po usunięciu jednej ściany powierzchnię każdego wielościanu można bez
+rozrywania rozciągnąć na płaszczyźnie.
+
+:::
+
+::: {#lem-triangulacja}
+
+Każdą ścianę otrzymanej siatki można podzielić przekątnymi na trójkąty,
+nie zmieniając wartości $V-E+F$.
+
+:::
+
+::: {#lem-usuwanie}
+
+Trójkąty można usuwać w dowolnej kolejności. Przy każdym usunięciu znika albo
+jedna ściana i jedna krawędź, albo jedna ściana, dwie krawędzie i jeden
+wierzchołek. Wartość $V-E+F$ pozostaje więc niezmieniona aż do pozostawienia
+pojedynczego trójkąta.
+
+:::
+
+Jeżeli wszystkie trzy lematy są prawdziwe, dowód działa. Każdy z nich jest
+jednak osobnym przypuszczeniem, które możemy próbować obalić.
+Z jednej strony dołożyliśmy sobie więcej pracy, bo zamiast sprawdzać
+poprawność naszej hipotezy musimy sprawdzić poprawność trzech lematów.
+Zauważmy jednak, że wszystkie są koncepcyjnie prostsze i 
+dotyczą bardzo konkretnych własności, przez co powinny być łatwiejsze 
+do rozstrzygnięcia. To ważna zmiana perspektywy. 
+Dowód nie tylko prowadzi od założeń do wniosku.
+Dowód rozkłada duże twierdzenie na mniejsze zobowiązania. 
+Pokazuje, co dokładnie
+musiałoby być prawdą, aby wniosek rzeczywiście wynikał z naszego pomysłu.
+
+### Pierwszy kontrprzykład: trójkąt ze środka
+
+Wróćmy do triangulacji sześcianu. 
+Co się stanie, jeśli jako pierwszy usuniemy
+trójkąt leżący całkowicie wewnątrz siatki? 
+Nie znika wtedy żadna krawędź ani żaden wierzchołek. 
+Znika tylko jedna ściana.
+Wartość $V-E+F$ zmniejsza się o $1$. 
+Trzeci krok dowodu w swojej
+najprostszej wersji jest więc fałszywy.
+
+
+Można w tym momencie stwierdzić, że to koniec dowodu.
+Czy to również koniec naszej hipotezy?
+Nie. 
+Pokazaliśmy, że konkretny argument nie działa; nie znaleźliśmy 
+jeszcze wielościanu naruszającego wzór.
+Pokazaliśmy jedynie, że nie wolno
+usuwać trójkątów w zupełnie dowolnej kolejności.
+
+Wprowadzimy teraz rozróżnienie pochodzące z @lakatos1976proofs.
+
+::: {#def-kontrprzyklady}
+
+**Kontrprzykład lokalny** obala jeden z lematów użytych w dowodzie, ale nie musi
+obalać głównego przypuszczenia.
+
+:::
+
+Sześcian z niefortunnie wybranym trójkątem jest kontrprzykładem lokalnym.
+Pokazuje, że dowód jest wadliwy, nie pokazuje jednak, że @cnj-eu jest
+fałszywa.
+
+
+### Hotfix
+
+Spróbujmy poprawić dowód. 
+Nie usuwajmy dowolnych trójkątów. Usuwajmy jedynie
+trójkąty leżące na brzegu aktualnej siatki.
+
+Trzeci lemat został więc zastąpiony ostrożniejszą wersją:
+
+> Trójkąty brzegowe można usuwać w dowolnej kolejności, a każdy taki ruch ma
+> jedną z dwóch bezpiecznych postaci.
+
+Ta poprawka rozwiązuje poprzedni problem, ale tworzy następny. Nawet trójkąty
+brzegowe można usuwać w złej kolejności. W triangulacji sześcianu da się usunąć
+osiem trójkątów tak, że na końcu zostaną dwa rozłączne trójkąty. Podczas jednego
+z ostatnich ruchów usuwamy ścianę i dwie krawędzie, ale nie usuwamy
+wierzchołka. Wartość $V-E+F$ znowu się zmienia.
+
+
+:::: {#fig-euler-bad-order}
+
+```{=html}
+<style>
+  .euler-removal-figure {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin: 1.5rem 0 0.75rem;
+    font-family: var(--bs-font-sans-serif);
+  }
+
+  .euler-removal-panel--full {
+    flex: 1 1 420px;
+    max-width: 560px;
+  }
+
+  .euler-removal-panel--final {
+    flex: 1 1 280px;
+    max-width: 400px;
+  }
+
+  .euler-removal-figure svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .euler-face-removed {
+    fill: rgba(var(--bs-danger-rgb), 0.08);
+  }
+
+  .euler-face-remaining {
+    fill: rgba(var(--bs-primary-rgb), 0.16);
+  }
+
+  .euler-structure {
+    fill: none;
+    stroke: var(--bs-body-color);
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .euler-critical-outline {
+    fill: none;
+    stroke: var(--bs-danger);
+    stroke-width: 4;
+    stroke-dasharray: 9 6;
+    stroke-linejoin: round;
+  }
+
+  .euler-final-triangle {
+    fill: rgba(var(--bs-primary-rgb), 0.16);
+    stroke: var(--bs-primary);
+    stroke-width: 3;
+    stroke-linejoin: round;
+  }
+
+  .euler-label circle {
+    fill: var(--bs-body-bg);
+    stroke: var(--bs-secondary-color);
+    stroke-width: 2;
+  }
+
+  .euler-label text {
+    fill: var(--bs-body-color);
+    font-size: 17px;
+    font-weight: 700;
+    text-anchor: middle;
+    dominant-baseline: central;
+  }
+
+  .euler-label--remaining circle {
+    stroke: var(--bs-primary);
+    stroke-width: 3;
+  }
+
+  .euler-label--critical circle {
+    stroke: var(--bs-danger);
+    stroke-width: 3;
+  }
+
+  .euler-panel-title {
+    fill: var(--bs-body-color);
+    font-size: 18px;
+    font-weight: 700;
+    text-anchor: middle;
+  }
+
+  .euler-panel-note {
+    fill: var(--bs-secondary-color);
+    font-size: 14px;
+    text-anchor: middle;
+  }
+</style>
+
+<div class="euler-removal-figure">
+  <div class="euler-removal-panel--full">
+    <svg
+      viewBox="0 0 540 450"
+      role="img"
+      aria-labelledby="euler-order-title euler-order-desc"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <title id="euler-order-title">
+        Nieudana kolejność usuwania trójkątów
+      </title>
+      <desc id="euler-order-desc">
+        Triangulowana płaska siatka sześcianu. Trójkąty są
+        ponumerowane w kolejności usuwania od 1 do 8. Po ich
+        usunięciu pozostają dwa rozłączne trójkąty 9 i 10.
+      </desc>
+
+      <text class="euler-panel-title" x="270" y="27">
+        Pełna triangulacja
+      </text>
+
+      <!-- Trójkąty usuwane w krokach 1–8 -->
+      <g class="euler-face-removed">
+        <polygon points="490,60 490,390 360,300" />
+        <polygon points="50,60 490,60 360,150" />
+        <polygon points="50,60 360,150 180,150" />
+        <polygon points="180,150 360,150 360,300" />
+        <polygon points="50,390 50,60 180,150" />
+        <polygon points="50,390 180,150 180,300" />
+        <polygon points="180,150 360,300 180,300" />
+        <polygon points="490,390 360,300 180,300" />
+      </g>
+
+      <!-- Trójkąty pozostające po ośmiu krokach -->
+      <g class="euler-face-remaining">
+        <polygon points="490,60 360,300 360,150" />
+        <polygon points="490,390 180,300 50,390" />
+      </g>
+
+      <!-- Krawędzie triangulacji -->
+      <g class="euler-structure">
+        <rect x="50" y="60" width="440" height="330" />
+        <rect x="180" y="150" width="180" height="150" />
+
+        <line x1="50"  y1="60"  x2="180" y2="150" />
+        <line x1="490" y1="60"  x2="360" y2="150" />
+        <line x1="490" y1="390" x2="360" y2="300" />
+        <line x1="50"  y1="390" x2="180" y2="300" />
+
+        <line x1="50"  y1="60"  x2="360" y2="150" />
+        <line x1="490" y1="60"  x2="360" y2="300" />
+        <line x1="490" y1="390" x2="180" y2="300" />
+        <line x1="50"  y1="390" x2="180" y2="150" />
+        <line x1="180" y1="150" x2="360" y2="300" />
+      </g>
+
+      <!-- Krok ósmy: ruch rozspajający siatkę -->
+      <polygon
+        class="euler-critical-outline"
+        points="490,390 360,300 180,300"
+      />
+
+      <!-- Numery trójkątów -->
+      <g class="euler-label">
+        <g transform="translate(447 250)">
+          <circle r="17" /><text y="1">1</text>
+        </g>
+        <g transform="translate(300 90)">
+          <circle r="17" /><text y="1">2</text>
+        </g>
+        <g transform="translate(197 120)">
+          <circle r="17" /><text y="1">3</text>
+        </g>
+        <g transform="translate(300 200)">
+          <circle r="17" /><text y="1">4</text>
+        </g>
+        <g transform="translate(93 200)">
+          <circle r="17" /><text y="1">5</text>
+        </g>
+        <g transform="translate(137 280)">
+          <circle r="17" /><text y="1">6</text>
+        </g>
+        <g transform="translate(240 250)">
+          <circle r="17" /><text y="1">7</text>
+        </g>
+        <g class="euler-label--critical" transform="translate(343 330)">
+          <circle r="17" /><text y="1">8</text>
+        </g>
+        <g class="euler-label--remaining" transform="translate(403 170)">
+          <circle r="18" /><text y="1">9</text>
+        </g>
+        <g class="euler-label--remaining" transform="translate(240 360)">
+          <circle r="19" /><text y="1">10</text>
+        </g>
+      </g>
+
+      <text class="euler-panel-note" x="270" y="428">
+        Usuwamy kolejno trójkąty 1, 2, …, 8
+      </text>
+    </svg>
+  </div>
+
+  <div class="euler-removal-panel--final">
+    <svg
+      viewBox="0 0 400 450"
+      role="img"
+      aria-labelledby="euler-final-title euler-final-desc"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <title id="euler-final-title">
+        Stan po usunięciu ośmiu trójkątów
+      </title>
+      <desc id="euler-final-desc">
+        Pozostają dwa rozłączne trójkąty oznaczone numerami 9 i 10.
+      </desc>
+
+      <text class="euler-panel-title" x="200" y="27">
+        Po usunięciu 1–8
+      </text>
+
+      <polygon
+        class="euler-final-triangle"
+        points="45,105 185,80 180,235"
+      />
+      <polygon
+        class="euler-final-triangle"
+        points="230,290 360,180 355,350"
+      />
+
+      <g class="euler-label euler-label--remaining">
+        <g transform="translate(137 140)">
+          <circle r="19" /><text y="1">9</text>
+        </g>
+        <g transform="translate(315 270)">
+          <circle r="21" /><text y="1">10</text>
+        </g>
+      </g>
+
+      <text class="euler-panel-note" x="200" y="382">
+        <tspan x="200" dy="0">Dwie rozłączne składowe</tspan>
+        <tspan x="200" dy="23">Krok 8: V -E+F =2 </tspan>
+      </text>
+    </svg>
+  </div>
+</div>
+```
+
+Nieudana kolejność usuwania trójkątów. Ósmy krok rozspaja siatkę:
+usuwamy jedną ścianę i dwie krawędzie, ale nie usuwamy żadnego wierzchołka.
+
+::::
+
+
+W takim razie powinniśmy usuwać tylko takie trójkąty brzegowe,
+których usunięcie nie rozspójnia pozostałej siatki.
+Problem polega na tym, że to nie jest jeszcze instrukcja. 
+Skąd wiadomo, że taki trójkąt
+zawsze istnieje? I skąd wiadomo, że po jego usunięciu 
+następny również będzie
+istniał?
+
+Istnienie tej kolejności jest teraz nowym twierdzeniem.
+Nie wolno umieszczać go w dowodzie pod postacią polecenia: 
+„wybieramy dobrą
+kolejność”. Zdanie
+
+> usuwamy trójkąty w takiej kolejności, aby wszystko działało
+
+nie jest argumentem. Jest jedynie innym sposobem zapisania tego, co należało
+udowodnić.
+
+Potrzebujemy zatem trzeciej wersji lematu:
+
+> Trójkąty triangulowanej mapy można tak ponumerować, aby usuwanie ich w tej
+> kolejności zachowywało wartość $V-E+F$ aż do ostatniego trójkąta.
+
+Zatrzymamy się na chwilę i spróbujemy
+uzupełnić tę lukę. 
+Poniższa
+wersja wykorzystuje indukcyjny argument opisany również przez @eppstein_triangle_removal .
+
+Nazwijmy trójkąt **dobrym**, jeśli leży na brzegu siatki i po jego usunięciu
+pozostałe trójkąty nadal tworzą jeden spójny kawałek w kształcie dysku.
+
+Potrzebujemy następującego faktu.
+
+::: {#lem-dobre-trojkaty}
+
+Jeżeli triangulowana mapa składa się z więcej niż jednego trójkąta, to zawiera
+co najmniej dwa dobre trójkąty brzegowe.
+
+:::
+
+Dowód tego lematu odłożymy na sam koniec.
+
+Lemat dostarcza brakującej instrukcji. Wybieramy dobry trójkąt i usuwamy go.
+Pozostaje mniejsza triangulowana mapa, więc lemat można zastosować ponownie.
+Ponieważ trójkątów jest skończenie wiele, po pewnej liczbie kroków zostanie
+jeden z nich.
+
+Na naszym rysunku sześcianu można najpierw usunąć cztery trójkąty przylegające
+do czterech boków zewnętrznego kwadratu. Następnie usuwamy cztery odsłonięte
+„uszy”, a na końcu jeden z dwóch środkowych trójkątów. W każdym kroku zmiany
+liczb $(V,E,F)$ mają jedną z dwóch bezpiecznych postaci opisanych wcześniej.
+
+:::: {#fig-euler-good-order}
+
+```{=html}
+<style>
+  .euler-good-sequence {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    align-items: start;
+    margin: 1.5rem 0 0.75rem;
+    font-family: var(--bs-font-sans-serif);
+  }
+
+  .euler-good-panel {
+    min-width: 0;
+    text-align: center;
+  }
+
+  .euler-good-panel svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .euler-good-face--now {
+    fill: rgba(var(--bs-primary-rgb), 0.20);
+  }
+
+  .euler-good-face--later {
+    fill: var(--bs-tertiary-bg);
+  }
+
+  .euler-good-structure {
+    fill: none;
+    stroke: var(--bs-body-color);
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .euler-good-node {
+    fill: var(--bs-body-bg);
+    stroke: var(--bs-body-color);
+    stroke-width: 2.2;
+  }
+
+  .euler-good-label circle {
+    fill: var(--bs-body-bg);
+    stroke: var(--bs-primary);
+    stroke-width: 3;
+  }
+
+  .euler-good-label text {
+    fill: var(--bs-body-color);
+    font-size: 18px;
+    font-weight: 700;
+    text-anchor: middle;
+    dominant-baseline: central;
+  }
+
+  .euler-good-label--later circle {
+    stroke: var(--bs-secondary-color);
+    stroke-width: 2;
+  }
+
+  .euler-good-title {
+    fill: var(--bs-body-color);
+    font-size: 20px;
+    font-weight: 700;
+    text-anchor: middle;
+  }
+
+  .euler-good-subtitle {
+    fill: var(--bs-secondary-color);
+    font-size: 15px;
+    text-anchor: middle;
+  }
+
+  .euler-good-counts {
+    margin-top: 0.35rem;
+    color: var(--bs-body-color);
+    line-height: 1.45;
+  }
+
+  .euler-good-counts strong {
+    color: var(--bs-primary);
+  }
+
+  .euler-good-counts small {
+    display: block;
+    color: var(--bs-secondary-color);
+  }
+</style>
+
+<div class="euler-good-sequence">
+  <!-- Etap 1: zdejmujemy po jednej ścianie i jednej krawędzi -->
+  <div class="euler-good-panel">
+    <svg
+      viewBox="0 0 540 445"
+      role="img"
+      aria-labelledby="euler-good-one-title euler-good-one-desc"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <title id="euler-good-one-title">
+        Pierwszy etap dobrej kolejności usuwania
+      </title>
+      <desc id="euler-good-one-desc">
+        Pełna triangulacja. Najpierw usuwamy cztery zewnętrzne
+        trójkąty oznaczone numerami od 1 do 4. Każdy z nich ma
+        dokładnie jedną krawędź należącą do brzegu.
+      </desc>
+
+      <text class="euler-good-title" x="270" y="28">Kroki 1–4</text>
+      <text class="euler-good-subtitle" x="270" y="51">
+        cztery trójkąty zewnętrzne
+      </text>
+
+      <!-- Ściany usuwane teraz -->
+      <g class="euler-good-face--now">
+        <polygon points="50,70 490,70 360,160" />
+        <polygon points="490,70 490,390 360,310" />
+        <polygon points="490,390 50,390 180,310" />
+        <polygon points="50,390 50,70 180,160" />
+      </g>
+
+      <!-- Ściany pozostawiane do kolejnych etapów -->
+      <g class="euler-good-face--later">
+        <polygon points="50,70 360,160 180,160" />
+        <polygon points="490,70 360,310 360,160" />
+        <polygon points="490,390 180,310 360,310" />
+        <polygon points="50,390 180,160 180,310" />
+        <polygon points="180,160 360,160 360,310" />
+        <polygon points="180,160 360,310 180,310" />
+      </g>
+
+      <!-- Pełna triangulacja -->
+      <g class="euler-good-structure">
+        <rect x="50" y="70" width="440" height="320" />
+        <rect x="180" y="160" width="180" height="150" />
+
+        <line x1="50"  y1="70"  x2="180" y2="160" />
+        <line x1="490" y1="70"  x2="360" y2="160" />
+        <line x1="490" y1="390" x2="360" y2="310" />
+        <line x1="50"  y1="390" x2="180" y2="310" />
+
+        <line x1="50"  y1="70"  x2="360" y2="160" />
+        <line x1="490" y1="70"  x2="360" y2="310" />
+        <line x1="490" y1="390" x2="180" y2="310" />
+        <line x1="50"  y1="390" x2="180" y2="160" />
+        <line x1="180" y1="160" x2="360" y2="310" />
+      </g>
+
+      <g class="euler-good-label">
+        <g transform="translate(270 105)">
+          <circle r="19" /><text y="1">1</text>
+        </g>
+        <g transform="translate(447 230)">
+          <circle r="19" /><text y="1">2</text>
+        </g>
+        <g transform="translate(270 358)">
+          <circle r="19" /><text y="1">3</text>
+        </g>
+        <g transform="translate(93 230)">
+          <circle r="19" /><text y="1">4</text>
+        </g>
+      </g>
+    </svg>
+
+    <div class="euler-good-counts">
+      <strong>(8, 17, 10) → (8, 13, 6)</strong>
+      <small>za każdym razem: ΔV = 0, ΔE = −1, ΔF = −1</small>
+      <small>V − E + F = 1</small>
+    </div>
+  </div>
+
+  <!-- Etap 2: zdejmujemy cztery uszy -->
+  <div class="euler-good-panel">
+    <svg
+      viewBox="0 0 540 445"
+      role="img"
+      aria-labelledby="euler-good-two-title euler-good-two-desc"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <title id="euler-good-two-title">
+        Drugi etap dobrej kolejności usuwania
+      </title>
+      <desc id="euler-good-two-desc">
+        Po usunięciu czterech trójkątów zewnętrznych zostają cztery
+        wystające uszy oznaczone numerami od 5 do 8 oraz dwa
+        trójkąty centralne. Z każdego ucha usuwamy także jeden
+        wierzchołek i dwie krawędzie.
+      </desc>
+
+      <text class="euler-good-title" x="270" y="28">Kroki 5–8</text>
+      <text class="euler-good-subtitle" x="270" y="51">
+        cztery odsłonięte „uszy”
+      </text>
+
+      <!-- Cztery uszy usuwane teraz -->
+      <g class="euler-good-face--now">
+        <polygon points="50,70 360,160 180,160" />
+        <polygon points="490,70 360,310 360,160" />
+        <polygon points="490,390 180,310 360,310" />
+        <polygon points="50,390 180,160 180,310" />
+      </g>
+
+      <!-- Dwa centralne trójkąty -->
+      <g class="euler-good-face--later">
+        <polygon points="180,160 360,160 360,310" />
+        <polygon points="180,160 360,310 180,310" />
+      </g>
+
+      <!-- Stan po usunięciu kroków 1–4 -->
+      <g class="euler-good-structure">
+        <rect x="180" y="160" width="180" height="150" />
+
+        <line x1="50"  y1="70"  x2="180" y2="160" />
+        <line x1="50"  y1="70"  x2="360" y2="160" />
+        <line x1="490" y1="70"  x2="360" y2="160" />
+        <line x1="490" y1="70"  x2="360" y2="310" />
+        <line x1="490" y1="390" x2="360" y2="310" />
+        <line x1="490" y1="390" x2="180" y2="310" />
+        <line x1="50"  y1="390" x2="180" y2="310" />
+        <line x1="50"  y1="390" x2="180" y2="160" />
+        <line x1="180" y1="160" x2="360" y2="310" />
+      </g>
+
+      <g class="euler-good-label">
+        <g transform="translate(197 128)">
+          <circle r="19" /><text y="1">5</text>
+        </g>
+        <g transform="translate(403 200)">
+          <circle r="19" /><text y="1">6</text>
+        </g>
+        <g transform="translate(343 348)">
+          <circle r="19" /><text y="1">7</text>
+        </g>
+        <g transform="translate(137 270)">
+          <circle r="19" /><text y="1">8</text>
+        </g>
+      </g>
+    </svg>
+
+    <div class="euler-good-counts">
+      <strong>(8, 13, 6) → (4, 5, 2)</strong>
+      <small>za każdym razem: ΔV = −1, ΔE = −2, ΔF = −1</small>
+      <small>V − E + F = 1</small>
+    </div>
+  </div>
+
+  <!-- Etap 3: pozostawiamy ostatni trójkąt -->
+  <div class="euler-good-panel">
+    <svg
+      viewBox="0 0 540 445"
+      role="img"
+      aria-labelledby="euler-good-three-title euler-good-three-desc"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <title id="euler-good-three-title">
+        Ostatni etap dobrej kolejności usuwania
+      </title>
+      <desc id="euler-good-three-desc">
+        Z centralnego kwadratu usuwamy trójkąt oznaczony numerem 9
+        wraz z jego wierzchołkiem stopnia dwa. Pozostaje pojedynczy
+        trójkąt oznaczony numerem 10.
+      </desc>
+
+      <text class="euler-good-title" x="270" y="28">Krok 9</text>
+      <text class="euler-good-subtitle" x="270" y="51">
+        zostawiamy ostatni trójkąt
+      </text>
+
+      <!-- Ostatnia ściana usuwana -->
+      <polygon
+        class="euler-good-face--now"
+        points="105,125 435,125 435,350"
+      />
+
+      <!-- Trójkąt, na którym kończymy -->
+      <polygon
+        class="euler-good-face--later"
+        points="105,125 435,350 105,350"
+      />
+
+      <g class="euler-good-structure">
+        <rect x="105" y="125" width="330" height="225" />
+        <line x1="105" y1="125" x2="435" y2="350" />
+      </g>
+
+      <g class="euler-good-label">
+        <g transform="translate(360 180)">
+          <circle r="21" /><text y="1">9</text>
+        </g>
+        <g class="euler-good-label--later" transform="translate(180 295)">
+          <circle r="23" /><text y="1">10</text>
+        </g>
+      </g>
+    </svg>
+
+    <div class="euler-good-counts">
+      <strong>(4, 5, 2) → (3, 3, 1)</strong>
+      <small>ΔV = −1, ΔE = −2, ΔF = −1</small>
+      <small>V − E + F = 1</small>
+    </div>
+  </div>
+</div>
+```
+
+Dobra kolejność usuwania trójkątów. Najpierw zdejmujemy cztery
+trójkąty zewnętrzne, następnie cztery odsłonięte „uszy”, a na końcu
+jeden z dwóch trójkątów centralnych. W każdym kroku wartość
+\(V-E+F\) pozostaje równa \(1\).
+
+::::
+
+
+
+Współczesnym językiem taka dobra kolejność ścian nazywa się **shellingiem**.
+Samo podanie nazwy niczego jednak nie dowodzi. Matematyczna treść tkwi w
+argumencie pokazującym, że odpowiednią kolejność rzeczywiście można znaleźć.
+
+
+## Czy hipoteza została już udowodniona?
+
+Naprawiliśmy trzeci krok argumentu. Nie oznacza to jeszcze, że dowód działa dla
+każdego obiektu, który moglibyśmy nazwać wielościanem. Nadal korzystamy z dwóch
+wcześniejszych założeń:
+
+1. po usunięciu ściany powierzchnię można rozłożyć na jeden płaski dysk;
+2. każda ściana jest zwykłym wielokątem, który można podzielić przekątnymi na
+   trójkąty.
+
+Dotychczas założenia te wyglądały niewinnie, ponieważ wszystkie rozważane
+bryły były wypukłe i przypominały zdeformowaną sferę. Poszukajmy obiektów,
+które wystawią te założenia na próbę.
+
+## Sześcienna skorupa
+
+
+
+Wyobraźmy sobie duży sześcian, z którego wnętrza wycięto mniejszy sześcian,
+nie przebijając się na zewnątrz. Powierzchnia otrzymanej bryły ma dwie części:
+zewnętrzną powierzchnię dużego sześcianu oraz wewnętrzną powierzchnię
+otaczającą pustą komorę.
+
+
+:::: {#fig-cubical-cavity}
+
+```{=html}
+<style>
+  .cubical-cavity-figure {
+    max-width: 920px;
+    margin: 1.5rem auto 0.75rem;
+    font-family: var(--bs-font-sans-serif);
+  }
+
+  .cubical-cavity-figure svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .cubical-cavity-outer-face {
+    fill: rgba(var(--bs-primary-rgb), 0.07);
+  }
+
+  .cubical-cavity-outer-edge {
+    fill: none;
+    stroke: var(--bs-body-color);
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .cubical-cavity-hidden-edge {
+    fill: none;
+    stroke: var(--bs-secondary-color);
+    stroke-width: 2;
+    stroke-dasharray: 8 7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .cubical-cavity-inner-face {
+    fill: rgba(var(--bs-primary-rgb), 0.22);
+  }
+
+  .cubical-cavity-inner-edge {
+    fill: none;
+    stroke: var(--bs-primary);
+    stroke-width: 2.7;
+    stroke-dasharray: 8 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .cubical-cavity-section-material {
+    fill: rgba(var(--bs-primary-rgb), 0.13);
+  }
+
+  .cubical-cavity-section-outline {
+    fill: none;
+    stroke: var(--bs-body-color);
+    stroke-width: 2.4;
+    stroke-linejoin: round;
+  }
+
+  .cubical-cavity-section-inner {
+    fill: var(--bs-body-bg);
+    stroke: var(--bs-primary);
+    stroke-width: 2.7;
+    stroke-dasharray: 8 6;
+  }
+
+  .cubical-cavity-label {
+    fill: var(--bs-body-color);
+    font-size: 17px;
+    font-weight: 600;
+    text-anchor: middle;
+  }
+
+  .cubical-cavity-label--primary {
+    fill: var(--bs-primary);
+  }
+
+  .cubical-cavity-heading {
+    fill: var(--bs-body-color);
+    font-size: 20px;
+    font-weight: 700;
+    text-anchor: middle;
+  }
+
+  .cubical-cavity-note {
+    fill: var(--bs-secondary-color);
+    font-size: 15px;
+    text-anchor: middle;
+  }
+
+  .cubical-cavity-separator {
+    stroke: var(--bs-border-color);
+    stroke-width: 1.5;
+  }
+
+  @media (max-width: 650px) {
+    .cubical-cavity-separator {
+      display: none;
+    }
+  }
+</style>
+
+<div class="cubical-cavity-figure">
+  <svg
+    viewBox="0 0 920 520"
+    role="img"
+    aria-labelledby="cubical-cavity-title cubical-cavity-desc"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title id="cubical-cavity-title">
+      Sześcian z zamkniętą sześcienną komorą
+    </title>
+    <desc id="cubical-cavity-desc">
+      Po lewej przezroczysty widok dużego sześcianu, wewnątrz którego
+      znajduje się mniejsza pusta sześcienna komora. Po prawej przekrój
+      pokazujący, że komora jest ze wszystkich stron otoczona materiałem
+      i nie łączy się z powierzchnią zewnętrzną.
+    </desc>
+
+    <text class="cubical-cavity-heading" x="300" y="30">
+      Widok przezroczysty
+    </text>
+
+    <!-- Półprzezroczyste ściany zewnętrznego sześcianu -->
+    <g class="cubical-cavity-outer-face">
+      <polygon points="120,155 390,155 500,75 230,75" />
+      <polygon points="390,155 500,75 500,345 390,425" />
+      <polygon points="120,155 390,155 390,425 120,425" />
+    </g>
+
+    <!-- Sześcienna powierzchnia zamkniętej komory -->
+    <g class="cubical-cavity-inner-face">
+      <polygon points="220,245 325,245 325,350 220,350" />
+      <polygon points="220,245 325,245 373,210 268,210" />
+      <polygon points="325,245 373,210 373,315 325,350" />
+    </g>
+
+    <!-- Krawędzie komory: przerywane, bo leżą wewnątrz bryły -->
+    <g class="cubical-cavity-inner-edge">
+      <rect x="220" y="245" width="105" height="105" />
+      <rect x="268" y="210" width="105" height="105" />
+      <line x1="220" y1="245" x2="268" y2="210" />
+      <line x1="325" y1="245" x2="373" y2="210" />
+      <line x1="325" y1="350" x2="373" y2="315" />
+      <line x1="220" y1="350" x2="268" y2="315" />
+    </g>
+
+    <!-- Niewidoczne krawędzie zewnętrznego sześcianu -->
+    <g class="cubical-cavity-hidden-edge">
+      <line x1="230" y1="75"  x2="230" y2="345" />
+      <line x1="230" y1="345" x2="500" y2="345" />
+      <line x1="120" y1="425" x2="230" y2="345" />
+    </g>
+
+    <!-- Widoczne krawędzie zewnętrznego sześcianu -->
+    <g class="cubical-cavity-outer-edge">
+      <rect x="120" y="155" width="270" height="270" />
+      <line x1="120" y1="155" x2="230" y2="75" />
+      <line x1="230" y1="75"  x2="500" y2="75" />
+      <line x1="390" y1="155" x2="500" y2="75" />
+      <line x1="500" y1="75"  x2="500" y2="345" />
+      <line x1="390" y1="425" x2="500" y2="345" />
+    </g>
+
+    <text class="cubical-cavity-label" x="310" y="119">
+      powierzchnia zewnętrzna
+    </text>
+
+    <text class="cubical-cavity-label cubical-cavity-label--primary" x="296" y="281">
+      <tspan x="296" dy="0">pusta</tspan>
+      <tspan x="296" dy="22">komora</tspan>
+    </text>
+
+    <text class="cubical-cavity-note" x="310" y="475">
+      wewnętrzna powierzchnia jest ukryta w bryle
+    </text>
+
+    <line class="cubical-cavity-separator" x1="565" y1="70" x2="565" y2="460" />
+
+    <!-- Przekrój przez środek bryły -->
+    <text class="cubical-cavity-heading" x="740" y="82">
+      Przekrój przez środek
+    </text>
+
+    <path
+      class="cubical-cavity-section-material"
+      fill-rule="evenodd"
+      d="M625,135 H855 V365 H625 Z M692,202 H788 V298 H692 Z"
+    />
+
+    <rect
+      class="cubical-cavity-section-outline"
+      x="625"
+      y="135"
+      width="230"
+      height="230"
+    />
+
+    <rect
+      class="cubical-cavity-section-inner"
+      x="692"
+      y="202"
+      width="96"
+      height="96"
+    />
+
+    <text class="cubical-cavity-label" x="740" y="174">
+      materiał bryły
+    </text>
+
+    <text class="cubical-cavity-label cubical-cavity-label--primary" x="740" y="238">
+      <tspan x="740" dy="0">pusta</tspan>
+      <tspan x="740" dy="22">komora</tspan>
+    </text>
+
+    <text class="cubical-cavity-note" x="740" y="410">
+      <tspan x="740" dy="0">komora jest zamknięta:</tspan>
+      <tspan x="740" dy="22">nie ma przejścia na zewnątrz</tspan>
+    </text>
+  </svg>
+</div>
+```
+
+Sześcienna skorupa z zamkniętą sześcienną komorą. Powierzchnia bryły
+ma dwie rozłączne części: powierzchnię zewnętrzną oraz powierzchnię
+otaczającą komorę.
+
+::::
+
+
+
+Każda z tych powierzchni ma osiem wierzchołków, dwanaście krawędzi i sześć
+ścian. Łącznie otrzymujemy
+\begin{equation*}
+V-E+F=16-24+12=4.
+\end{equation*}
+Jest wielościanem,
+dla którego $V-E+F\neq2$.
+
+::: {#def-kontr}
+
+**Kontrprzykład globalny** obala główne przypuszczenie. 
+
+
+:::
+
+
+To nie jest już wyłącznie krytyka dowodu. Otrzymaliśmy obiekt, dla którego
+główne przypuszczenie zawodzi. Jest to kontrprzykład globalny.
+
+::: {.callout-important title="Jak powinniśmy zareagować?"}
+
+1. Odrzucić hipotezę.
+2. Uznać, że sześcienna skorupa nie jest prawdziwym wielościanem.
+3. Zachować hipotezę, ale jawnie wykluczyć bryły z wewnętrznymi komorami.
+4. Wrócić do dowodu i sprawdzić, który jego krok nie działa dla skorupy.
+
+:::
+
+Każda z tych odpowiedzi reprezentuje inną strategię metodologiczną.
+
+#### Kapitulacja
+
+Możemy powiedzieć: „Hipoteza była fałszywa, więc ją odrzucamy”. Jest to
+logicznie bez zarzutu, ale matematycznie mało owocne. Tracimy razem z fałszywą
+hipotezą fakt, że wzór działał dla wszystkich dotychczasowych zwykłych brył.
+Kontrprzykład powinien skłonić nas do pytania, co odróżnia skorupę od
+czworościanu czy sześcianu.
+
+#### Wykluczenie potwora
+
+Możemy także oznajmić, że skorupa nie jest wielościanem. 
+Zmieniamy granice pojęcia w taki sposób,
+aby kłopotliwy obiekt znalazł się na zewnątrz.
+
+Taka decyzja nie zawsze jest błędna. Definicje muszą gdzieś wyznaczać granice.
+Problem pojawia się wtedy, gdy jedynym uzasadnieniem zmiany jest chęć uratowania
+ulubionego twierdzenia. Jeśli przed zobaczeniem kontrprzykładu nazwalibyśmy
+skorupę wielościanem, a po jego zobaczeniu przestajemy to robić, powinniśmy
+wyjaśnić, dlaczego nowa definicja jest matematycznie użyteczna.
+
+#### Wykluczenie wyjątku
+
+Możemy osłabić hipotezę i powiedzieć na przykład:
+
+> Każdy wypukły wielościan spełnia $V-E+F=2$.
+
+To prawdziwe i ważne twierdzenie. Zwróćmy uwagę, że takie
+strategiczne wycofanie się do bezpiecznej klasy może przesłonić informację
+zawartą w dowodzie. Wypukłość jest warunkiem wystarczającym, ale wygląda na
+znacznie silniejszy, niż naprawdę potrzebujemy. Wiele niewypukłych
+wielościanów również spełnia wzór.
+
+#### Włączenie lematu
+
+Najbardziej pouczająca reakcja polega na powrocie do dowodu. Dla sześciennej
+skorupy zawodzi pierwszy krok. Po usunięciu jednej ściany zewnętrzna część
+powierzchni może zostać otwarta, ale powierzchnia wewnętrznej komory nadal
+pozostaje zamkniętym, oddzielnym składnikiem.
+
+Dowód ujawnia więc ukryte założenie: powierzchnia nie może mieć zamkniętej
+komory odłączonej od powierzchni zewnętrznej. Zamiast arbitralnie odrzucać
+kontrprzykład, dołączamy wykryty warunek do twierdzenia.
+
+### Drugi potwór: rama z tunelem
+
+Rozważmy teraz bryłę w kształcie grubej prostokątnej ramy. Można przełożyć
+przez nią rękę; jej powierzchnia ma jeden tunel.
+
+:::: {#fig-rectangular-frame}
+
+```{=html}
+<style>
+  .rectangular-frame-figure {
+    max-width: 820px;
+    margin: 1.5rem auto 0.75rem;
+    font-family: var(--bs-font-sans-serif);
+  }
+
+  .rectangular-frame-figure svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .rectangular-frame-front-face {
+    fill: rgba(var(--bs-primary-rgb), 0.13);
+  }
+
+  .rectangular-frame-back-face {
+    fill: var(--bs-tertiary-bg);
+  }
+
+  .rectangular-frame-outer-side {
+    fill: rgba(var(--bs-primary-rgb), 0.07);
+  }
+
+  .rectangular-frame-tunnel-side {
+    fill: rgba(var(--bs-primary-rgb), 0.24);
+  }
+
+  .rectangular-frame-front-edge {
+    fill: none;
+    stroke: var(--bs-body-color);
+    stroke-width: 2.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .rectangular-frame-depth-edge {
+    fill: none;
+    stroke: var(--bs-body-color);
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .rectangular-frame-back-edge {
+    fill: none;
+    stroke: var(--bs-secondary-color);
+    stroke-width: 2;
+    stroke-dasharray: 8 7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .rectangular-frame-tunnel-edge {
+    fill: none;
+    stroke: var(--bs-primary);
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .rectangular-frame-axis {
+    fill: none;
+    stroke: var(--bs-primary);
+    stroke-width: 3;
+    stroke-dasharray: 8 6;
+    stroke-linecap: round;
+  }
+
+  .rectangular-frame-heading {
+    fill: var(--bs-body-color);
+    font-size: 20px;
+    font-weight: 700;
+    text-anchor: middle;
+  }
+
+  .rectangular-frame-label {
+    fill: var(--bs-primary);
+    font-size: 17px;
+    font-weight: 600;
+    text-anchor: middle;
+  }
+
+  .rectangular-frame-note {
+    fill: var(--bs-secondary-color);
+    font-size: 15px;
+    text-anchor: middle;
+  }
+</style>
+
+<div class="rectangular-frame-figure">
+  <svg
+    viewBox="0 0 760 500"
+    role="img"
+    aria-labelledby="rectangular-frame-title rectangular-frame-desc"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title id="rectangular-frame-title">
+      Prostopadłościenna rama z tunelem na wylot
+    </title>
+    <desc id="rectangular-frame-desc">
+      Gruba prostokątna rama przedstawiona w perspektywie. Prostokątny
+      otwór na przedniej ścianie łączy się z otworem na ścianie tylnej,
+      tworząc tunel przechodzący przez całą bryłę. Przednia i tylna
+      powierzchnia ramy są podzielone na cztery czworokątne ściany.
+    </desc>
+
+    <defs>
+      <marker
+        id="rectangular-frame-arrow"
+        viewBox="0 0 10 10"
+        refX="9"
+        refY="5"
+        markerWidth="7"
+        markerHeight="7"
+        orient="auto-start-reverse"
+      >
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--bs-primary)" />
+      </marker>
+    </defs>
+
+    <text class="rectangular-frame-heading" x="350" y="30">
+      Prostopadłościenna rama
+    </text>
+
+    <!-- Cztery czworokątne ściany tylnej strony -->
+    <g class="rectangular-frame-back-face">
+      <polygon points="215,85 575,85 475,160 315,160" />
+      <polygon points="575,85 575,345 475,270 475,160" />
+      <polygon points="215,345 315,270 475,270 575,345" />
+      <polygon points="215,85 315,160 315,270 215,345" />
+    </g>
+
+    <!-- Zewnętrzne ściany łączące przód z tyłem -->
+    <g class="rectangular-frame-outer-side">
+      <polygon points="120,150 480,150 575,85 215,85" />
+      <polygon points="480,150 480,410 575,345 575,85" />
+      <polygon points="120,410 480,410 575,345 215,345" />
+      <polygon points="120,150 120,410 215,345 215,85" />
+    </g>
+
+    <!-- Cztery wewnętrzne ściany tunelu -->
+    <g class="rectangular-frame-tunnel-side">
+      <polygon points="220,225 380,225 475,160 315,160" />
+      <polygon points="380,225 380,335 475,270 475,160" />
+      <polygon points="220,335 380,335 475,270 315,270" />
+      <polygon points="220,225 220,335 315,270 315,160" />
+    </g>
+
+    <!-- Tylne krawędzie i podział tylnej strony na cztery ściany -->
+    <g class="rectangular-frame-back-edge">
+      <rect x="215" y="85" width="360" height="260" />
+      <rect x="315" y="160" width="160" height="110" />
+      <line x1="215" y1="85"  x2="315" y2="160" />
+      <line x1="575" y1="85"  x2="475" y2="160" />
+      <line x1="575" y1="345" x2="475" y2="270" />
+      <line x1="215" y1="345" x2="315" y2="270" />
+    </g>
+
+    <!-- Krawędzie w kierunku głębokości -->
+    <g class="rectangular-frame-depth-edge">
+      <line x1="120" y1="150" x2="215" y2="85" />
+      <line x1="480" y1="150" x2="575" y2="85" />
+      <line x1="480" y1="410" x2="575" y2="345" />
+      <line x1="120" y1="410" x2="215" y2="345" />
+    </g>
+
+    <!-- Krawędzie tunelu -->
+    <g class="rectangular-frame-tunnel-edge">
+      <line x1="220" y1="225" x2="315" y2="160" />
+      <line x1="380" y1="225" x2="475" y2="160" />
+      <line x1="380" y1="335" x2="475" y2="270" />
+      <line x1="220" y1="335" x2="315" y2="270" />
+    </g>
+
+    <!-- Cztery czworokątne ściany przedniej strony -->
+    <g class="rectangular-frame-front-face">
+      <polygon points="120,150 480,150 380,225 220,225" />
+      <polygon points="480,150 480,410 380,335 380,225" />
+      <polygon points="120,410 220,335 380,335 480,410" />
+      <polygon points="120,150 220,225 220,335 120,410" />
+    </g>
+
+    <!-- Przednie krawędzie i podział na cztery czworokąty -->
+    <g class="rectangular-frame-front-edge">
+      <rect x="120" y="150" width="360" height="260" />
+      <rect x="220" y="225" width="160" height="110" />
+      <line x1="120" y1="150" x2="220" y2="225" />
+      <line x1="480" y1="150" x2="380" y2="225" />
+      <line x1="480" y1="410" x2="380" y2="335" />
+      <line x1="120" y1="410" x2="220" y2="335" />
+    </g>
+
+
+    <text class="rectangular-frame-note" x="350" y="462">
+      przednia i tylna strona są podzielone na cztery czworokąty
+    </text>
+  </svg>
+</div>
+```
+
+Prostopadłościenna rama — wielościenna wersja torusa. Otwór łączy przednią
+i tylną stronę bryły, tworząc jeden tunel.
+
+::::
+
+
+
+
+Przy naturalnym podziale powierzchni na czworokąty otrzymujemy
+\begin{equation*}
+  V-E+F=0.
+\end{equation*}
+Również tutaj nie działa pierwszy krok dowodu. 
+Usunięcie jednej ściany nie
+pozwala rozciągnąć bryły na płaszczyźnie. Pozostaje obszar z otworem.
+
+
+
+## Twierdzenie wygenerowane przez dowód
+
+Pierwotna hipoteza brzmiała:
+
+> Dla każdego wielościanu V-E+F=2.
+
+Była to **naiwna hipoteza**: powstała z przykładów, zanim wiedzieliśmy, jakie
+własności obiektów będą istotne. Analiza dowodu i kontrprzykładów prowadzi do
+precyzyjniejszego stwierdzenia.
+
+::: {#thm-euler-sfera}
+
+Niech wielościan składa się ze skończenie wielu zwykłych wielokątnych ścian.
+Załóżmy, że po usunięciu jednej ściany pozostałą powierzchnię można — wyginając
+i rozciągając, ale bez rozcinania ani sklejania — zamienić w jeden płaski obszar
+bez dziur. Wtedy
+\begin{equation*}
+V-E+F=2.
+\end{equation*}
+
+:::
+
+
+### Epilog
+
+Historia nie musi kończyć się na wykluczeniu skorupy i ramy. Ich wyniki układają
+się w nowy wzór.  
+Jeżeli wielościan ma w sobie $g$ tunelów, to zachodzi
+\begin{equation*}
+V-E+F=2-2g.
+\end{equation*}
+To znacznie bogatszy rezultat niż początkowe $V-E+F=2$. Fałszywa naiwna
+hipoteza nie została po prostu wyrzucona. Została zastąpiona twierdzeniem,
+które wyjaśnia zarówno wcześniejsze przykłady, jak i kontrprzykłady.
+
+
+### Dowód brakującego lematu
+
+::: {.proof}
+
+Zastosujemy indukcję względem liczby trójkątów. Dla dysku złożonego z dwóch
+trójkątów teza jest bezpośrednia: można bezpiecznie usunąć każdy z nich.
+Załóżmy teraz, że lemat jest prawdziwy dla wszystkich dysków złożonych z
+mniejszej liczby trójkątów.
+
+Jeżeli każdy trójkąt brzegowy jest dobry, wynik jest oczywisty. Trójkątów
+brzegowych musi być co najmniej dwa: gdyby wszystkie krawędzie brzegu należały
+do jednego trójkąta, cała figura składałaby się tylko z niego.
+
+Załóżmy więc, że istnieje zły trójkąt brzegowy $T$, czyli taki, którego
+usunięcie rozcina pozostałą figurę na dwa mniejsze kawałki $P_1$ i $P_2$.
+
+Rozważmy $P_1$. Jeżeli składa się z jednego trójkąta, trójkąt ten można
+bezpiecznie usunąć z całej figury. Jeżeli zawiera więcej trójkątów, to z
+założenia indukcyjnego ma dwa dobre trójkąty brzegowe. Co najwyżej jeden z nich
+leży w miejscu, w którym $P_1$ był połączony z $T$. Drugi jest dobry także
+w całej wyjściowej figurze.
+
+Tak samo postępujemy z $P_2$. Otrzymujemy po jednym dobrym trójkącie z każdej
+strony $T$, a więc co najmniej dwa dobre trójkąty w całej figurze.
+
+:::
+
+
+
+## Zadania
+
+
+ToDo
+
+## Referencje

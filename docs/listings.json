@@ -7,17 +7,32 @@
     ]
   },
   {
+    "listing": "/blog/liceum.html",
+    "items": [
+      "/blog/posts/dowod2.html",
+      "/blog/posts/dowod.html"
+    ]
+  },
+  {
     "listing": "/blog/index.html",
+    "items": [
+      "/blog/posts/dowod2.html",
+      "/blog/posts/dowod.html",
+      "/blog/posts/cutoff.html"
+    ]
+  },
+  {
+    "listing": "/blog/english.html",
     "items": [
       "/blog/posts/cutoff.html"
     ]
   },
   {
-    "listing": "/papers/index.html",
+    "listing": "/events/index.html",
     "items": []
   },
   {
-    "listing": "/presentations/index.html",
+    "listing": "/courses/index.html",
     "items": []
   },
   {
@@ -29,12 +44,26 @@
     ]
   },
   {
-    "listing": "/courses/index.html",
+    "listing": "/presentations/index.html",
     "items": []
   },
   {
-    "listing": "/events/index.html",
+    "listing": "/papers/index.html",
     "items": []
+  },
+  {
+    "listing": "/blog/studenci.html",
+    "items": [
+      "/blog/posts/dowod2.html",
+      "/blog/posts/dowod.html",
+      "/blog/posts/cutoff.html"
+    ]
+  },
+  {
+    "listing": "/blog/zaawansowane.html",
+    "items": [
+      "/blog/posts/cutoff.html"
+    ]
   },
   {
     "listing": "/grants/index.html",

@@ -51,3 +51,84 @@
 [data-bs-theme="dark"] .ramsey-triangle {
   opacity: 0.24;
 }
+
+.euler-3d-figure {
+  width: min(100%, 52rem);
+  margin: 1.5rem auto;
+}
+
+.euler-3d-controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.euler-3d-plot {
+  width: 100%;
+  height: 560px;
+}
+
+.euler-3d-hint {
+  margin-top: 0.25rem;
+  text-align: center;
+  color: var(--bs-secondary-color);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .euler-3d-plot {
+    height: 430px;
+  }
+}
+
+.cauchy-diagram {
+  width: min(100%, 30rem);
+  margin: 1.5rem auto;
+}
+
+.cauchy-diagram svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cauchy-face {
+  fill: var(--bs-primary);
+  opacity: 0.08;
+}
+
+.cauchy-edge {
+  fill: none;
+  stroke: var(--bs-body-color);
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.cauchy-boundary {
+  fill: none;
+  stroke: var(--bs-primary);
+  stroke-width: 4;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.cauchy-vertex {
+  fill: var(--bs-body-bg);
+  stroke: var(--bs-body-color);
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
+}
+
+[data-bs-theme="dark"] .cauchy-face {
+  opacity: 0.15;
+}
+
+.cauchy-diagonal {
+  fill: none;
+  stroke: var(--bs-danger);
+  stroke-width: 3;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}

@@ -1,0 +1,28 @@
+---
+title: "Scribbles: Dla studentów"
+description: "Notatki i materiały na poziomie studiów licencjackich i magisterskich."
+listing:
+  id: undergraduate-notes
+  contents: posts
+  include:
+    audience: "undergraduate"
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: true
+  page-size: 10
+---
+
+Materiały przeznaczone przede wszystkim dla studentów matematyki i kierunków
+pokrewnych. Niektóre z nich są elementarne, inne prowadzą w stronę bardziej
+zaawansowanych tematów.
+
+::: {.d-flex .flex-wrap .gap-2 .mb-4}
+[Wszystkie notatki](index.qmd){.btn .btn-outline-primary}
+[Dla licealistów](liceum.qmd){.btn .btn-outline-primary}
+[Dla studentów](studenci.qmd){.btn .btn-primary}
+[Materiały zaawansowane](zaawansowane.qmd){.btn .btn-outline-primary}
+[In English](english.qmd){.btn .btn-outline-primary}
+:::
+
