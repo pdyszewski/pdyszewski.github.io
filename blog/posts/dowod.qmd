@@ -9,8 +9,8 @@ lang: pl
 bibliography: dowod.bib
 image: dowod.png
 css: dowod.css
-date: "9/15/2026"
-draft: false
+date: "9/26/2026"
+draft: true
 crossref:
   cnj-title: "Hipoteza"
   cnj-prefix: "Hipoteza"

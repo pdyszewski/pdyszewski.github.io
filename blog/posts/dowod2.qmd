@@ -10,7 +10,7 @@ bibliography: dowod.bib
 image: dowod2.png
 css: dowod.css
 date: "10/1/2026"
-draft: false
+draft: true
 crossref:
   cnj-title: "Hipoteza"
   cnj-prefix: "Hipoteza"
