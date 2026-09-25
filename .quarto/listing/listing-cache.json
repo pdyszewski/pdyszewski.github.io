@@ -1,43 +1,43 @@
 {
   "listingMap": {
-    "blog\\english.qmd": [
-      "posts"
+    "presentations/index.qmd": [
+      "presentations.yml"
     ],
-    "blog\\index.qmd": [
-      "posts"
-    ],
-    "blog\\liceum.qmd": [
-      "posts"
-    ],
-    "blog\\studenci.qmd": [
-      "posts"
-    ],
-    "blog\\zaawansowane.qmd": [
-      "posts"
-    ],
-    "courses\\index.qmd": [
-      "courses.yml"
-    ],
-    "events\\index.qmd": [
-      "events.yml"
-    ],
-    "grants\\index.qmd": [
-      "*.qmd"
+    "papers/index.qmd": [
+      "pubs.yml"
     ],
     "index.qmd": [
       "news/*.qmd"
     ],
-    "lecture_notes\\index.qmd": [
-      "notes.yml"
+    "courses/index.qmd": [
+      "courses.yml"
     ],
-    "news\\index.qmd": [
+    "events/index.qmd": [
+      "events.yml"
+    ],
+    "blog/english.qmd": [
+      "posts"
+    ],
+    "blog/studenci.qmd": [
+      "posts"
+    ],
+    "blog/index.qmd": [
+      "posts"
+    ],
+    "blog/zaawansowane.qmd": [
+      "posts"
+    ],
+    "blog/liceum.qmd": [
+      "posts"
+    ],
+    "grants/index.qmd": [
       "*.qmd"
     ],
-    "papers\\index.qmd": [
-      "pubs.yml"
+    "lecture_notes/index.qmd": [
+      "notes.yml"
     ],
-    "presentations\\index.qmd": [
-      "presentations.yml"
+    "news/index.qmd": [
+      "*.qmd"
     ]
   }
 }

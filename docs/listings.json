@@ -1,9 +1,5 @@
 [
   {
-    "listing": "/presentations/index.html",
-    "items": []
-  },
-  {
     "listing": "/news/index.html",
     "items": [
       "/news/2026-09-04.html",
@@ -11,26 +7,15 @@
     ]
   },
   {
-    "listing": "/index.html",
+    "listing": "/blog/liceum.html",
     "items": [
-      "/news/index.html",
-      "/news/2026-09-04.html",
-      "/news/2026-06-19-test.html"
-    ]
-  },
-  {
-    "listing": "/courses/index.html",
-    "items": []
-  },
-  {
-    "listing": "/blog/zaawansowane.html",
-    "items": [
-      "/blog/posts/cutoff.html"
+      "/blog/posts/dowod.html"
     ]
   },
   {
     "listing": "/blog/index.html",
     "items": [
+      "/blog/posts/dowod.html",
       "/blog/posts/cutoff.html"
     ]
   },
@@ -41,18 +26,41 @@
     ]
   },
   {
-    "listing": "/blog/liceum.html",
+    "listing": "/events/index.html",
+    "items": []
+  },
+  {
+    "listing": "/courses/index.html",
+    "items": []
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/news/index.html",
+      "/news/2026-09-04.html",
+      "/news/2026-06-19-test.html"
+    ]
+  },
+  {
+    "listing": "/presentations/index.html",
+    "items": []
+  },
+  {
+    "listing": "/papers/index.html",
     "items": []
   },
   {
     "listing": "/blog/studenci.html",
     "items": [
+      "/blog/posts/dowod.html",
       "/blog/posts/cutoff.html"
     ]
   },
   {
-    "listing": "/events/index.html",
-    "items": []
+    "listing": "/blog/zaawansowane.html",
+    "items": [
+      "/blog/posts/cutoff.html"
+    ]
   },
   {
     "listing": "/grants/index.html",
@@ -62,10 +70,6 @@
   },
   {
     "listing": "/lecture_notes/index.html",
-    "items": []
-  },
-  {
-    "listing": "/papers/index.html",
     "items": []
   }
 ]
