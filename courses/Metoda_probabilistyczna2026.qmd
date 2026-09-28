@@ -1,0 +1,10 @@
+---
+title: "Metoda probabilistyczna"
+description: "semestr zimowy 2026/2027"
+semester: "2025/2026"
+image: "PM.png"
+---
+
+Seminarium przeglądowe poświęcone metodzie probabilistycznej. Podczas zajęć będziemy omawiać wybrane rozdziały książki [*The Probabilistic Method*](https://math.bme.hu/~gabor/oktatas/SztoM/AlonSpencer.ProbMethod3ed.pdf).
+
+**Wymagania wstępne:** znajomość materiału z pierwszego semestru rachunku prawdopodobieństwa.

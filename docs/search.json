@@ -112,39 +112,39 @@
     "text": "Listy zadań\n\nŁańcuchy Markowa w czasie dyskretnym (html, pdf)\nŁańcuchy Markowa w czasie ciągłym (html, pdf)\nProcesy i półgrupy Fellera (html, pdf)\nGeneratory (html)\nGenerator a proces (html, pdf)\nKilka zaginionych faktów (html, pdf)\nlista 7 (html, pdf)\nSystemy niezależnych cząstek (html, pdf)\nthe Voter model (html, pdf)\nEpidemia (html, pdf)"
   },
   {
-    "objectID": "courses/SZMP.html",
-    "href": "courses/SZMP.html",
-    "title": "Słaba zbieżność miar probabilistycznych",
+    "objectID": "courses/AS.html",
+    "href": "courses/AS.html",
+    "title": "Analiza stochastyczna",
     "section": "",
-    "text": "Cwiczenia: Czwartki 8:15-10:00 sala 604,\nWykład: piątki 10:15-12:00 sala 601\nKolokwium: 12.05\nSylabus"
+    "text": "Sylabus\nKolokwia: 5.12 i 30.01\nEgzamin 16.02 sala 601 godzina 10:15\nPrzykładowy egzamin"
   },
   {
-    "objectID": "courses/SZMP.html#notatki-do-wykładu",
-    "href": "courses/SZMP.html#notatki-do-wykładu",
-    "title": "Słaba zbieżność miar probabilistycznych",
+    "objectID": "courses/AS.html#aktualności",
+    "href": "courses/AS.html#aktualności",
+    "title": "Analiza stochastyczna",
+    "section": "",
+    "text": "Sylabus\nKolokwia: 5.12 i 30.01\nEgzamin 16.02 sala 601 godzina 10:15\nPrzykładowy egzamin"
+  },
+  {
+    "objectID": "courses/AS.html#notatki-do-wykładu",
+    "href": "courses/AS.html#notatki-do-wykładu",
+    "title": "Analiza stochastyczna",
     "section": "Notatki do wykładu",
-    "text": "Notatki do wykładu\n\nWykład 1: Propaganda\nWykład 2: Prawdopodobieństwa na przestrzeniach metrycznych\nWykład 3: Słaba zbieżność (3.03)\nWykład 4: Elementy losowe (10.03)\nWykład 5: Losowe permutacje (17.03)\nWykład 6: Losowe funkcje ciągłe (24.03)\nWykład 7: Miara Wienera (31.03)\nWykład 8: Twierdzenie Donskera (14.04)\nWykład 9: Procesy punktowe (21.04)\nWykład 10: Procesy Poissona (28.04)\nWykład 11: Zbieżność procesów punktowych (5.05)\nWykład 12: Rozkłady stabilne\nWykład 13: Przestrzeń Skorochoda\nWykład 14: Topologia Skorochoda (3.06)\nWykład 15: Losowe funkcje cadlag (7.06)"
+    "text": "Notatki do wykładu\n\nWstęp\nProcesy stochastyczne\nMartyngały\nCałka stochastyczna\nStochastyczny rachunek całkowy\nStochastyczne równania różniczkowe\nWielowymiarowa całka stochastyczna\nZastosowania"
   },
   {
-    "objectID": "courses/SZMP.html#listy-zadań",
-    "href": "courses/SZMP.html#listy-zadań",
-    "title": "Słaba zbieżność miar probabilistycznych",
+    "objectID": "courses/AS.html#listy-zadań",
+    "href": "courses/AS.html#listy-zadań",
+    "title": "Analiza stochastyczna",
     "section": "Listy zadań",
-    "text": "Listy zadań\n\nSłaba zbieżność na prostej\nPrzestrzenie metryczne\nPrawdopodobieństwa na przestrzeniach metrycznych\nSłaba zbieżność\nCiągi losowe\nLosowe partycje\nWzór Camerona-Martina\nLosowe funkcje ciągłe\nProcesy punktowe\nZbieżność procesów punktowych\nPrzestrzeń Skorochoda\nLosowe funkcje cadlag\nZadania egzaminacyjne"
-  },
-  {
-    "objectID": "courses/SZMP.html#wizualizacje",
-    "href": "courses/SZMP.html#wizualizacje",
-    "title": "Słaba zbieżność miar probabilistycznych",
-    "section": "Wizualizacje",
-    "text": "Wizualizacje"
+    "text": "Listy zadań\n\nRuch Browna i całka Riemanna-Stieltjesa\nFiltracje i czasy zatrzymania\nProcesy mierzalne\nMartyngały po raz pierwszy\nTwierdzenie o zatrzymaniu\nNawias skośny\nPowtórka przed kolokwium\nCałka stochastyczna\nWłasności całki stochastycznej\nProcesy Ito\nStochastyczne równania różniczkowe\nDyfuzje Ito\n\nPowtórka przed kolokwium\nWielowymiarowa całka stochastyczna\nZamiana miary i czasu\nPowtórka przed egzaminem"
   },
   {
     "objectID": "courses/index.html",
     "href": "courses/index.html",
     "title": "Courses",
     "section": "",
-    "text": "A list of courses I teach or have taught.\n\n\n    \n      \n      \n    \n\n\n\n  \n    \n      \n        \n      \n    \n\n    \n\n      \n        Rachunek prawdopodobieństwa 2R\n      \n\n      \n        \n           \n        \n      \n\n      \n        \n          \n            semestr zimowy 2023/2024\n          \n\n          \n\n          \n\n          \n\n          \n        \n      \n    \n  \n\n  \n    \n      \n        \n      \n    \n\n    \n\n      \n        Stochastyczne modele układów oddziałujących\n      \n\n      \n        \n           \n        \n      \n\n      \n        \n          \n            semestr letni 2024/2025\n          \n\n          \n\n          \n\n          \n\n          \n        \n      \n    \n  \n\n  \n    \n      \n        \n      \n    \n\n    \n\n      \n        Słaba zbieżność miar probabilistycznych\n      \n\n      \n        \n           \n        \n      \n\n      \n        \n          \n            semestr letni 2022/2023\n          \n\n          \n\n          \n\n          \n\n          \n        \n      \n    \n  \n\n  \n    \n      \n        \n      \n    \n\n    \n\n      \n        Teoria wielkich odchyleń\n      \n\n      \n        \n           \n        \n      \n\n      \n        \n          \n            semestr letni 2023/2024\n          \n\n          \n\n          \n\n          \n\n          \n        \n      \n    \n  \n\n  \n    \n      \n        \n      \n    \n\n    \n\n      \n        Analiza stochastyczna\n      \n\n      \n        \n           \n        \n      \n\n      \n        \n          \n            semestr zimowy 2022/2023\n          \n\n          \n\n          \n\n          \n\n          \n        \n      \n    \n  \n\n\nNo matching items"
+    "text": "A list of courses I teach or have taught.\n\n\n    \n      \n      \n    \n\n\n\n  \n    \n      \n        \n      \n    \n\n    \n\n      \n        Rachunek prawdopodobieństwa 2R\n      \n\n      \n        \n           \n        \n      \n\n      \n        \n          \n            semestr zimowy 2023/2024\n          \n\n          \n\n          \n\n          \n\n          \n        \n      \n    \n  \n\n  \n    \n      \n        \n      \n    \n\n    \n\n      \n        Stochastyczne modele układów oddziałujących\n      \n\n      \n        \n           \n        \n      \n\n      \n        \n          \n            semestr letni 2024/2025\n          \n\n          \n\n          \n\n          \n\n          \n        \n      \n    \n  \n\n  \n    \n      \n        \n      \n    \n\n    \n\n      \n        Słaba zbieżność miar probabilistycznych\n      \n\n      \n        \n           \n        \n      \n\n      \n        \n          \n            semestr letni 2022/2023\n          \n\n          \n\n          \n\n          \n\n          \n        \n      \n    \n  \n\n  \n    \n      \n        \n      \n    \n\n    \n\n      \n        Teoria wielkich odchyleń\n      \n\n      \n        \n           \n        \n      \n\n      \n        \n          \n            semestr letni 2023/2024\n          \n\n          \n\n          \n\n          \n\n          \n        \n      \n    \n  \n\n  \n    \n      \n        \n      \n    \n\n    \n\n      \n        Metoda probabilistyczna\n      \n\n      \n        \n           \n        \n      \n\n      \n        \n          \n            semestr zimowy 2026/2027\n          \n\n          \n\n          \n\n          \n\n          \n        \n      \n    \n  \n\n  \n    \n      \n        \n      \n    \n\n    \n\n      \n        Rachunek prawdopodobieństwa (AI) \n      \n\n      \n        \n           \n        \n      \n\n      \n        \n          \n            semestr zimowy 2026/2027\n          \n\n          \n\n          \n\n          \n\n          \n        \n      \n    \n  \n\n  \n    \n      \n        \n      \n    \n\n    \n\n      \n        Analiza stochastyczna\n      \n\n      \n        \n           \n        \n      \n\n      \n        \n          \n            semestr zimowy 2022/2023\n          \n\n          \n\n          \n\n          \n\n          \n        \n      \n    \n  \n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -196,32 +196,39 @@
     "text": "About this site"
   },
   {
-    "objectID": "courses/AS.html",
-    "href": "courses/AS.html",
-    "title": "Analiza stochastyczna",
+    "objectID": "courses/Metoda_probabilistyczna2026.html",
+    "href": "courses/Metoda_probabilistyczna2026.html",
+    "title": "Metoda probabilistyczna",
     "section": "",
-    "text": "Sylabus\nKolokwia: 5.12 i 30.01\nEgzamin 16.02 sala 601 godzina 10:15\nPrzykładowy egzamin"
+    "text": "Seminarium przeglądowe poświęcone metodzie probabilistycznej. Podczas zajęć będziemy omawiać wybrane rozdziały książki The Probabilistic Method.\nWymagania wstępne: znajomość materiału z pierwszego semestru rachunku prawdopodobieństwa."
   },
   {
-    "objectID": "courses/AS.html#aktualności",
-    "href": "courses/AS.html#aktualności",
-    "title": "Analiza stochastyczna",
+    "objectID": "courses/SZMP.html",
+    "href": "courses/SZMP.html",
+    "title": "Słaba zbieżność miar probabilistycznych",
     "section": "",
-    "text": "Sylabus\nKolokwia: 5.12 i 30.01\nEgzamin 16.02 sala 601 godzina 10:15\nPrzykładowy egzamin"
+    "text": "Cwiczenia: Czwartki 8:15-10:00 sala 604,\nWykład: piątki 10:15-12:00 sala 601\nKolokwium: 12.05\nSylabus"
   },
   {
-    "objectID": "courses/AS.html#notatki-do-wykładu",
-    "href": "courses/AS.html#notatki-do-wykładu",
-    "title": "Analiza stochastyczna",
+    "objectID": "courses/SZMP.html#notatki-do-wykładu",
+    "href": "courses/SZMP.html#notatki-do-wykładu",
+    "title": "Słaba zbieżność miar probabilistycznych",
     "section": "Notatki do wykładu",
-    "text": "Notatki do wykładu\n\nWstęp\nProcesy stochastyczne\nMartyngały\nCałka stochastyczna\nStochastyczny rachunek całkowy\nStochastyczne równania różniczkowe\nWielowymiarowa całka stochastyczna\nZastosowania"
+    "text": "Notatki do wykładu\n\nWykład 1: Propaganda\nWykład 2: Prawdopodobieństwa na przestrzeniach metrycznych\nWykład 3: Słaba zbieżność (3.03)\nWykład 4: Elementy losowe (10.03)\nWykład 5: Losowe permutacje (17.03)\nWykład 6: Losowe funkcje ciągłe (24.03)\nWykład 7: Miara Wienera (31.03)\nWykład 8: Twierdzenie Donskera (14.04)\nWykład 9: Procesy punktowe (21.04)\nWykład 10: Procesy Poissona (28.04)\nWykład 11: Zbieżność procesów punktowych (5.05)\nWykład 12: Rozkłady stabilne\nWykład 13: Przestrzeń Skorochoda\nWykład 14: Topologia Skorochoda (3.06)\nWykład 15: Losowe funkcje cadlag (7.06)"
   },
   {
-    "objectID": "courses/AS.html#listy-zadań",
-    "href": "courses/AS.html#listy-zadań",
-    "title": "Analiza stochastyczna",
+    "objectID": "courses/SZMP.html#listy-zadań",
+    "href": "courses/SZMP.html#listy-zadań",
+    "title": "Słaba zbieżność miar probabilistycznych",
     "section": "Listy zadań",
-    "text": "Listy zadań\n\nRuch Browna i całka Riemanna-Stieltjesa\nFiltracje i czasy zatrzymania\nProcesy mierzalne\nMartyngały po raz pierwszy\nTwierdzenie o zatrzymaniu\nNawias skośny\nPowtórka przed kolokwium\nCałka stochastyczna\nWłasności całki stochastycznej\nProcesy Ito\nStochastyczne równania różniczkowe\nDyfuzje Ito\n\nPowtórka przed kolokwium\nWielowymiarowa całka stochastyczna\nZamiana miary i czasu\nPowtórka przed egzaminem"
+    "text": "Listy zadań\n\nSłaba zbieżność na prostej\nPrzestrzenie metryczne\nPrawdopodobieństwa na przestrzeniach metrycznych\nSłaba zbieżność\nCiągi losowe\nLosowe partycje\nWzór Camerona-Martina\nLosowe funkcje ciągłe\nProcesy punktowe\nZbieżność procesów punktowych\nPrzestrzeń Skorochoda\nLosowe funkcje cadlag\nZadania egzaminacyjne"
+  },
+  {
+    "objectID": "courses/SZMP.html#wizualizacje",
+    "href": "courses/SZMP.html#wizualizacje",
+    "title": "Słaba zbieżność miar probabilistycznych",
+    "section": "Wizualizacje",
+    "text": "Wizualizacje"
   },
   {
     "objectID": "courses/TWO.html",

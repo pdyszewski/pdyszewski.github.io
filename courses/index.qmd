@@ -13,7 +13,7 @@ listing:
   page-size: 20
 ---
 
-A list of courses I teach or have taught.
+A list of courses I teach or have taught. 
 
 ::: {#courses}
 :::

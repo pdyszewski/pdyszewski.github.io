@@ -1,0 +1,7 @@
+---
+title: "Rachunek prawdopodobieństwa (AI)"
+description: "semestr zimowy 2026/2027"
+semester: "2025/2026"
+image: "RPAI.png"
+---
+
