@@ -9,12 +9,14 @@
   {
     "listing": "/blog/liceum.html",
     "items": [
+      "/blog/posts/dowod2.html",
       "/blog/posts/dowod.html"
     ]
   },
   {
     "listing": "/blog/index.html",
     "items": [
+      "/blog/posts/dowod2.html",
       "/blog/posts/dowod.html",
       "/blog/posts/cutoff.html"
     ]
@@ -52,6 +54,7 @@
   {
     "listing": "/blog/studenci.html",
     "items": [
+      "/blog/posts/dowod2.html",
       "/blog/posts/dowod.html",
       "/blog/posts/cutoff.html"
     ]

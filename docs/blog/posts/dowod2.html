@@ -95,7 +95,6 @@ div.csl-indent {
     "search-label": "Szukaj"
   }
 }</script>
-<meta name="quarto:status" content="draft">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -302,7 +301,7 @@ window.Quarto = {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Projekt</div>
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -1474,137 +1473,44 @@ Rysunek&nbsp;5: Dobra kolejność usuwania trójkątów. Najpierw zdejmujemy czt
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cubical-cavity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <style>
-  .cubical-cavity-figure {
-    max-width: 920px;
-    margin: 1.5rem auto 0.75rem;
-    font-family: var(--bs-font-sans-serif);
-  }
-
-  .cubical-cavity-figure svg {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  .cubical-cavity-outer-face {
-    fill: rgba(var(--bs-primary-rgb), 0.07);
-  }
-
-  .cubical-cavity-outer-edge {
-    fill: none;
-    stroke: var(--bs-body-color);
-    stroke-width: 2.4;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-  .cubical-cavity-hidden-edge {
-    fill: none;
-    stroke: var(--bs-secondary-color);
-    stroke-width: 2;
-    stroke-dasharray: 8 7;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-  .cubical-cavity-inner-face {
-    fill: rgba(var(--bs-primary-rgb), 0.22);
-  }
-
-  .cubical-cavity-inner-edge {
-    fill: none;
-    stroke: var(--bs-primary);
-    stroke-width: 2.7;
-    stroke-dasharray: 8 6;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-  .cubical-cavity-section-material {
-    fill: rgba(var(--bs-primary-rgb), 0.13);
-  }
-
-  .cubical-cavity-section-outline {
-    fill: none;
-    stroke: var(--bs-body-color);
-    stroke-width: 2.4;
-    stroke-linejoin: round;
-  }
-
-  .cubical-cavity-section-inner {
-    fill: var(--bs-body-bg);
-    stroke: var(--bs-primary);
-    stroke-width: 2.7;
-    stroke-dasharray: 8 6;
-  }
-
-  .cubical-cavity-label {
-    fill: var(--bs-body-color);
-    font-size: 17px;
-    font-weight: 600;
-    text-anchor: middle;
-  }
-
-  .cubical-cavity-label--primary {
-    fill: var(--bs-primary);
-  }
-
-  .cubical-cavity-heading {
-    fill: var(--bs-body-color);
-    font-size: 20px;
-    font-weight: 700;
-    text-anchor: middle;
-  }
-
-  .cubical-cavity-note {
-    fill: var(--bs-secondary-color);
-    font-size: 15px;
-    text-anchor: middle;
-  }
-
-  .cubical-cavity-separator {
-    stroke: var(--bs-border-color);
-    stroke-width: 1.5;
-  }
-
-  @media (max-width: 650px) {
-    .cubical-cavity-separator {
-      display: none;
-    }
-  }
+.cubical-shell-figure { max-width: 580px; margin: 1.5rem auto; }
+.cubical-shell-figure svg { display: block; width: 100%; height: auto; }
+.cubical-shell-figure .cubical-cavity-outer-face { fill: rgba(var(--bs-primary-rgb, 13, 110, 253), 0.07); }
+.cubical-shell-figure .cubical-cavity-inner-face { fill: rgba(var(--bs-primary-rgb, 13, 110, 253), 0.22); }
+.cubical-shell-figure .cubical-cavity-outer-edge {
+  fill: none; stroke: var(--bs-body-color, #212529); stroke-width: 2.4;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.cubical-shell-figure .cubical-cavity-hidden-edge {
+  fill: none; stroke: var(--bs-secondary-color, #6c757d); stroke-width: 2;
+  stroke-dasharray: 8 7; stroke-linecap: round; stroke-linejoin: round;
+}
+.cubical-shell-figure .cubical-cavity-inner-edge {
+  fill: none; stroke: var(--bs-primary, #0d6efd); stroke-width: 2.7;
+  stroke-dasharray: 8 6; stroke-linecap: round; stroke-linejoin: round;
+}
 </style>
-
-<div class="cubical-cavity-figure">
-  <svg viewbox="0 0 920 520" role="img" aria-labelledby="cubical-cavity-title cubical-cavity-desc" xmlns="http://www.w3.org/2000/svg">
+<div class="cubical-shell-figure">
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="90 45 440 410" role="img" aria-labelledby="cubical-cavity-title cubical-cavity-desc" width="660" height="615">
     <title id="cubical-cavity-title">
       Sześcian z zamkniętą sześcienną komorą
     </title>
-    <desc id="cubical-cavity-desc">
-      Po lewej przezroczysty widok dużego sześcianu, wewnątrz którego
-      znajduje się mniejsza pusta sześcienna komora. Po prawej przekrój
-      pokazujący, że komora jest ze wszystkich stron otoczona materiałem
-      i nie łączy się z powierzchnią zewnętrzną.
-    </desc>
+    <desc id="cubical-cavity-desc">Przezroczysty widok sześciennej skorupy z zamkniętą sześcienną komorą. Powierzchnia komory nie styka się z powierzchnią zewnętrzną.</desc>
 
-    <text class="cubical-cavity-heading" x="300" y="30">
-      Widok przezroczysty
-    </text>
-
-    <!-- Półprzezroczyste ściany zewnętrznego sześcianu -->
     <g class="cubical-cavity-outer-face">
       <polygon points="120,155 390,155 500,75 230,75"></polygon>
       <polygon points="390,155 500,75 500,345 390,425"></polygon>
       <polygon points="120,155 390,155 390,425 120,425"></polygon>
     </g>
 
-    <!-- Sześcienna powierzchnia zamkniętej komory -->
+    
     <g class="cubical-cavity-inner-face">
       <polygon points="220,245 325,245 325,350 220,350"></polygon>
       <polygon points="220,245 325,245 373,210 268,210"></polygon>
       <polygon points="325,245 373,210 373,315 325,350"></polygon>
     </g>
 
-    <!-- Krawędzie komory: przerywane, bo leżą wewnątrz bryły -->
+    
     <g class="cubical-cavity-inner-edge">
       <rect x="220" y="245" width="105" height="105"></rect>
       <rect x="268" y="210" width="105" height="105"></rect>
@@ -1614,14 +1520,14 @@ Rysunek&nbsp;5: Dobra kolejność usuwania trójkątów. Najpierw zdejmujemy czt
       <line x1="220" y1="350" x2="268" y2="315"></line>
     </g>
 
-    <!-- Niewidoczne krawędzie zewnętrznego sześcianu -->
+    
     <g class="cubical-cavity-hidden-edge">
       <line x1="230" y1="75" x2="230" y2="345"></line>
       <line x1="230" y1="345" x2="500" y2="345"></line>
       <line x1="120" y1="425" x2="230" y2="345"></line>
     </g>
 
-    <!-- Widoczne krawędzie zewnętrznego sześcianu -->
+    
     <g class="cubical-cavity-outer-edge">
       <rect x="120" y="155" width="270" height="270"></rect>
       <line x1="120" y1="155" x2="230" y2="75"></line>
@@ -1631,46 +1537,7 @@ Rysunek&nbsp;5: Dobra kolejność usuwania trójkątów. Najpierw zdejmujemy czt
       <line x1="390" y1="425" x2="500" y2="345"></line>
     </g>
 
-    <text class="cubical-cavity-label" x="310" y="119">
-      powierzchnia zewnętrzna
-    </text>
-
-    <text class="cubical-cavity-label cubical-cavity-label--primary" x="296" y="281">
-      <tspan x="296" dy="0">pusta</tspan>
-      <tspan x="296" dy="22">komora</tspan>
-    </text>
-
-    <text class="cubical-cavity-note" x="310" y="475">
-      wewnętrzna powierzchnia jest ukryta w bryle
-    </text>
-
-    <line class="cubical-cavity-separator" x1="565" y1="70" x2="565" y2="460"></line>
-
-    <!-- Przekrój przez środek bryły -->
-    <text class="cubical-cavity-heading" x="740" y="82">
-      Przekrój przez środek
-    </text>
-
-    <path class="cubical-cavity-section-material" fill-rule="evenodd" d="M625,135 H855 V365 H625 Z M692,202 H788 V298 H692 Z"></path>
-
-    <rect class="cubical-cavity-section-outline" x="625" y="135" width="230" height="230"></rect>
-
-    <rect class="cubical-cavity-section-inner" x="692" y="202" width="96" height="96"></rect>
-
-    <text class="cubical-cavity-label" x="740" y="174">
-      materiał bryły
-    </text>
-
-    <text class="cubical-cavity-label cubical-cavity-label--primary" x="740" y="238">
-      <tspan x="740" dy="0">pusta</tspan>
-      <tspan x="740" dy="22">komora</tspan>
-    </text>
-
-    <text class="cubical-cavity-note" x="740" y="410">
-      <tspan x="740" dy="0">komora jest zamknięta:</tspan>
-      <tspan x="740" dy="22">nie ma przejścia na zewnątrz</tspan>
-    </text>
-  </svg>
+    </svg>
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cubical-cavity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1959,10 +1826,6 @@ V-E+F=2-2g.
 <p>Tak samo postępujemy z <span class="math inline">\(P_2\)</span>. Otrzymujemy po jednym dobrym trójkącie z każdej strony <span class="math inline">\(T\)</span>, a więc co najmniej dwa dobre trójkąty w całej figurze.</p>
 </div>
 </section>
-</section>
-<section id="zadania" class="level2">
-<h2 class="anchored" data-anchor-id="zadania">Zadania</h2>
-<p>ToDo</p>
 </section>
 <section id="referencje" class="level2">
 
