@@ -78,3 +78,12 @@
   link: "https://pdyszewski.github.io/MPSN/"
   image: "MPSN.png"
   date: "2026-01-01"
+
+
+- title: "Rachunek prawdopodobieństwa (AI)"
+  status: "draft"
+  language: "Polish"
+  type: "Lecture notes"
+  link: "https://pdyszewski.github.io/RPAI/"
+  image: "RPAI.png"
+  date: "2026-10-01"

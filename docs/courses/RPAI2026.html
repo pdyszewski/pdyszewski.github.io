@@ -76,6 +76,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="Rachunek prawdopodobieństwa (AI) – Piotr Dyszewski">
@@ -361,8 +390,28 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="aktualności" class="level2">
+<h2 class="anchored" data-anchor-id="aktualności">Aktualności</h2>
+<ul>
+<li>Egzamin: TBD</li>
+<li>Kolokwia (po 40 pkt): 25.11.2026 i 26.01.2027 w godzinach 10:15-12:00</li>
+<li>Na ćwiczeniach (z wyłaczeniem 8.10.2026, 26.11.2026, 27.01.2027 oraz 4.02.2027) odbywac się będą kartkówki (10 pkt, 10 min)</li>
+<li>wynik z ćwiczeń liczony jest według wzoru <span class="math display">\[
+  \mbox{łączny wynik z 11 kartkówek} + 2 \cdot \mbox{łączny wynik z dwóch kolokwiów}
+\]</span> W ten sposób można uzyskać maksymalnie 270 pkt. Do zaliczenia wystarcza 50%.</li>
+<li>Ocenę z ćwiczeń może podnieść aktywność (na ćw + zgłaszanie błędów w notatkach)</li>
+<li><a href="https://pdyszewski.github.io/RPAI/">Notatki do wykładu</a></li>
+</ul>
+</section>
+<section id="listy-zadań" class="level2">
+<h2 class="anchored" data-anchor-id="listy-zadań">Listy zadań</h2>
+<ul>
+<li><a href="https://pdyszewski.github.io/RPAI/lista1.html">Lista 1. Przestrzenie zdarzeń elementarnych</a> na ćwiczenia 8.20.2026</li>
+<li><a href="https://pdyszewski.github.io/RPAI/lista2.html">Lista 2. Prawdopodobieństwo klasyczne</a> na ćwiczenia 15.10.2016</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
