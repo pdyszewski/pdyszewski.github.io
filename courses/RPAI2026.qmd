@@ -8,9 +8,9 @@ image: "RPAI.png"
 ## Aktualności
 
  - Egzamin: TBD
- - Kolokwia (po 40 pkt): 25.11.2026 i 26.01.2027 w godzinach 10:15-12:00
- - Na ćwiczeniach (z wyłaczeniem 8.10.2026, 26.11.2026, 27.01.2027 oraz 4.02.2027) 
-   odbywac się będą kartkówki (10 pkt, 10 min)
+ - Kolokwia (po 40 pkt): 25.11.2026 i 26.01.2027 w godzinach 10:15-12:00. Kolokwia odbędą się na dwóch pierwszych godzinach wykładu.
+ - Na początku każdych ćwiczeń (z wyłaczeniem 8.10.2026, 26.11.2026, 27.01.2027 oraz 4.02.2027) 
+   odbywać się będą kartkówki (10 pkt, 10 min)
  - wynik z ćwiczeń liczony jest według wzoru 
    $$
      \mbox{łączny wynik z 11 kartkówek} + 2 \cdot \mbox{łączny wynik z dwóch kolokwiów}
@@ -23,5 +23,6 @@ image: "RPAI.png"
 
  - [Lista 1. Przestrzenie zdarzeń elementarnych](https://pdyszewski.github.io/RPAI/lista1.html) na ćwiczenia 8.20.2026
  - [Lista 2. Prawdopodobieństwo klasyczne](https://pdyszewski.github.io/RPAI/lista2.html) na ćwiczenia 15.10.2016
+ - [Lista 3. Prawdopodobieństwo warunkowe](https://pdyszewski.github.io/RPAI/lista3.html) na ćwiczenia 22.10.2016
 
  
