@@ -18,11 +18,15 @@ image: "RPAI.png"
    W ten sposób można uzyskać maksymalnie 270 pkt. Do zaliczenia wystarcza 50%.
  - Ocenę z ćwiczeń może podnieść aktywność (na ćw + zgłaszanie błędów w notatkach)
  - [Notatki do wykładu](https://pdyszewski.github.io/RPAI/)
+ - [Przykładowe kolokwium 1](https://pdyszewski.github.io/courses/Rachunek_AI_2026_kol1_przykladowe.pdf)
 
 ## Listy zadań
 
  - [Lista 1. Przestrzenie zdarzeń elementarnych](https://pdyszewski.github.io/RPAI/lista1.html) na ćwiczenia 8.20.2026
- - [Lista 2. Prawdopodobieństwo klasyczne](https://pdyszewski.github.io/RPAI/lista2.html) na ćwiczenia 15.10.2016
- - [Lista 3. Prawdopodobieństwo warunkowe](https://pdyszewski.github.io/RPAI/lista3.html) na ćwiczenia 22.10.2016
-
+ - [Lista 2. Prawdopodobieństwo klasyczne](https://pdyszewski.github.io/RPAI/lista2.html) na ćwiczenia 15.10.2026
+ - [Lista 3. Prawdopodobieństwo warunkowe](https://pdyszewski.github.io/RPAI/lista3.html) na ćwiczenia 22.10.2026
+ - [Lista 4. Niezależność zdarzeń](https://pdyszewski.github.io/RPAI/lista4.html) na ćwiczenia 29.10.2026
+ - [Lista 5. Zmienne losowe](https://pdyszewski.github.io/RPAI/lista5.html) na ćwiczenia 5.11.2026
+ - [Lista 6. Wektory losowe](https://pdyszewski.github.io/RPAI/lista6.html) na ćwiczenia 19.10.2016
+ - [Lista 7. Powtórka przed kolokwium](https://pdyszewski.github.io/RPAI/lista7.html)
  
